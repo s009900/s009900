@@ -7,4 +7,4 @@
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=heydude&theme=juicyfresh&column=7&margin-w=15&margin-h=15&no-frame=true&no-bg=true&title=MultiLanguage,Commits,Stars,Followers,Repositories,PullRequest,Issues&background=45,EB2F2F29,FF63D5)](https://github.com/ryo-ma/github-profile-trophy)
 
-![snake gif](https://github.com/s009900/s009900/blob/output/github-contribution-grid-snake.svg)
+![GitHub Snake Light](https://github.com/s009900/s009900/blob/output/github-contribution-grid-snake.svg)
