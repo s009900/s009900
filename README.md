@@ -7,6 +7,8 @@
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&hide=html&card_width=465&theme=midnight-purple&bg_color=45,EB2F2F29,FF63D5&border_color=FFFFFF&title_color=FFFFFF&text_color=000000)](https://github.com/s009900)
 
 ### Trophies
-[![trophy](https://github-profile-trophy.vercel.app/?username=heydude&theme=juicyfresh&column=7&margin-w=15&margin-h=15&no-frame=true&no-bg=true&title=MultiLanguage,Commits,Stars,Followers,Repositories,PullRequest,Issues&background=45,EB2F2F29,FF63D5)](https://github.com/ryo-ma/github-profile-trophy)
-
+![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
 ![GitHub Snake Light](https://github.com/s009900/s009900/blob/output/github-contribution-grid-snake.svg)
+
+
+
