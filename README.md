@@ -1,4 +1,6 @@
-![ReposViews](https://komarev.com/ghpvc/?username=s009900&style=flat-square)
+
+![ReposViews](https://komarev.com/ghpvc/?username=s009900&color=ff69b4)
+
 
 # Views of this readme very fancy
 
