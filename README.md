@@ -1,5 +1,4 @@
-<img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=A7A459&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello!;I'm+s009900%2C+%E2%9C%A9" width="70%" />
-
+<img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=FF69B4&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello,+look+below;I'm+s009900%2C+%E2%9C%A9+my+readme" width="70%" />
 
 <pre>
       ___           ___           ___       ___       ___     
