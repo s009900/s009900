@@ -1,7 +1,5 @@
 
-![ReposViews](https://komarev.com/ghpvc/?username=s009900&color=ff69b4)
-
-
+![](https://komarev.com/ghpvc/?username=s009900&color=ff69b4&label=All+my+repos+views:)
 # Views of this readme very fancy
 
 <img alt="" src="https://count.getloli.com/get/@:s009900?theme=rule34">
