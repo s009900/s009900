@@ -30,6 +30,12 @@
 ![Typing SVG](https://readme-typing-svg.demolab.com/?font=serif&size=25&pause=1000&color=000000&width=300&lines=Click+%F0%9F%91%86+and+follow!)
 
 Hi! <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="50" />
+
+## Contributions City
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/7165badb-2ac6-46aa-b9ad-63dc3484377c" />
+
+
 ### Contributions Streak
 [![GitHub Streak](https://streak-stats.demolab.com?user=s009900&theme=midnight-purple&background=45%2CEB2F2F29%2CFF63D5&border=FFFFFF&dates=000000&excludeDaysLabel=FFFFFF&currStreakNum=FFFFFF&ring=FFFFFF&sideLabels=000000&fire=FFFFFF&sideNums=000000&currStreakLabel=FFFFFF)](https://git.io/streak-stats)
  
