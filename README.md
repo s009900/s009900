@@ -60,3 +60,7 @@ Hi! <img src="https://user-images.githubusercontent.com/18350557/176309783-07859
 | 3 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="24" /> | [h0011000](https://github.com/h0011000) |
 | 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
 <!--LAST_FOLLOWERS_END-->
+
+
+[![Stars over time not yet working](https://starchart.cc/s009900/s009900.svg)](s009900's readme stars)
+
