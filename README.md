@@ -5,7 +5,9 @@
 
 <img alt="" src="https://count.getloli.com/get/@:s009900?theme=rule34">
 
+## Stargazers
 
+[![Stargazers repo roster for @s009900/s009900](https://reporoster.com/stars/s009900/s009900)](https://github.com/s009900/s009900/stargazers)
 
 <img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=FF69B4&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello,+look+below;I'm+s009900%2C+%E2%9C%A9+my+readme" width="70%" />
 
