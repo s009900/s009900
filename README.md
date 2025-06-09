@@ -1,4 +1,7 @@
 
+![s009900](https://stats.justsong.cn/api/github?username=s009900)
+
+(👆 because no public repos, my name is apparently null)
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=All+my+repos+views:)
 #### Views of this readme (very fancy):
@@ -25,8 +28,6 @@
      /:/  /       \:\__\        \:\__\    \:\__\    \::/  /   
      \/__/         \/__/         \/__/     \/__/     \/__/    
 </pre>
-
-![VGS](https://raw.githubusercontent.com/rayliverified/FlutterGames/refs/heads/master/assets/Game-Controller-Logo-iOS.png)
 
 
 # s009900
@@ -69,4 +70,7 @@ Hi! <img src="https://user-images.githubusercontent.com/18350557/176309783-07859
 
 [![Stars over time not yet working](https://starchart.cc/s009900/s009900.svg)](s009900's readme stars)
 
+
+
+![VGS](https://raw.githubusercontent.com/rayliverified/FlutterGames/refs/heads/master/assets/Game-Controller-Logo-iOS.png)
 
