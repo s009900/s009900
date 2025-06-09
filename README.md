@@ -1,17 +1,9 @@
 
-![s009900](https://stats.justsong.cn/api/github?username=s009900)
-
-(👆 because no public repos, my name is apparently null)
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=All+my+repos+views:)
 #### Views of this readme (very fancy):
 
 <img alt="" src="https://count.getloli.com/get/@:s009900?theme=rule34">
-
-
-## Stargazers
-
-[![Stargazers repo roster for @s009900/s009900](https://reporoster.com/stars/s009900/s009900)](https://github.com/s009900/s009900/stargazers)
 
 <img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=FF69B4&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello,+look+below;I'm+s009900%2C+%E2%9C%A9+my+readme" width="70%" />
 
@@ -68,8 +60,19 @@ Hi! <img src="https://user-images.githubusercontent.com/18350557/176309783-07859
 <!--LAST_FOLLOWERS_END-->
 
 
-[![Stars over time not yet working](https://starchart.cc/s009900/s009900.svg)](s009900's readme stars)
+![Stars over time not yet working](https://starchart.cc/s009900/s009900.svg)
 
+Below (not yet working bcz no public repos):
+Contributions Data and Languages
+
+<a href="https://github.com/s009900/"><img height="137px" src="https://github-readme-stats.vercel.app/api?username=s009900&hide_title=true&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&line_height=21&text_color=000&icon_color=000&bg_color=0,ea6161,ffc64d,fffc4d,52fa5a&theme=graywhite" /><!-- wi*quL3fcV --><img height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=6&exclude_repo=comp426,Redventures-Movie-Quotes&text_color=000&icon_color=fff&bg_color=0,52fa5a,4dfcff,c64dff&theme=graywhite" /></a>
+
+![s009900](https://stats.justsong.cn/api/github?username=s009900)
+
+(👆 because no public repos, my name is apparently null)
+## Stargazers
+
+[![Stargazers repo roster for @s009900/s009900](https://reporoster.com/stars/s009900/s009900)](https://github.com/s009900/s009900/stargazers)
 
 
 ![VGS](https://raw.githubusercontent.com/rayliverified/FlutterGames/refs/heads/master/assets/Game-Controller-Logo-iOS.png)
