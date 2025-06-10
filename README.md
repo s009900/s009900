@@ -112,7 +112,19 @@ Contributions Data and Languages
 
 
 (👆 because no public repos, my name is apparently null)
-## Stargazers
+## Stargazers (not yet works)
+
+https://avatars.githubusercontent.com/u/207075205?s=400&u=8dd58624406c23f898e27f9ec3d4e00cd87382bb&v=4
+
+<div align="center">
+<a href="https://www.star-history.com/s009900/readme-ai-generator&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https:///svg?repos=s009900/readme-ai-generator&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=s009900/readme-ai-generator&type=Date" />
+   <img alt="Readme AI Generator Star History" src="https://api.star-history.com/svg?repos=s009900/readme-ai-generator&type=Date" style="width: 80%; height: auto;" />
+ </picture>
+</a>
+</div>
 
 [![Stargazers repo roster for @s009900/s009900](https://reporoster.com/stars/s009900/s009900)](https://github.com/s009900/s009900/stargazers)
 
