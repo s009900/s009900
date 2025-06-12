@@ -132,6 +132,8 @@ https://avatars.githubusercontent.com/u/207075205?s=400&u=8dd58624406c23f898e27f
 
 [![Stargazers repo roster for @s009900/s009900](https://reporoster.com/stars/s009900/s009900)](https://github.com/s009900/s009900/stargazers)
 
+[![Star History Chart](https://api.star-history.com/svg?repos=s009900/pokebinder&type=Date)](https://star-history.com/#s009900/pokebinder&Date)
+
 
 ![VGS](https://raw.githubusercontent.com/rayliverified/FlutterGames/refs/heads/master/assets/Game-Controller-Logo-iOS.png)
 
