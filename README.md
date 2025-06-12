@@ -3,6 +3,10 @@
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=All+my+repos+views:)
 #### Views of this readme (very fancy):
 
+## Dino Game!
+![dino](https://github.com/user-attachments/assets/76dcb129-3398-4d4b-890d-9be3ad8ef1b8)
+
+
 <img alt="" src="https://count.getloli.com/get/@:s009900?theme=rule34">
 
 <img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=FF69B4&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=Hello+hello,+look+below;I'm+s009900%2C+%E2%9C%A9+my+readme" width="70%" />
