@@ -1,4 +1,13 @@
+## Contributors: Coming Soon!
 
+<a href="https://openomy.app/github/s009900/s009900" target="_blank" style="display: block; width: 100%;" align="center">
+  <img src="https://www.openomy.app/svg?repo=s009900/s009900&chart=bubble&latestMonth=3" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" />
+</a>
+
+
+<a href="https://github.com/s009900/s009900/graphs/contributors">
+  <img src="https://opencollective.com/s009900/contributors.svg?width=960&button=false" alt="contributors" />
+</a>
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=All+my+repos+views:)
 #### Views of this readme (very fancy):
