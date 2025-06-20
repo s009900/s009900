@@ -5,7 +5,6 @@ Want to sign the guestbook? Open an issue with your message!
 ---
 
 <!-- GUESTBOOK:START -->
-
 <!-- GUESTBOOK:END -->
 
 ## Contributors: Coming Soon!
