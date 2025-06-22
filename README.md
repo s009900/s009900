@@ -26,8 +26,9 @@
 ### Trophies
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
 
-### Contributions Snake
+### Contributions Snake (Dark not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
+![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
 ### Activity Graph
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact)
 
