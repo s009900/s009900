@@ -44,7 +44,7 @@ Hi!
 ### Trophies
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
 
-### Contributions Snake (Dark not very good)
+### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
 ### Activity Graph
@@ -148,3 +148,8 @@ It's FINALLY working...
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Astonished%20Face.png" width="10%" alt="It's working but you don't know how!"/><br>
 on its own? HOW IS IT WORKING???
 -->
+
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=twinkling" width="100%" />
+</div>
