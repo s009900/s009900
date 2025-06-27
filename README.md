@@ -150,6 +150,38 @@ on its own? HOW IS IT WORKING???
 -->
 
 
+```mermaid
+flowchart LR
+    direction LR
+    subgraph 1[" "]
+        direction TB
+        top1[Find s009900's Profile] --> bottom1[Ask s009900 🤝]
+    end
+    subgraph 2[" "]
+        direction TB
+        top2[Google Endlessly 🔎] --> bottom2[Waste Time ⌛]
+    end
+
+    %% Link to subgraph1
+    3[Discover Problem 🐛] --> 1
+
+    %% Link within subgraph2
+    3[Discover Problem 🐛] --> 2
+
+    1 --> outside1["Succeed" 📈]
+    2 --> outside2["Cry" 😢]
+
+    click top1 "https://www.github.com/s009900/" "Github"
+
+    style 1 stroke:#072ff7,stroke-width:5px
+    style 2 stroke:#f70707,stroke-width:5px
+```
+
+
+
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=twinkling" width="100%" />
 </div>
+
+
+
