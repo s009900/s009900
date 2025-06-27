@@ -155,7 +155,7 @@ flowchart LR
     direction LR
     subgraph 1[" "]
         direction TB
-        top1[Find s009900's Profile] --> bottom1[Ask s009900 🤝]
+        top1[s009900's-Profile - did it!] --> bottom1[Ask s009900 🤝]
     end
     subgraph 2[" "]
         direction TB
