@@ -21,7 +21,7 @@ Hi!
 
 <!-- start statics fun section -->
 <details>
-<summary><b> Cool Stats </b></summary>
+<summary><b> Cool Stats, Click to Expand </b></summary>
 <div align="center">
 <img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=tokyonight&count_private=true&line_height=40'  align="left" />
 <img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=tokyonight&hide_langs_below=4' />
