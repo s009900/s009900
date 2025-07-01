@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate default snake (green)
+      - name: Generate default snake
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -26,7 +26,7 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/pink-snake.svg
-          args: --color_snake "#ff69b4" --color_dots "#ffd1ec,#fff0f6,#f0a6d3,#e757a6"
+          config: .github/snk-pink.yaml
 
       - name: Commit and push generated snakes
         uses: EndBug/add-and-commit@v9
