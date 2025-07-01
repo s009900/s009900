@@ -9,7 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Default snake
+      - uses: actions/checkout@v4
+
       - name: Generate default snake
         uses: Platane/snk@v3
         with:
@@ -17,18 +18,15 @@ jobs:
           outputs: |
             dist/default-snake.svg
 
-      # Pink snake
       - name: Generate pink snake
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/pink-snake.svg
-          color_snake: "#ff69b4"   # Pink
-          color_dots: "#ffd1ec,#fff0f6,#f0a6d3,#e757a6"
+          args: --color_snake "#ff69b4" --color_dots "#ffd1ec,#fff0f6,#f0a6d3,#e757a6"
 
-      # Commit the files
-      - name: Push generated files
+      - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
           add: 'dist/*.svg'
