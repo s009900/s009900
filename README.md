@@ -151,7 +151,7 @@ Hi!
 <!--
 **Code Cycle**<br>
 
-<img src="spiral-eyes.md" width="10%" alt="Broken system!"/>
+<img src="good-spiral-eyes.png" width="10%" alt="Broken system!"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Something BROKE!
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Relieved%20Face.png" width="10%" alt="It's working!"/>
@@ -163,7 +163,7 @@ on its own? HOW IS IT WORKING???
 
 
 <details>
-<summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
+<summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
 
 ```mermaid
 flowchart LR
