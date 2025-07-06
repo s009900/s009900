@@ -7,8 +7,7 @@
 ![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)
 Hi!
 
-<!--<img align="right" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Penguin.png" alt="Penguin" width="15%" /><br>
--->
+<img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
 
@@ -167,11 +166,14 @@ on its own? HOW IS IT WORKING???
 <details>
 <summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
 ```mermaid
+flowchart LR
     direction LR
+    
     subgraph 1[" "]
         direction TB
         top1[s009900's-Profile - did it!] --> bottom1[Ask s009900 🤝]
     end
+    
     subgraph 2[" "]
         direction TB
         top2[Google Endlessly 🔎] --> bottom2[Waste Time ⌛]
@@ -235,3 +237,5 @@ on its own? HOW IS IT WORKING???
 
 
 -->
+
+
