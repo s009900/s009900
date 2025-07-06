@@ -3,8 +3,8 @@
 
 <!-- GUESTBOOK_END -->
 
-<!-- ![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8) -->
-![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)
+![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8)
+<!--![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)-->
 Hi!
 
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
@@ -166,32 +166,15 @@ on its own? HOW IS IT WORKING???
 <details>
 <summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
 ```mermaid
-flowchart LR
-    direction LR
+flowchart TD
+    A[Discover Problem 🐛] --> B[Ask s009900 🤝]
+    A --> C[Google Endlessly 🔎]
+    B --> D[Succeed 📈]
+    C --> E[Waste Time ⌛]
+    E --> F[Cry 😢]
     
-    subgraph 1[" "]
-        direction TB
-        top1[s009900's-Profile - did it!] --> bottom1[Ask s009900 🤝]
-    end
-    
-    subgraph 2[" "]
-        direction TB
-        top2[Google Endlessly 🔎] --> bottom2[Waste Time ⌛]
-    end
-
-    %% Link to subgraph1
-    3[Discover Problem 🐛] --> 1
-
-    %% Link within subgraph2
-    3[Discover Problem 🐛] --> 2
-
-    1 --> outside1["Succeed" 📈]
-    2 --> outside2["Cry" 😢]
-
-    click top1 "https://www.github.com/s009900/" "Github"
-
-    style 1 stroke:#072ff7,stroke-width:5px
-    style 2 stroke:#f70707,stroke-width:5px
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
 ```
 </details>
 
