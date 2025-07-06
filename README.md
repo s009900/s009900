@@ -166,20 +166,33 @@ on its own? HOW IS IT WORKING???
 <details>
 <summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
 ```mermaid
-flowchart TD
-    A[Discover Problem 🐛] --> B[Ask s009900 🤝]
-    A --> C[Google Endlessly 🔎]
-    B --> D[Succeed 📈]
-    C --> E[Waste Time ⌛]
-    E --> F[Cry 😢]
-    
-    style B fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
-    style C fill:#ffebee,stroke:#cc0000,stroke-width:2px
-    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
-    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px
-```
+flowchart LR
+    %% Set the overall direction
+    direction LR
 
-[View my GitHub Profile](https://www.github.com/s009900/)
+    %% Subgraph 1
+    subgraph S1 [ ]
+        direction TB
+        top1["s009900's-Profile - did it!"] --> bottom1["Ask s009900 🤝"]
+    end
+
+    %% Subgraph 2
+    subgraph S2 [ ]
+        direction TB
+        top2["Google Endlessly 🔎"] --> bottom2["Waste Time ⌛"]
+    end
+
+    %% Entry point
+    D["Discover Problem 🐛"] --> S1
+    D --> S2
+
+    S1 --> SC["Succeed 📈"]
+    S2 --> CRY["Cry 😢"]
+
+    click top1 "https://www.github.com/s009900/" "Visit Github Profile"
+    style S1 stroke:#072ff7,stroke-width:5px
+    style S2 stroke:#f70707,stroke-width:5px
+```
 </details>
 
 
