@@ -162,6 +162,9 @@ on its own? HOW IS IT WORKING???
 -->
 
 
+<details>
+<summary><b>🔄 Workflow (Click to Expand)</b></summary>
+
 ```mermaid
 flowchart LR
     direction LR
@@ -188,6 +191,8 @@ flowchart LR
     style 1 stroke:#072ff7,stroke-width:5px
     style 2 stroke:#f70707,stroke-width:5px
 ```
+
+</details>
 
 
 
