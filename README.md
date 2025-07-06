@@ -163,7 +163,7 @@ on its own? HOW IS IT WORKING???
 
 
 <details>
-<summary><b>🔄 Workflow (Click to Expand)</b></summary>
+<summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
 
 ```mermaid
 flowchart LR
