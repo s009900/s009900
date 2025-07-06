@@ -148,7 +148,7 @@ Hi!
 <br><br>
 </tr>
 </tr></tr>
-<!--
+
 **Code Cycle**<br>
 
 <img src="good-spiral-eyes.png" width="10%" alt="Broken system!"/>
@@ -159,7 +159,7 @@ Something BROKE!
 It's FINALLY working...
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Astonished%20Face.png" width="10%" alt="It's working but you don't know how!"/><br>
 on its own? HOW IS IT WORKING???
--->
+
 
 
 <details>
