@@ -165,6 +165,7 @@ on its own? HOW IS IT WORKING???
 
 <details>
 <summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
+
 ```mermaid
 flowchart LR
     %% Set the overall direction
