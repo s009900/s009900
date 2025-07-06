@@ -196,7 +196,7 @@ flowchart LR
 </div>
 
 
-
+<!--
 🐻 Today (Mon, Jun 30th)
 -------------------------------------------------------------------
                  Editor time :                            1.8 hrs
@@ -230,4 +230,4 @@ flowchart LR
             Total keystrokes :                                  8
 
 
-
+-->
