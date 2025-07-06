@@ -164,7 +164,7 @@ on its own? HOW IS IT WORKING???
 
 
 <details>
-<summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
+<summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
 ```mermaid
 flowchart TD
     A[Discover Problem 🐛] --> B[Ask s009900 🤝]
@@ -173,9 +173,13 @@ flowchart TD
     C --> E[Waste Time ⌛]
     E --> F[Cry 😢]
     
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style B fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
+    style C fill:#ffebee,stroke:#cc0000,stroke-width:2px
+    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px
 ```
+
+[View my GitHub Profile](https://www.github.com/s009900/)
 </details>
 
 
