@@ -166,6 +166,7 @@ on its own? HOW IS IT WORKING???
 
 <details>
 <summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
+```mermaid
     direction LR
     subgraph 1[" "]
         direction TB
@@ -190,7 +191,6 @@ on its own? HOW IS IT WORKING???
     style 1 stroke:#072ff7,stroke-width:5px
     style 2 stroke:#f70707,stroke-width:5px
 ```
-
 </details>
 
 
