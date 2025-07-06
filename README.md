@@ -53,20 +53,26 @@ Hi!
 ### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
-### Activity Graph
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact)
+<details>
+<summary><b>📊 Activity Graph (Click to Expand)</b></summary>
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact" alt="Activity Graph" width="100%">
+</div>
+</details>
 
 
 
-## Last Followers
-<!--LAST_FOLLOWERS_START-->
+<details>
+<summary><b>👥 Last Followers (Click to Expand)</b></summary>
+
 | # | Avatar | Username |
 |---|--------|----------|
 | 1 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="24" /> | [as000010000](https://github.com/as000010000) |
 | 2 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="24" /> | [ez0000001000000](https://github.com/ez0000001000000) |
 | 3 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="24" /> | [h0011000](https://github.com/h0011000) |
 | 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
-<!--LAST_FOLLOWERS_END-->
+
+</details>
 
 
 
