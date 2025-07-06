@@ -2,11 +2,10 @@
 <!-- GUESTBOOK_START -->
 
 <!-- GUESTBOOK_END -->
-
+<!-->
 ![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8)
 <!--![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)-->
-Hi!
-
+<!--Hi!-->
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
