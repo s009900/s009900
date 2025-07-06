@@ -157,18 +157,15 @@ Something BROKE!
 <img src="good-relieved.png" width="10%" alt="It's working!"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 It's FINALLY working...
-<img src="good-astonished.png" width="10%" alt="It's working but you don't know how!"/><br>
+<img src="good-astonished.png" width="10%" alt="It's working but I don't know how!"/><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 on its own? HOW IS IT WORKING???
 
-```
-```
+<br><br>
+
 
 <details>
 <summary><b>🔄 Workflow Through Life(Click to Expand)</b></summary>
-
-```mermaid
-flowchart LR
     direction LR
     subgraph 1[" "]
         direction TB
