@@ -50,9 +50,12 @@ jobs:
               }
             }
             
-            // Create a simple comment with just the table row
+            // Create a comment with the full table structure for better parsing
             const formattedDate = new Date().toISOString().split('T')[0];
-            const tableRow = `| **${name}** | ${message} | ${formattedDate} |`;
+            const commentContent = '### Guestbook Entry\n\n' +
+              '| Name | Message | Date |\n' +
+              '|------|---------|------|\n' +
+              `| **${name}** | ${message} | ${formattedDate} |`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
