@@ -10,7 +10,15 @@ Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?
 ### Recent Entries
 
 <!-- GUESTBOOK:START -->
+| Name | Message | Date |
+|------|---------|------|
+| **s009900** | ### Your Name or GitHub Handle
 
+ME!
+
+### Your Message
+
+Hey, testing testing 1-2-3 | 2025-07-24 |
 <!-- GUESTBOOK:END -->
 
 _Automatically updates with new entries_
