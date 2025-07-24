@@ -18,7 +18,6 @@
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=dracula&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 ![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula)
-<img src="https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true" width="100%">
 ![](https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true)
 ![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula)
 ![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula)
