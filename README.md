@@ -1,5 +1,5 @@
-
-# s009900's profile readme
+# s009900
+# ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo+if+you+like+it!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
 
 <!--## Guestbook-->
 <!-- GUESTBOOK_START -->
