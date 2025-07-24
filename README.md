@@ -1,13 +1,8 @@
 # s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo+if+you+like+it!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
-
-<!--## Guestbook-->
-<!-- GUESTBOOK_START -->
-
-<!-- GUESTBOOK_END -->
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
-
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
+
 <!-- start statics fun section -->
 <details>
 <summary><b> Cool Stats, Click to Expand </b></summary>
@@ -125,7 +120,7 @@
 <details>
 <summary><b>📊 Activity Graph (Click to Expand)</b></summary>
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact" alt="Activity Graph" width="100%">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula" alt="Activity Graph" width="100%">
 </div>
 </details>
 
@@ -190,10 +185,18 @@ flowchart LR
 </details>
 
 <details>
-<summary>Contributions</summary>
-Want to contribute? Awesome! The most basic way to show your support is to star the project or to raise issues or suggest ideas. Thanks! 
+<summary><b>Contributions</b></summary>
+Want to contribute? Awesome! 
+  
+The most basic way to show your support is to star the project or to raise issues or suggest ideas. Thanks! 
 </details>
 
+<details>
+<summary><b>🫱🏼‍🫲🏼 Contributors - You can be one too! Just fork and submit a PR with your changes</b></summary>
+
+[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
+
+</details>
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
@@ -206,6 +209,8 @@ Want to contribute? Awesome! The most basic way to show your support is to star 
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
 </div>
+
+
 
 
 <div align="center">
