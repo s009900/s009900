@@ -5,7 +5,7 @@
 
 ## 📖 Guestbook
 
-Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook-entry.yml)!
+Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook-sign.yml)!
 
 ### Recent Entries
 
