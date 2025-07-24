@@ -32,9 +32,12 @@ jobs:
           
           // Only process if it's a word-cloud issue
           if (context.payload.issue.labels.some(label => label.name === 'word-cloud')) {
-            const word = context.payload.issue.body.match(/Word to Add[\s\S]*?-{3,}\s*([^\n]+)/i);
-            if (word && word[1]) {
-              const newWord = word[1].trim();
+            // Extract word from the form data
+            const body = context.payload.issue.body;
+            const wordMatch = body.match(/### Word to Add\s*\n\s*```\s*\n([\s\S]*?)\n\s*```/i);
+            const word = wordMatch ? wordMatch[1].trim() : null;
+            if (word) {
+              const newWord = word.trim();
               
               // Load existing words
               let words = [];
