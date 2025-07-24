@@ -132,7 +132,7 @@
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
 
 
-**Code Cycle**<br>
+### Code Cycle<br>
 
 <img src="good-spiral-eyes.png" width="10%" alt="Broken system!"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
