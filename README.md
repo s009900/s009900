@@ -9,21 +9,9 @@ Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?
 
 ### Recent Entries
 
-<!-- GUESTBOOK:START -->
-- **[@s009900](https://github.com/s009900/s009900/issues/6)**: Guestbook entry: s009900
-  > ### Your Name or GitHub Handle
-
-@s009900
-
-### Your Message
-
-Loving this project!
-  _(2025-07-24)_
-
 | Name | Message | Date |
 |------|---------|------|
 | No entries yet. Be the first! |  |  |
-<!-- GUESTBOOK:END -->
 
 _Automatically updates with new entries_
 

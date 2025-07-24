@@ -26,16 +26,15 @@ jobs:
             const message = issue.body.match(/### Your Message\s*([\s\S]*?)\s*### Your Name/)[1].trim();
             const name = issue.body.match(/### Your Name\s*([\s\S]*?)(?:\s*###|$)/)[1].trim();
             
-            // Create a comment with the formatted entry as a table row
+            // Create a simple comment with just the table row
             const formattedDate = new Date().toISOString().split('T')[0];
             const tableRow = `| **${name}** | ${message} | ${formattedDate} |`;
-            const tableHeader = '| Name | Message | Date |\n|------|---------|------|\n';
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `## 📝 Guestbook Entry\n\n${tableHeader}${tableRow}\n\n_Thank you for signing the guestbook! 🎉_`
+              body: tableRow
             });
             
             // Close the issue
