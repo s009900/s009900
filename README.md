@@ -3,6 +3,12 @@
 <img align="top-right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
 
+## 🎨 Community Word Cloud
+
+Add a word to my word cloud! [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
+
+![Word Cloud](assets/wordcloud.png)
+
 ### 👥 Latest Followers
 
 | Name | GitHub |

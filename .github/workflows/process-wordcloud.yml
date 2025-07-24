@@ -1,0 +1,87 @@
+name: Process Word Cloud Submission
+
+on:
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+
+jobs:
+  process-word:
+    if: contains(github.event.issue.labels.*.name, 'word-cloud')
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r .github/wordcloud/requirements.txt
+    
+    - name: Process new word
+      id: process
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Only process if it's a word-cloud issue
+          if (context.payload.issue.labels.some(label => label.name === 'word-cloud')) {
+            const word = context.payload.issue.body.match(/Word to Add[\s\S]*?-{3,}\s*([^\n]+)/i);
+            if (word && word[1]) {
+              const newWord = word[1].trim();
+              
+              // Load existing words
+              let words = [];
+              try {
+                words = JSON.parse(fs.readFileSync('.github/wordcloud/words.json', 'utf8'));
+              } catch (e) {
+                console.log('No existing words file, creating new one');
+              }
+              
+              // Add new word
+              words.push(newWord);
+              
+              // Save updated words
+              fs.writeFileSync('.github/wordcloud/words.json', JSON.stringify(words));
+              
+              // Generate word cloud
+              const { execSync } = require('child_process');
+              execSync('python .github/wordcloud/generate_wordcloud.py');
+              
+              // Commit changes
+              execSync('git config --global user.name "GitHub Action"');
+              execSync('git config --global user.email "action@github.com"');
+              execSync('git add .github/wordcloud/words.json assets/wordcloud.png');
+              execSync('git commit -m "chore: update word cloud with new word"');
+              execSync('git push');
+              
+              // Add a comment to the issue
+              return `Thanks for adding "${newWord}" to my word cloud! 🎉`;
+            }
+          }
+          return 'No word detected in the issue body.';
+    
+    - name: Close the issue
+      if: steps.process.outputs.result && !contains(steps.process.outputs.result, 'No word detected')
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: steps.process.outputs.result
+          });
+          
+          await github.rest.issues.update({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'closed'
+          });

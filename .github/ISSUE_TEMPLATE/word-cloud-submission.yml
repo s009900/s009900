@@ -1,0 +1,21 @@
+name: 🌈 Add to Word Cloud
+about: Submit a word to be added to my word cloud
+description: Suggest a word to be added to my GitHub word cloud
+labels: [word-cloud]
+body:
+  - type: textarea
+    id: word
+    attributes:
+      label: Word to Add
+      description: Enter a single word or short phrase (max 2 words)
+      placeholder: "Type your word here..."
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: Your Message (Optional)
+      description: Add a short message about why you chose this word
+      placeholder: "I chose this word because..."
+    validations:
+      required: false
