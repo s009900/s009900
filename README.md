@@ -185,10 +185,18 @@ flowchart LR
 </details>
 
 <details>
-<summary>Contributions</summary>
-Want to contribute? Awesome! The most basic way to show your support is to star the project or to raise issues or suggest ideas. Thanks! 
+<summary><b>Contributions</b></summary>
+Want to contribute? Awesome! 
+  
+The most basic way to show your support is to star the project or to raise issues or suggest ideas. Thanks! 
 </details>
 
+<details>
+<summary><b>🫱🏼‍🫲🏼 Contributors - You can be one too! Just fork and submit a PR with your changes</b></summary>
+
+[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
+
+</details>
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
@@ -201,6 +209,8 @@ Want to contribute? Awesome! The most basic way to show your support is to star 
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
 </div>
+
+
 
 
 <div align="center">
