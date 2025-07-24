@@ -1,8 +1,8 @@
 name: Update Followers List
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # Runs every hour
+  repository_dispatch:
+    types: [new_follower]
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
