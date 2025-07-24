@@ -3,6 +3,13 @@ description: "Submit a word to be added to the community word cloud"
 title: "Add word to word cloud"
 labels: ["word-cloud"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Add a word to my word cloud!
+        
+        Your word will be added to the word cloud in my README. Keep it clean and appropriate!
+  
   - type: input
     id: word
     attributes:
@@ -11,3 +18,12 @@ body:
       placeholder: "Type your word here..."
     validations:
       required: true
+      
+  - type: textarea
+    id: message
+    attributes:
+      label: "Optional Message"
+      description: "Add a message about why you chose this word (optional)"
+      placeholder: "I chose this word because..."
+    validations:
+      required: false

@@ -2,19 +2,11 @@ name: Process Word Cloud Submission
 
 on:
   issues:
-    types: [labeled, opened, edited]
+    types: [opened, edited, labeled]
   workflow_dispatch:
 
 jobs:
   process-word:
-    # Only run if the issue has the word-cloud label or if we're manually triggering
-    if: >
-      (github.event_name == 'workflow_dispatch') ||
-      (github.event_name == 'issues' && 
-       (github.event.action == 'labeled' && github.event.label.name == 'word-cloud') ||
-       (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'word-cloud')) ||
-       (github.event.action == 'edited' && contains(github.event.issue.labels.*.name, 'word-cloud'))
-      )
     runs-on: ubuntu-latest
     
     steps:
@@ -37,53 +29,84 @@ jobs:
         script: |
           const fs = require('fs');
           
-          // Get the latest issue data to ensure we have the current labels
+          // Log the event for debugging
+          console.log('Event payload:', JSON.stringify(context.payload, null, 2));
+          
+          // Get the latest issue data
           const { data: issue } = await github.rest.issues.get({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.issue.number
           });
           
-          // Only process if it's a word-cloud issue
-          if (issue.labels.some(label => label.name === 'word-cloud')) {
-            // Extract word from the form data
-            const body = context.payload.issue.body;
-            // Match the word from the form input
-            const wordMatch = body.match(/### Word to Add[\s\S]*?\n\s*([^\n]+)/i);
-            const word = wordMatch ? wordMatch[1].trim() : null;
-            if (word) {
-              const newWord = word.trim();
-              
-              // Load existing words
-              let words = [];
-              try {
-                words = JSON.parse(fs.readFileSync('.github/wordcloud/words.json', 'utf8'));
-              } catch (e) {
-                console.log('No existing words file, creating new one');
-              }
-              
-              // Add new word
-              words.push(newWord);
-              
-              // Save updated words
-              fs.writeFileSync('.github/wordcloud/words.json', JSON.stringify(words));
-              
-              // Generate word cloud
-              const { execSync } = require('child_process');
-              execSync('python .github/wordcloud/generate_wordcloud.py');
-              
-              // Commit changes
-              execSync('git config --global user.name "GitHub Action"');
-              execSync('git config --global user.email "action@github.com"');
-              execSync('git add .github/wordcloud/words.json assets/wordcloud.png');
-              execSync('git commit -m "chore: update word cloud with new word"');
-              execSync('git push');
-              
-              // Add a comment to the issue
-              return `Thanks for adding "${newWord}" to my word cloud! 🎉`;
-            }
+          // Log the issue data
+          console.log('Issue data:', JSON.stringify(issue, null, 2));
+          
+          // Check if this is a word cloud submission
+          const isWordCloudIssue = issue.labels && issue.labels.some(label => 
+            typeof label === 'string' ? label === 'word-cloud' : label.name === 'word-cloud'
+          );
+          
+          if (!isWordCloudIssue) {
+            console.log('Not a word cloud issue, skipping...');
+            return 'Skipped: Not a word cloud issue';
           }
-          return 'No word detected in the issue body.';
+          
+          // Extract word from the form data
+          const body = context.payload.issue.body;
+          console.log('Issue body:', body);
+          
+          // Match the word from the form input
+          const wordMatch = body.match(/### Word to Add[\s\S]*?\n\s*([^\n]+)/i);
+          const word = wordMatch ? wordMatch[1].trim() : null;
+          console.log('Extracted word:', word);
+          
+          if (!word) {
+            console.log('No word found in the issue body');
+            return 'Error: No word found in the issue body';
+          }
+          
+          const newWord = word.trim();
+          console.log('Processing word:', newWord);
+          
+          // Load existing words
+          let words = [];
+          try {
+            const wordsFile = fs.readFileSync('.github/wordcloud/words.json', 'utf8');
+            words = JSON.parse(wordsFile);
+            console.log('Loaded existing words:', words);
+          } catch (e) {
+            console.log('No existing words file, creating new one');
+          }
+          
+          // Add new word
+          words.push(newWord);
+          console.log('Updated words:', words);
+          
+          try {
+            // Save updated words
+            fs.writeFileSync('.github/wordcloud/words.json', JSON.stringify(words, null, 2));
+            console.log('Saved words to file');
+            
+            // Generate word cloud
+            const { execSync } = require('child_process');
+            console.log('Generating word cloud...');
+            execSync('python .github/wordcloud/generate_wordcloud.py');
+            
+            // Commit changes
+            console.log('Committing changes...');
+            execSync('git config --global user.name "GitHub Action"');
+            execSync('git config --global user.email "action@github.com"');
+            execSync('git add .github/wordcloud/words.json assets/wordcloud.png');
+            execSync('git commit -m "chore: update word cloud with new word"');
+            execSync('git push');
+            
+            console.log('Successfully updated word cloud');
+            return `Thanks for adding "${newWord}" to my word cloud! 🎉`;
+          } catch (error) {
+            console.error('Error updating word cloud:', error);
+            return `Error updating word cloud: ${error.message}`;
+          }
     
     - name: Close the issue
       if: steps.process.outputs.result && !contains(steps.process.outputs.result, 'No word detected')
