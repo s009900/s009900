@@ -193,6 +193,8 @@ The most basic way to show your support is to star the project or to raise issue
 
 <details>
 <summary><b>🫱🏼‍🫲🏼 Contributors - You can be one too! Just fork and submit a PR with your changes</b></summary>
+  
+[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
 
 </details>
 
