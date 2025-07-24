@@ -109,6 +109,8 @@ jobs:
             execSync('git push');
             
             console.log('Successfully updated word cloud');
+            // Set the output for the next step
+            core.setOutput('result', `Thanks for adding "${newWord}" to my word cloud! 🎉`);
             return `Thanks for adding "${newWord}" to my word cloud! 🎉`;
           } catch (error) {
             console.error('Error updating word cloud:', error);
@@ -116,20 +118,27 @@ jobs:
           }
     
     - name: Close the issue
-      if: steps.process.outputs.result && !contains(steps.process.outputs.result, 'No word detected')
+      if: success()
       uses: actions/github-script@v6
       with:
         script: |
-          await github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: steps.process.outputs.result
-          });
+          const result = '${{ steps.process.outputs.result }}';
+          console.log('Step output:', result);
           
-          await github.rest.issues.update({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            state: 'closed'
-          });
+          // Only proceed if we have a valid result
+          if (result && !result.includes('Error') && !result.includes('Skipped')) {
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: result
+            });
+            
+            await github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              state_reason: 'completed'
+            });
+          }
