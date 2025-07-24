@@ -1,3 +1,5 @@
+
+
 # s009900's profile readme
 
 <!--## Guestbook-->
@@ -30,15 +32,10 @@
 ### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
-<details>
-<summary><b>📊 Activity Graph (Click to Expand)</b></summary>
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact" alt="Activity Graph" width="100%">
-</div>
-</details>
 
 
 
+<!--
 <details>
 <summary><b>👥 Last Followers (Click to Expand)</b></summary>
 
@@ -50,7 +47,7 @@
 | 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
 
 </details>
-
+-->
 
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
@@ -126,10 +123,19 @@
 </tr>
 </tr></tr>
 
-### Trophies
+<details>
+<summary><b>📊 Activity Graph (Click to Expand)</b></summary>
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact" alt="Activity Graph" width="100%">
+</div>
+</details>
+
+<details>
+  
+<summary><b>🏆 Trophies</b></summary>
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
-
+</details>
 <details>
 <summary><b>😁 Code Cycle</b></summary>
 
