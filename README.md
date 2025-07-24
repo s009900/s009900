@@ -1,13 +1,8 @@
 # s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo+if+you+like+it!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
-
-<!--## Guestbook-->
-<!-- GUESTBOOK_START -->
-
-<!-- GUESTBOOK_END -->
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
-
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
+
 <!-- start statics fun section -->
 <details>
 <summary><b> Cool Stats, Click to Expand </b></summary>
@@ -125,7 +120,7 @@
 <details>
 <summary><b>📊 Activity Graph (Click to Expand)</b></summary>
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=github-compact" alt="Activity Graph" width="100%">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula" alt="Activity Graph" width="100%">
 </div>
 </details>
 
