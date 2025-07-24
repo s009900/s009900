@@ -36,6 +36,9 @@ jobs:
         set -e  # Exit immediately if a command exits with a non-zero status
         
         echo "Starting word cloud processing..."
+        echo "Current directory: $(pwd)"
+        echo "Repository contents:"
+        ls -la
         
         # Check if we have an issue body
         if [ -z "${{ github.event.issue.body }}" ]; then
@@ -44,7 +47,11 @@ jobs:
           exit 1
         fi
         
+        # Create assets directory if it doesn't exist
+        mkdir -p assets
+        
         # Pass the issue body to our Python script
+        echo "Processing word from issue..."
         if ! python .github/wordcloud/process_issue.py "${{ github.event.issue.body }}"; then
           echo "Error: Failed to process the word"
           echo "result=❌ Error: Failed to process the word" >> $GITHUB_OUTPUT
@@ -54,11 +61,21 @@ jobs:
         echo "Word processed successfully, generating word cloud..."
         
         # Generate the word cloud
+        echo "Generating word cloud..."
         if ! python .github/wordcloud/generate_wordcloud.py; then
           echo "Error: Failed to generate word cloud"
           echo "result=❌ Error: Failed to generate word cloud" >> $GITHUB_OUTPUT
           exit 1
         fi
+        
+        # Verify word cloud was created
+        if [ ! -f "assets/wordcloud.png" ]; then
+          echo "Error: Word cloud image was not generated"
+          echo "result=❌ Error: Word cloud image was not generated" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        echo "Word cloud generated successfully!"
         
         # Configure git
         git config --global user.name "GitHub Action"
