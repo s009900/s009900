@@ -56,9 +56,16 @@ jobs:
           const body = context.payload.issue.body;
           console.log('Issue body:', body);
           
-          // Match the word from the form input
-          const wordMatch = body.match(/### Word to Add[\s\S]*?\n\s*([^\n]+)/i);
-          const word = wordMatch ? wordMatch[1].trim() : null;
+          // Get the word from the form input
+          // The form data is in the format: **<label>**\n\n<value>\n\n
+          let word = null;
+          const wordSection = body.split('**Word to Add**')[1];
+          if (wordSection) {
+            // Get the first line after the label (skipping any empty lines)
+            const lines = wordSection.split('\n').map(line => line.trim()).filter(line => line);
+            word = lines[0];
+          }
+          
           console.log('Extracted word:', word);
           
           if (!word) {
