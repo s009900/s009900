@@ -34,7 +34,8 @@ jobs:
           if (context.payload.issue.labels.some(label => label.name === 'word-cloud')) {
             // Extract word from the form data
             const body = context.payload.issue.body;
-            const wordMatch = body.match(/### Word to Add\s*\n\s*```\s*\n([\s\S]*?)\n\s*```/i);
+            // Match the word from the form input
+            const wordMatch = body.match(/### Word to Add[\s\S]*?\n\s*([^\n]+)/i);
             const word = wordMatch ? wordMatch[1].trim() : null;
             if (word) {
               const newWord = word.trim();
