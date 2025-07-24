@@ -1,5 +1,4 @@
 
-
 # s009900's profile readme
 
 <!--## Guestbook-->
@@ -15,7 +14,7 @@
 <div align="center">
 <img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&line_height=40'  align="left" />
   
-<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&hide_langs_below=4' />
+<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula' />
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=dracula&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 ![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula)
@@ -29,7 +28,7 @@
 <!-- end statics fun section -->
 
 
-### Contributions Snake (Dark is not very good)
+### Contributions Snake Light/Dark Themed
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
 
@@ -189,6 +188,12 @@ flowchart LR
     style S2 stroke:#f70707,stroke-width:5px
 ```
 </details>
+
+<details>
+<summary>Contributions</summary>
+Want to contribute? Awesome! The most basic way to show your support is to star the project or to raise issues or suggest ideas. Thanks! 
+</details>
+
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
