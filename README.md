@@ -11,6 +11,12 @@
 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="30" height="30"> h0011000 | [@h0011000](https://github.com/h0011000) |
 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="30" height="30"> ez0000001000000 | [@ez0000001000000](https://github.com/ez0000001000000) |
 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="30" height="30"> as000010000 | [@as000010000](https://github.com/as000010000) |
+
+
+You can be 👆 there too by [following me](https://github.com/s009900)
+
+(Usually takes a minute to update)
+
 ## Contributions Snake Light/Dark Themed
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
