@@ -130,8 +130,6 @@
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
 
-### Code Cycle
-
 <details>
 <summary><b>😁 Code Cycle</b></summary>
 
