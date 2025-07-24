@@ -5,6 +5,12 @@ on:
     types: [opened, edited, labeled]
   workflow_dispatch:
 
+# Set the permissions at the workflow level
+permissions:
+  contents: write  # For committing changes
+  issues: write    # For adding comments and closing issues
+  pull-requests: write  # For creating pull requests if needed
+
 jobs:
   process-word:
     runs-on: ubuntu-latest
@@ -24,182 +30,105 @@ jobs:
     
     - name: Process new word
       id: process
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const fs = require('fs');
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        set -e  # Exit immediately if a command exits with a non-zero status
+        
+        echo "Starting word cloud processing..."
+        
+        # Check if we have an issue body
+        if [ -z "${{ github.event.issue.body }}" ]; then
+          echo "Error: No issue body found"
+          echo "result=❌ Error: No issue body found" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        # Pass the issue body to our Python script
+        if ! python .github/wordcloud/process_issue.py "${{ github.event.issue.body }}"; then
+          echo "Error: Failed to process the word"
+          echo "result=❌ Error: Failed to process the word" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        echo "Word processed successfully, generating word cloud..."
+        
+        # Generate the word cloud
+        if ! python .github/wordcloud/generate_wordcloud.py; then
+          echo "Error: Failed to generate word cloud"
+          echo "result=❌ Error: Failed to generate word cloud" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+        
+        # Configure git
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        
+        # Add and commit changes
+        git add .github/wordcloud/words.json assets/wordcloud.png
+        
+        # Only commit if there are changes
+        if ! git diff --quiet --staged; then
+          echo "Committing changes..."
+          git commit -m "chore: update word cloud"
           
-          // Log the event for debugging
-          console.log('Event payload:', JSON.stringify(context.payload, null, 2));
+          # Set up authentication for push
+          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git
           
-          // Get the latest issue data
-          const { data: issue } = await github.rest.issues.get({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: context.issue.number
-          });
-          
-          // Log the issue data
-          console.log('Issue data:', JSON.stringify(issue, null, 2));
-          
-          // Check if this is a word cloud submission by looking at the issue title or body
-          const isWordCloudIssue = 
-            (issue.title && issue.title.toLowerCase().includes('word cloud')) ||
-            (issue.body && issue.body.includes('### Word to Add'));
-          
-          if (!isWordCloudIssue) {
-            console.log('Not a word cloud issue, skipping...');
-            return 'Skipped: Not a word cloud issue';
-          }
-          
-          console.log('Processing as word cloud submission');
-          
-          // Extract word from the form data
-          const body = context.payload.issue.body;
-          console.log('Issue body:', body);
-          
-          // Get the word from the form input
-          // The form data is in the format: **<label>**\n\n<value>\n\n
-          let word = null;
-          const wordSection = body.split('**Word to Add**')[1];
-          if (wordSection) {
-            // Get the first line after the label (skipping any empty lines)
-            const lines = wordSection.split('\n').map(line => line.trim()).filter(line => line);
-            word = lines[0];
-          }
-          
-          console.log('Extracted word:', word);
-          
-          if (!word) {
-            console.log('No word found in the issue body');
-            return 'Error: No word found in the issue body';
-          }
-          
-          const newWord = word.trim();
-          console.log('Processing word:', newWord);
-          
-          // Load existing words
-          let words = [];
-          const wordsPath = '.github/wordcloud/words.json';
-          try {
-            console.log('Reading words from:', wordsPath);
-            const wordsFile = fs.readFileSync(wordsPath, 'utf8');
-            words = JSON.parse(wordsFile);
-            console.log('Successfully parsed words.json');
-            console.log('Current words:', JSON.stringify(words, null, 2));
-          } catch (e) {
-            console.log('Error reading/parsing words.json, using empty array. Error:', e.message);
-            words = [];
-          }
-          
-          // Add new word
-          words.push(newWord);
-          console.log('Updated words:', JSON.stringify(words, null, 2));
-          
-          try {
-            // Save updated words
-            const wordsContent = JSON.stringify(words, null, 2);
-            console.log('Saving words to file. Content length:', wordsContent.length);
-            fs.writeFileSync(wordsPath, wordsContent);
-            
-            // Verify the file was written
-            const verifyContent = fs.readFileSync(wordsPath, 'utf8');
-            console.log('Successfully wrote to words.json. File content:', verifyContent);
-            
-            // Generate word cloud
-            const { execSync } = require('child_process');
-            console.log('Generating word cloud...');
-            execSync('python .github/wordcloud/generate_wordcloud.py');
-            
-            // Commit changes
-            console.log('Committing changes...');
-            try {
-              // Configure git
-              execSync('git config --global user.name "GitHub Action"');
-              execSync('git config --global user.email "action@github.com"');
-              
-              // Add files with force flag to ensure they're staged
-              execSync('git add --force .github/wordcloud/words.json');
-              
-              // Check if the file is actually staged
-              const stagedFiles = execSync('git diff --name-only --cached').toString().trim();
-              console.log('Staged files:', stagedFiles);
-              
-              // Check if there are any changes to commit
-              const status = execSync('git status --porcelain .github/wordcloud/words.json').toString().trim();
-              console.log('Git status for words.json:', status);
-              
-              // Always try to commit, even if status doesn't show changes
-              try {
-                execSync('git commit -m "chore: update word cloud with new word"');
-                console.log('Successfully committed changes');
-                
-                // Try to push
-                try {
-                  execSync('git push');
-                  console.log('Successfully pushed changes');
-                } catch (pushError) {
-                  console.error('Error pushing changes:', pushError.message);
-                  console.log('Attempting to pull and retry push...');
-                  execSync('git pull --rebase');
-                  execSync('git push');
-                  console.log('Successfully pushed after pull');
-                }
-              } catch (commitError) {
-                console.log('No changes to commit or commit failed:', commitError.message);
-              }
-              
-              // Generate and add word cloud
-              console.log('Generating word cloud...');
-              execSync('python .github/wordcloud/generate_wordcloud.py');
-              execSync('git add assets/wordcloud.png');
-              
-              // Check if word cloud was generated and added
-              const wcStatus = execSync('git status --porcelain assets/wordcloud.png').toString().trim();
-              if (wcStatus) {
-                execSync('git commit -m "chore: update word cloud image"');
-                execSync('git push');
-                console.log('Successfully updated word cloud image');
-              } else {
-                console.log('No changes to word cloud image');
-              }
-              
-            } catch (error) {
-              console.error('Error during git operations:', error);
-              throw error;
-            }
-            
-            console.log('Successfully updated word cloud');
-            // Set the output for the next step
-            core.setOutput('result', `Thanks for adding "${newWord}" to my word cloud! 🎉`);
-            return `Thanks for adding "${newWord}" to my word cloud! 🎉`;
-          } catch (error) {
-            console.error('Error updating word cloud:', error);
-            return `Error updating word cloud: ${error.message}`;
-          }
+          # Push changes
+          if git push; then
+            echo "✅ Changes pushed successfully"
+            echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
+          else
+            echo "❌ Failed to push changes"
+            echo "result=❌ Error: Failed to push changes" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+        else
+          echo "No changes to commit"
+          echo "result=ℹ️ No changes to commit" >> $GITHUB_OUTPUT
+        fi
     
     - name: Close the issue
-      if: success()
+      if: always()  # Run this step even if previous steps fail
       uses: actions/github-script@v6
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         script: |
-          const result = '${{ steps.process.outputs.result }}';
-          console.log('Step output:', result);
-          
-          // Only proceed if we have a valid result
-          if (result && !result.includes('Error') && !result.includes('Skipped')) {
+          try {
+            const result = '${{ steps.process.outputs.result }}';
+            console.log('Step output:', result);
+            
+            // Get the issue number from the event
+            const issueNumber = context.issue ? context.issue.number : null;
+            if (!issueNumber) {
+              console.log('No issue number found in context');
+              return;
+            }
+            
+            console.log(`Processing issue #${issueNumber}`);
+            
+            // Add a comment with the result
             await github.rest.issues.createComment({
-              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: result
+              issue_number: issueNumber,
+              body: result || 'Word cloud processing completed.'
             });
             
+            // Close the issue
             await github.rest.issues.update({
-              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
+              issue_number: issueNumber,
               state: 'closed',
               state_reason: 'completed'
             });
+            
+            console.log('Successfully closed the issue');
+          } catch (error) {
+            console.error('Error in GitHub Script:', error);
+            // Fail the step if there's an error
+            core.setFailed(`Action failed with error: ${error}`);
           }
