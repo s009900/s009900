@@ -12,6 +12,9 @@ Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?
 <!-- GUESTBOOK:START -->
 | Name | Message | Date |
 |------|---------|------|
+| **s009900** | Hi there! | 2025-07-24 |
+| Name | Message | Date |
+|------|---------|------|
 | **s009900** | ### Your Name or GitHub Handle
 
 @s009900
