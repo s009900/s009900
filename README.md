@@ -5,13 +5,15 @@
 
 ## 📖 Guestbook
 
-Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook-sign.yml)!
+Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook-entry.yml)!
 
 ### Recent Entries
 
+<!-- GUESTBOOK:START -->
 | Name | Message | Date |
 |------|---------|------|
 | No entries yet. Be the first! |  |  |
+<!-- GUESTBOOK:END -->
 
 _Automatically updates with new entries_
 

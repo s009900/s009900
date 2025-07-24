@@ -26,15 +26,27 @@ jobs:
             const bodyLines = issue.body.split('\n');
             let message = '';
             let name = '';
+            let currentField = '';
             
             for (let i = 0; i < bodyLines.length; i++) {
               const line = bodyLines[i].trim();
-              if (line.startsWith('### Your Message')) {
-                // The message is in the next line
-                message = bodyLines[i + 1].trim();
-              } else if (line.startsWith('### Your Name')) {
-                // The name is in the next line
-                name = bodyLines[i + 1].trim();
+              if (line.startsWith('### ')) {
+                if (line.includes('Your Message')) {
+                  currentField = 'message';
+                } else if (line.includes('Your Name')) {
+                  currentField = 'name';
+                } else {
+                  currentField = '';
+                }
+              } else if (line.startsWith('```') || line === '') {
+                // Skip code block markers and empty lines
+                continue;
+              } else if (currentField === 'message' && !line.startsWith('<!--')) {
+                message = line.trim();
+                currentField = '';
+              } else if (currentField === 'name' && !line.startsWith('<!--')) {
+                name = line.trim();
+                currentField = '';
               }
             }
             
