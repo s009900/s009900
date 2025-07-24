@@ -34,8 +34,8 @@
 <!-- end statics fun section -->
 
 
-### Trophies
-![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
+### 🏆 GitHub Trophies
+[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=onedark&row=2&column=4&no-frame=true&margin-w=15&margin-h=15&no-bg=true&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C&v=2)](https://github.com/ryo-ma/github-profile-trophy)
 
 ### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
