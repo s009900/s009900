@@ -102,11 +102,46 @@ jobs:
             
             // Commit changes
             console.log('Committing changes...');
-            execSync('git config --global user.name "GitHub Action"');
-            execSync('git config --global user.email "action@github.com"');
-            execSync('git add .github/wordcloud/words.json assets/wordcloud.png');
-            execSync('git commit -m "chore: update word cloud with new word"');
-            execSync('git push');
+            try {
+              // Configure git
+              execSync('git config --global user.name "GitHub Action"');
+              execSync('git config --global user.email "action@github.com"');
+              
+              // Add files
+              execSync('git add .github/wordcloud/words.json');
+              
+              // Check if there are any changes to commit
+              const status = execSync('git status --porcelain').toString().trim();
+              console.log('Git status:', status);
+              
+              if (status) {
+                // Commit and push if there are changes
+                execSync('git commit -m "chore: update word cloud with new word"');
+                execSync('git push');
+                console.log('Successfully committed and pushed changes');
+              } else {
+                console.log('No changes to commit');
+              }
+              
+              // Generate and add word cloud
+              console.log('Generating word cloud...');
+              execSync('python .github/wordcloud/generate_wordcloud.py');
+              execSync('git add assets/wordcloud.png');
+              
+              // Check if word cloud was generated and added
+              const wcStatus = execSync('git status --porcelain assets/wordcloud.png').toString().trim();
+              if (wcStatus) {
+                execSync('git commit -m "chore: update word cloud image"');
+                execSync('git push');
+                console.log('Successfully updated word cloud image');
+              } else {
+                console.log('No changes to word cloud image');
+              }
+              
+            } catch (error) {
+              console.error('Error during git operations:', error);
+              throw error;
+            }
             
             console.log('Successfully updated word cloud');
             // Set the output for the next step
