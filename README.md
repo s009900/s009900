@@ -9,15 +9,6 @@
 ![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8)
 <!--![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)-->
 <!--Hi!-->
-<div align="center">
-  <h1>s009900's GitHub Profile</h1>
-  <img src="Penguin.png" alt="Penguin" width="200" />
-  
-  <p>
-    <img src="https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Profile+Views" alt="Profile Views" />
-  </p>
-</div>
-
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
@@ -43,8 +34,8 @@
 <!-- end statics fun section -->
 
 
-### 🏆 GitHub Trophies
-[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=onedark&row=2&column=4&no-frame=true&margin-w=15&margin-h=15&no-bg=true&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C&v=2)](https://github.com/ryo-ma/github-profile-trophy)
+### Trophies
+![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
 
 ### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
@@ -209,3 +200,13 @@ flowchart LR
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=twinkling" width="100%" />
 </div>
+
+## Last Followers
+<!--LAST_FOLLOWERS_START-->
+| # | Avatar | Username |
+|---|--------|----------|
+| 1 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="24" /> | [as000010000](https://github.com/as000010000) |
+| 2 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="24" /> | [ez0000001000000](https://github.com/ez0000001000000) |
+| 3 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="24" /> | [h0011000](https://github.com/h0011000) |
+| 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
+<!--LAST_FOLLOWERS_END-->
