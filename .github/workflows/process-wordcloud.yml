@@ -2,12 +2,19 @@ name: Process Word Cloud Submission
 
 on:
   issues:
-    types: [opened, edited]
+    types: [labeled, opened, edited]
   workflow_dispatch:
 
 jobs:
   process-word:
-    if: contains(github.event.issue.labels.*.name, 'word-cloud')
+    # Only run if the issue has the word-cloud label or if we're manually triggering
+    if: >
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event_name == 'issues' && 
+       (github.event.action == 'labeled' && github.event.label.name == 'word-cloud') ||
+       (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'word-cloud')) ||
+       (github.event.action == 'edited' && contains(github.event.issue.labels.*.name, 'word-cloud'))
+      )
     runs-on: ubuntu-latest
     
     steps:
@@ -30,8 +37,15 @@ jobs:
         script: |
           const fs = require('fs');
           
+          // Get the latest issue data to ensure we have the current labels
+          const { data: issue } = await github.rest.issues.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number
+          });
+          
           // Only process if it's a word-cloud issue
-          if (context.payload.issue.labels.some(label => label.name === 'word-cloud')) {
+          if (issue.labels.some(label => label.name === 'word-cloud')) {
             // Extract word from the form data
             const body = context.payload.issue.body;
             // Match the word from the form input
