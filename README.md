@@ -1,29 +1,29 @@
 # s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
-<img align="top-right" src="Penguin.png" alt="Penguin" width="15%" /><br>
+<img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
 
-## 🎨 Community Word Cloud
+<!-- start statics fun section -->
+<details>
+<summary><b> Cool Stats, Click to Expand </b></summary>
+<div align="center">
+<img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&line_height=40'  align="left" />
+  
+<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula' />
 
-Add a word to my word cloud! [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
+[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=dracula&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula)
+![](https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula)
+![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula)
+![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=s009900&theme=dracula)
 
-![Word Cloud](assets/wordcloud.png)
-
-### 👥 Latest Followers
-
-| Name | GitHub |
-|------|--------|
-| <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="30" height="30"> jaiq123 | [@jaiq123](https://github.com/jaiq123) |
-| <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="30" height="30"> h0011000 | [@h0011000](https://github.com/h0011000) |
-| <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="30" height="30"> ez0000001000000 | [@ez0000001000000](https://github.com/ez0000001000000) |
-| <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="30" height="30"> as000010000 | [@as000010000](https://github.com/as000010000) |
+</div>
+</details>
+<!-- end statics fun section -->
 
 
-You can be 👆 there too by [following me](https://github.com/s009900)
-
-(Usually takes a minute to update)
-
-## Contributions Snake Light/Dark Themed
+### Contributions Snake Light/Dark Themed
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
 
