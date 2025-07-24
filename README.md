@@ -3,6 +3,20 @@
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
 
+## 📖 Guestbook
+
+Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook-entry.yml)!
+
+### Recent Entries
+
+```markdown
+<!-- GUESTBOOK:START -->
+No entries yet. Be the first!
+<!-- GUESTBOOK:END -->
+```
+
+_Automatically updates with new entries_
+
 <!-- start statics fun section -->
 <details>
 <summary><b> Cool Stats, Click to Expand </b></summary>

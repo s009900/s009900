@@ -1,0 +1,43 @@
+name: Process Guestbook Entry
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process-guestbook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Process Guestbook Entry
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            
+            if (issue.state === 'closed') return;
+            
+            // Get the message and name from the issue body
+            const message = issue.body.match(/### Your Message\s*([\s\S]*?)\s*### Your Name/)[1].trim();
+            const name = issue.body.match(/### Your Name\s*([\s\S]*?)(?:\s*###|$)/)[1].trim();
+            
+            // Create a comment with the formatted entry
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `📝 **Guestbook Entry**\n\n**Name:** ${name}\n**Message:** ${message}\n\n_Entry created at ${new Date().toISOString()}_`
+            });
+            
+            // Close the issue
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
