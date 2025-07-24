@@ -42,15 +42,11 @@ jobs:
                 
                 if (comments.data.length > 0) {
                   const comment = comments.data[0].body;
-                  // Extract name and message from the comment
-                  const nameMatch = comment.match(/\*\*(.*?)\*\* \|/);
-                  const messageMatch = comment.split('|')[1];
-                  const date = new Date(issue.updated_at).toISOString().split('T')[0];
-                  
-                  if (nameMatch && messageMatch) {
-                    const name = nameMatch[1].trim();
-                    const message = messageMatch.trim();
-                    tableContent += `| **${name}** | ${message} | ${date} |\n`;
+                  // Extract the table row from the comment
+                  const tableMatch = comment.match(/\|\s*\*\*.*?\*\*\s*\|.*?\|.*?\|/);
+                  if (tableMatch) {
+                    const date = new Date(issue.updated_at).toISOString().split('T')[0];
+                    tableContent += `${tableMatch[0]}\n`;
                   }
                 }
               }
