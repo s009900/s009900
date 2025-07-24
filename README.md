@@ -1,6 +1,5 @@
 # s009900's profile readme
 
-
 <!--## Guestbook-->
 <!-- GUESTBOOK_START -->
 
@@ -131,21 +130,24 @@
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
 
+### Code Cycle
 
-### Code Cycle<br>
-
-<img src="good-spiral-eyes.png" width="10%" alt="Broken system!"/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Something BROKE!
-<img src="good-relieved.png" width="10%" alt="It's working!"/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-It's FINALLY working...
-<img src="good-astonished.png" width="10%" alt="It's working but I don't know how!"/><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-on its own? HOW IS IT WORKING???
-
-<br><br>
-
+<table style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="center" style="border: none; padding: 0 20px;">
+      <img src="good-spiral-eyes.png" width="80" alt="Broken system!"/><br>
+      Something BROKE!
+    </td>
+    <td align="center" style="border: none; padding: 0 20px;">
+      <img src="good-relieved.png" width="80" alt="It's working!"/><br>
+      It's FINALLY working...
+    </td>
+    <td align="center" style="border: none; padding: 0 20px;">
+      <img src="good-astonished.png" width="80" alt="It's working but I don't know how!"/><br>
+      on its own? HOW IS IT WORKING???
+    </td>
+  </tr>
+</table>
 
 <details>
 <summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
