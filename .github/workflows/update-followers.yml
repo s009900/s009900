@@ -1,0 +1,62 @@
+name: Update Followers List
+
+on:
+  repository_dispatch:
+    types: [new_follower]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update-followers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Update Followers in README
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: followers } = await github.rest.users.listFollowersForUser({
+              username: 's009900',  // Your GitHub username
+              per_page: 4,          // Get only 4 most recent followers
+              headers: {
+                'X-GitHub-Api-Version': '2022-11-28'
+              }
+            });
+            
+            // Generate the followers table
+            let followersTable = '## 👥 Latest Followers\n\n';
+            
+            if (followers.length > 0) {
+              followersTable += '| Name | GitHub |\n|------|--------|\n';
+              
+              for (const follower of followers) {
+                followersTable += `| <img src="${follower.avatar_url}" width="30" height="30"> ${follower.login} | [@${follower.login}](https://github.com/${follower.login}) |\n`;
+              }
+            } else {
+              followersTable += 'No followers yet. Be the first!\n';
+            }
+            
+            // Read the current README
+            const fs = require('fs');
+            let readme = fs.readFileSync('README.md', 'utf8');
+            
+            // Update or add the followers section
+            const followersSectionRegex = /## 👥 Latest Followers[\s\S]*?(?=## |$)/;
+            const newReadme = readme.match(followersSectionRegex) 
+              ? readme.replace(followersSectionRegex, followersTable)
+              : readme + '\n\n' + followersTable;
+            
+            // Write the updated README
+            fs.writeFileSync('README.md', newReadme);
+            
+            // Commit the changes if there are any
+            if (readme !== newReadme) {
+              const { execSync } = require('child_process');
+              execSync('git config --global user.name "GitHub Action"');
+              execSync('git config --global user.email "action@github.com"');
+              execSync('git add README.md');
+              execSync('git commit -m "docs: update followers list"');
+              execSync('git push');
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

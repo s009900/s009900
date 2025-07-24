@@ -3,6 +3,10 @@
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
 
+## 👥 Latest Followers
+
+*Loading followers...*
+
 <!-- start statics fun section -->
 <details>
 <summary><b> Cool Stats, Click to Expand </b></summary>
