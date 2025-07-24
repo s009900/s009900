@@ -12,7 +12,13 @@ Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?
 <!-- GUESTBOOK:START -->
 | Name | Message | Date |
 |------|---------|------|
-| No entries yet. Be the first! |  |  |
+| **s009900** | ### Your Name or GitHub Handle
+
+@s009900
+
+### Your Message
+
+Hey there! | 2025-07-24 |
 <!-- GUESTBOOK:END -->
 
 _Automatically updates with new entries_
