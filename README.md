@@ -31,7 +31,7 @@
 
 <!--
 <details>
-<summary><b>👥 Last Followers (Click to Expand)</b></summary>
+<summary><b>👥 Last Followers</b></summary>
 
 | # | Avatar | Username |
 |---|--------|----------|
@@ -118,7 +118,7 @@
 </tr></tr>
 
 <details>
-<summary><b>📊 Activity Graph (Click to Expand)</b></summary>
+<summary><b>📊 Activity Graph</b></summary>
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula" alt="Activity Graph" width="100%">
 </div>
@@ -152,7 +152,7 @@
 </details>
 
 <details>
-<summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
+<summary><b>🔄 Workflow Through Life</b></summary>
 
 ```mermaid
 flowchart LR
