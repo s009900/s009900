@@ -23,15 +23,16 @@ jobs:
               }
             });
             
-            // Generate the followers table
-            let followersTable = '## 👥 Latest Followers\n\n';
+            // Generate the followers table in a dropdown
+            let followersTable = '<details>\n<summary><b>👥 Latest Followers (Click to Expand)</b></summary>\n\n| Name | GitHub |\n|------|--------|\n';
             
             if (followers.length > 0) {
-              followersTable += '| Name | GitHub |\n|------|--------|\n';
-              
               for (const follower of followers) {
                 followersTable += `| <img src="${follower.avatar_url}" width="30" height="30"> ${follower.login} | [@${follower.login}](https://github.com/${follower.login}) |\n`;
               }
+              // Close the details tag
+              followersTable += '\n</details>';
+            }
             } else {
               followersTable += 'No followers yet. Be the first!\n';
             }
