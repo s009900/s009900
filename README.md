@@ -132,7 +132,10 @@
 
 ### Code Cycle
 
-<table style="border: none; border-collapse: collapse;">
+<details>
+<summary><b>😁 Code Cycle</b></summary>
+
+<table style="border: none; border-collapse: collapse; margin: 10px 0;">
   <tr style="border: none;">
     <td align="center" style="border: none; padding: 0 20px;">
       <img src="good-spiral-eyes.png" width="80" alt="Broken system!"/><br>
@@ -148,6 +151,7 @@
     </td>
   </tr>
 </table>
+</details>
 
 <details>
 <summary><b>🔄 Workflow Through Life (Click to Expand)</b></summary>
