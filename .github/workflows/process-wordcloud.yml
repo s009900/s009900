@@ -78,22 +78,31 @@ jobs:
           
           // Load existing words
           let words = [];
+          const wordsPath = '.github/wordcloud/words.json';
           try {
-            const wordsFile = fs.readFileSync('.github/wordcloud/words.json', 'utf8');
+            console.log('Reading words from:', wordsPath);
+            const wordsFile = fs.readFileSync(wordsPath, 'utf8');
             words = JSON.parse(wordsFile);
-            console.log('Loaded existing words:', words);
+            console.log('Successfully parsed words.json');
+            console.log('Current words:', JSON.stringify(words, null, 2));
           } catch (e) {
-            console.log('No existing words file, creating new one');
+            console.log('Error reading/parsing words.json, using empty array. Error:', e.message);
+            words = [];
           }
           
           // Add new word
           words.push(newWord);
-          console.log('Updated words:', words);
+          console.log('Updated words:', JSON.stringify(words, null, 2));
           
           try {
             // Save updated words
-            fs.writeFileSync('.github/wordcloud/words.json', JSON.stringify(words, null, 2));
-            console.log('Saved words to file');
+            const wordsContent = JSON.stringify(words, null, 2);
+            console.log('Saving words to file. Content length:', wordsContent.length);
+            fs.writeFileSync(wordsPath, wordsContent);
+            
+            // Verify the file was written
+            const verifyContent = fs.readFileSync(wordsPath, 'utf8');
+            console.log('Successfully wrote to words.json. File content:', verifyContent);
             
             // Generate word cloud
             const { execSync } = require('child_process');
@@ -107,20 +116,35 @@ jobs:
               execSync('git config --global user.name "GitHub Action"');
               execSync('git config --global user.email "action@github.com"');
               
-              // Add files
-              execSync('git add .github/wordcloud/words.json');
+              // Add files with force flag to ensure they're staged
+              execSync('git add --force .github/wordcloud/words.json');
+              
+              // Check if the file is actually staged
+              const stagedFiles = execSync('git diff --name-only --cached').toString().trim();
+              console.log('Staged files:', stagedFiles);
               
               // Check if there are any changes to commit
-              const status = execSync('git status --porcelain').toString().trim();
-              console.log('Git status:', status);
+              const status = execSync('git status --porcelain .github/wordcloud/words.json').toString().trim();
+              console.log('Git status for words.json:', status);
               
-              if (status) {
-                // Commit and push if there are changes
+              // Always try to commit, even if status doesn't show changes
+              try {
                 execSync('git commit -m "chore: update word cloud with new word"');
-                execSync('git push');
-                console.log('Successfully committed and pushed changes');
-              } else {
-                console.log('No changes to commit');
+                console.log('Successfully committed changes');
+                
+                // Try to push
+                try {
+                  execSync('git push');
+                  console.log('Successfully pushed changes');
+                } catch (pushError) {
+                  console.error('Error pushing changes:', pushError.message);
+                  console.log('Attempting to pull and retry push...');
+                  execSync('git pull --rebase');
+                  execSync('git push');
+                  console.log('Successfully pushed after pull');
+                }
+              } catch (commitError) {
+                console.log('No changes to commit or commit failed:', commitError.message);
               }
               
               // Generate and add word cloud
