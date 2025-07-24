@@ -28,7 +28,10 @@ jobs:
               per_page: 10
             });
             
-            const entries = [];
+            // Create table header
+            let tableContent = '| Name | Message | Date |\n|------|---------|------|\n';
+            
+            // Process each guestbook entry
             for (const issue of issues) {
               if (issue.comments > 0) {
                 const comments = await github.rest.issues.listComments({
@@ -38,14 +41,27 @@ jobs:
                 });
                 
                 if (comments.data.length > 0) {
-                  const message = comments.data[0].body;
-                  const date = new Date(issue.updated_at).toLocaleDateString();
-                  entries.push(`- ${message.split('\n')[0]} (${date})`);
+                  const comment = comments.data[0].body;
+                  // Extract name and message from the comment
+                  const nameMatch = comment.match(/\*\*(.*?)\*\* \|/);
+                  const messageMatch = comment.split('|')[1];
+                  const date = new Date(issue.updated_at).toISOString().split('T')[0];
+                  
+                  if (nameMatch && messageMatch) {
+                    const name = nameMatch[1].trim();
+                    const message = messageMatch.trim();
+                    tableContent += `| **${name}** | ${message} | ${date} |\n`;
+                  }
                 }
               }
             }
             
-            return entries.join('\n');
+            // If no entries, return a message
+            if (tableContent === '| Name | Message | Date |\n|------|---------|------|\n') {
+              return 'No entries yet. Be the first!';
+            }
+            
+            return tableContent;
 
       - name: Update README
         uses: actions/github-script@v6
