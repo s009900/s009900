@@ -42,15 +42,17 @@ jobs:
           // Log the issue data
           console.log('Issue data:', JSON.stringify(issue, null, 2));
           
-          // Check if this is a word cloud submission
-          const isWordCloudIssue = issue.labels && issue.labels.some(label => 
-            typeof label === 'string' ? label === 'word-cloud' : label.name === 'word-cloud'
-          );
+          // Check if this is a word cloud submission by looking at the issue title or body
+          const isWordCloudIssue = 
+            (issue.title && issue.title.toLowerCase().includes('word cloud')) ||
+            (issue.body && issue.body.includes('### Word to Add'));
           
           if (!isWordCloudIssue) {
             console.log('Not a word cloud issue, skipping...');
             return 'Skipped: Not a word cloud issue';
           }
+          
+          console.log('Processing as word cloud submission');
           
           // Extract word from the form data
           const body = context.payload.issue.body;
