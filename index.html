@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s009900's Profile</title>
+    <style>
+        :root {
+            --primary-bg: #282a36;
+            --secondary-bg: #44475a;
+            --text-color: #f8f8f2;
+            --accent: #bd93f9;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--primary-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--accent);
+        }
+        
+        .container {
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background-color: var(--primary-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-box img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .tool-item {
+            background-color: var(--primary-bg);
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+        
+        details {
+            background-color: var(--primary-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        summary {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        summary:hover {
+            color: var(--accent);
+        }
+        
+        .snake-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .snake-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>s009900's Profile</h1>
+        <div>
+            <img src="Penguin.png" alt="Profile" width="100" style="border-radius: 50%;">
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <h2>📊 GitHub Statistics</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <img src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&line_height=40" alt="GitHub Stats">
+            </div>
+            <div class="stat-box">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&hide_langs_below=4" alt="Top Languages">
+            </div>
+        </div>
+    </div>
+
+    <!-- Trophies -->
+    <div class="container">
+        <details>
+            <summary>🏆 Trophies</summary>
+            <img src="https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&theme=dracula" alt="Trophies" style="width: 100%;">
+        </details>
+    </div>
+
+    <!-- Languages and Tools -->
+    <div class="container">
+        <details open>
+            <summary>🔧 Languages and Tools</summary>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React">
+                    <div>React</div>
+                </div>
+                <!-- Add all other tools in the same pattern -->
+                <div class="tool-item">
+                    <img src="https://techstack-generator.vercel.app/csharp-icon.svg" alt="C#">
+                    <div>C#</div>
+                </div>
+                <!-- Continue with all other tools -->
+            </div>
+        </details>
+    </div>
+
+    <!-- Contribution Snake -->
+    <div class="snake-container">
+        <h2>My Contribution Graph</h2>
+        <img src="https://github.com/s009900/s009900-test/raw/output/github-contribution-grid-snake.svg" alt="GitHub Snake">
+    </div>
+
+    <script>
+        // Add any interactive functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // This is where you can add any JavaScript functionality
+            console.log('Profile page loaded!');
+        });
+    </script>
+</body>
+</html>
