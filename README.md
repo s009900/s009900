@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+# s009900's profile readme
+
+
+<!--## Guestbook-->
+<!-- GUESTBOOK_START -->
+
+<!-- GUESTBOOK_END -->
+<!--
+![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8)
+<img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
+
+![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
+<!-- start statics fun section -->
+<details>
+<summary><b> Cool Stats, Click to Expand </b></summary>
+>>>>>>> 5421f145dd435cb84c2e11e777863fccd652ee7d
 <div align="center">
   <h1>s009900's GitHub Profile</h1>
   <img src="Penguin.png" alt="Penguin" width="200" />
@@ -7,7 +25,11 @@
   </p>
 </div>
 
+<<<<<<< HEAD
 ---
+=======
+[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
+>>>>>>> 5421f145dd435cb84c2e11e777863fccd652ee7d
 
 <details>
 <summary><b>📊 GitHub Statistics</b></summary>
@@ -29,8 +51,14 @@
 </div>
 </details>
 
+<<<<<<< HEAD
 ---
 
+=======
+### Contributions Snake Light and Dark
+![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
+![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
+>>>>>>> 5421f145dd435cb84c2e11e777863fccd652ee7d
 <details>
 <summary><b>🏆 GitHub Trophies</b></summary>
 
@@ -55,21 +83,6 @@
 <div align="center">
   <img src="https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
 </div>
-
-
-
-<details>
-<summary><b>👥 Last Followers (Click to Expand)</b></summary>
-
-| # | Avatar | Username |
-|---|--------|----------|
-| 1 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="24" /> | [as000010000](https://github.com/as000010000) |
-| 2 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="24" /> | [ez0000001000000](https://github.com/ez0000001000000) |
-| 3 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="24" /> | [h0011000](https://github.com/h0011000) |
-| 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
-
-</details>
-
 
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
@@ -145,7 +158,7 @@
 </tr>
 </tr></tr>
 
-**Code Cycle**<br>
+## Code Cycle<br>
 
 <img src="good-spiral-eyes.png" width="10%" alt="Broken system!"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
