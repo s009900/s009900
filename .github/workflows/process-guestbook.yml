@@ -22,9 +22,21 @@ jobs:
             
             if (issue.state === 'closed') return;
             
-            // Get the message and name from the issue body
-            const message = issue.body.match(/### Your Message\s*([\s\S]*?)\s*### Your Name/)[1].trim();
-            const name = issue.body.match(/### Your Name\s*([\s\S]*?)(?:\s*###|$)/)[1].trim();
+            // Parse the issue body which is in YAML format
+            const bodyLines = issue.body.split('\n');
+            let message = '';
+            let name = '';
+            
+            for (let i = 0; i < bodyLines.length; i++) {
+              const line = bodyLines[i].trim();
+              if (line.startsWith('### Your Message')) {
+                // The message is in the next line
+                message = bodyLines[i + 1].trim();
+              } else if (line.startsWith('### Your Name')) {
+                // The name is in the next line
+                name = bodyLines[i + 1].trim();
+              }
+            }
             
             // Create a simple comment with just the table row
             const formattedDate = new Date().toISOString().split('T')[0];
