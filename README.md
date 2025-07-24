@@ -5,10 +5,6 @@
 <!-- GUESTBOOK_START -->
 
 <!-- GUESTBOOK_END -->
-<!--
-![176309783-0785949b-9127-417c-8b55-ab5a4333674e](https://github.com/user-attachments/assets/f01ff3f4-9893-4647-89e0-dd046d9cf1d8)
-<!--![https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif](https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand@2x.gif)-->
-<!--Hi!-->
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
 
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
@@ -16,15 +12,14 @@
 <details>
 <summary><b> Cool Stats, Click to Expand </b></summary>
 <div align="center">
-<img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=tokyonight&count_private=true&line_height=40'  align="left" />
-<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=tokyonight&hide_langs_below=4' />
+<img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&line_height=40'  align="left" />
+  
+<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&hide_langs_below=4' />
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=onedark&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
-
-![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dark)
-
-<img src="https://activity-graph.herokuapp.com/graph?username=s009900&theme=react-dark&bg_color=20232a&hide_border=true" width="100%">
-
+[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=dracula&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula)
+<img src="https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true" width="100%">
+![](https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true)
 ![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula)
 ![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula)
 ![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=s009900&theme=dracula)
@@ -33,9 +28,6 @@
 </details>
 <!-- end statics fun section -->
 
-
-### Trophies
-![trophy](https://github-profile-trophy.vercel.app/?username=s009900)
 
 ### Contributions Snake (Dark is not very good)
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
@@ -135,6 +127,11 @@
 <br><br>
 </tr>
 </tr></tr>
+
+### Trophies
+
+![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
+
 
 **Code Cycle**<br>
 
