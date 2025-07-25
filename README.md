@@ -209,7 +209,7 @@ The most basic way to show your support is to star the project or to raise issue
 
 ## 🎨 Community Word Cloud
 
-Add a word to my word cloud! [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
+Add a word to my word cloud! (PS: Emojis don't work yet) [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
 
 <details>
 <summary><b>🔽 Click to Show/Hide Word Cloud</b></summary>
