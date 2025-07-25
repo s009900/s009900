@@ -111,7 +111,7 @@
 
 ### 📊 Contribution Graph
 <div align="center">
- <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula&bg_color=282a36&hide_border=true&line=ff79c6&point=f8f8f2" />
+ <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula&bg_color=282a36&hide_border=true&line=ff79c6&point=f8f8f2" width="800" style="border-radius: 10px;" />
 </div>
 
 </details>
