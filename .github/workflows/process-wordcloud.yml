@@ -17,6 +17,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for all branches and tags
+        persist-credentials: true  # This ensures the token persists for pushing
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -37,8 +40,11 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         git config --global --add safe.directory /github/workspace
-        git fetch --depth=1
-        git checkout -b temp-branch
+        # Fetch the latest changes from the main branch
+        git fetch origin main
+        git checkout main
+        # Reset to ensure we're up to date
+        git reset --hard origin/main
 
     - name: Process new word
       id: process
@@ -111,15 +117,15 @@ jobs:
           # Pull any changes first to avoid conflicts
           git pull --rebase origin main
           
-          # Push changes
-          if git push origin HEAD:main; then
-            echo "✅ Changes pushed successfully"
-            echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
-          else
+          # Push changes with token authentication
+          if ! git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git HEAD:main; then
             echo "❌ Failed to push changes"
             echo "result=❌ Error: Failed to push changes" >> $GITHUB_OUTPUT
             exit 1
           fi
+          
+          echo "✅ Changes pushed successfully"
+          echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
         else
           echo "No changes to commit"
           echo "result=ℹ️ No changes to commit" >> $GITHUB_OUTPUT

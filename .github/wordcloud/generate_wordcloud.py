@@ -68,17 +68,21 @@ def generate_wordcloud():
     # Generate word cloud
     try:
         wc = WordCloud(
-            width=1200,
-            height=600,
+            width=1600,
+            height=800,
             background_color='white',
             colormap='viridis',
             max_words=200,
             contour_width=1,
             contour_color='steelblue',
-            prefer_horizontal=0.9,
-            min_font_size=10,
-            max_font_size=200,
-            random_state=42
+            prefer_horizontal=0.85,
+            min_font_size=20,
+            max_font_size=300,
+            margin=5,
+            random_state=42,
+            collocations=False,
+            normalize_plurals=True,
+            relative_scaling=0.5
         ).generate_from_frequencies(word_freq)
         
         # Create figure
@@ -87,8 +91,8 @@ def generate_wordcloud():
         plt.axis('off')
         plt.tight_layout(pad=0)
         
-        # Save the figure
-        plt.savefig(output_file, bbox_inches='tight', pad_inches=0.1, dpi=150, quality=95)
+        # Save the figure with high quality settings
+        plt.savefig(output_file, bbox_inches='tight', pad_inches=0.1, dpi=300, format='png')
         plt.close()
         
         # Verify the file was created
