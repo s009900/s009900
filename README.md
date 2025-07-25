@@ -27,21 +27,17 @@
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
 
-
-
-<!--
 <details>
 <summary><b>👥 Last Followers</b></summary>
 
 | # | Avatar | Username |
 |---|--------|----------|
-| 1 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="24" /> | [as000010000](https://github.com/as000010000) |
-| 2 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="24" /> | [ez0000001000000](https://github.com/ez0000001000000) |
-| 3 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="24" /> | [h0011000](https://github.com/h0011000) |
-| 4 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="24" /> | [jaiq123](https://github.com/jaiq123) |
+<!-- followers:start -->
+<!-- This section is auto-updated by GitHub Actions -->
+<!-- followers:end -->
 
+[View all followers](https://github.com/s009900?tab=followers)
 </details>
--->
 
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
