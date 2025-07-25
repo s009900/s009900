@@ -1,7 +1,7 @@
 # s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
 <img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
-![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:)
+![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:) ![GitHub Downloads](https://img.shields.io/github/downloads/s009900/s009900/total?&style=for-the-badge&color=ff69b4&)
 
 <!-- start statics fun section -->
 <details>
