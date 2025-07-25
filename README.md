@@ -36,7 +36,6 @@
 | 1 | <img src="https://avatars.githubusercontent.com/u/placeholder" width="32" height="32" alt="Loading..." /> | Loading followers... |
 <!-- followers:end -->
 
-[View all followers](https://github.com/s009900?tab=followers)
 </details>
 
 
