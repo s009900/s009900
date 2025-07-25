@@ -30,10 +30,10 @@
 <details>
 <summary><b>👥 Last Followers</b></summary>
 
+<!-- followers:start -->
 | # | Avatar | Username |
 |---|--------|----------|
-<!-- followers:start -->
-<!-- This section is auto-updated by GitHub Actions -->
+| 1 | <img src="https://avatars.githubusercontent.com/u/placeholder" width="32" height="32" alt="Loading..." /> | Loading followers... |
 <!-- followers:end -->
 
 [View all followers](https://github.com/s009900?tab=followers)
