@@ -2,8 +2,8 @@ name: Update Followers List
 
 on:
   schedule:
-    # Runs every 6 hours
-    - cron: '0 */6 * * *'
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
