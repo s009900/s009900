@@ -216,17 +216,6 @@ Add a word to my word cloud! [Click here to add your word](https://github.com/s0
   <img src="assets/wordcloud.png?t=1" alt="Word Cloud" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" id="wordcloud-image">
 </div>
 
-<!-- This script will update the image URL with a timestamp to prevent caching -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const img = document.getElementById('wordcloud-image');
-    if (img) {
-      const timestamp = new Date().getTime();
-      img.src = `assets/wordcloud.png?t=${timestamp}`;
-    }
-  });
-</script>
-
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=float" width="100%" />
 </div>
