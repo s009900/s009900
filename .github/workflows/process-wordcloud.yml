@@ -98,38 +98,38 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         
-        # Add and commit changes
+        # Force add the word cloud image to ensure it's updated
+        git add -f assets/wordcloud.png
         git add .github/wordcloud/words.json
-        git add assets/wordcloud.png
         
         # Verify what's being committed
         echo "Files to be committed:"
         git status --porcelain
         
-        # Only commit if there are changes
-        if ! git diff --quiet --staged; then
-          echo "Committing changes..."
-          git commit -m "chore: update word cloud"
-          
-          # Set up authentication for push
-          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git
-          
-          # Pull any changes first to avoid conflicts
-          git pull --rebase origin main
-          
-          # Push changes with token authentication
-          if ! git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git HEAD:main; then
-            echo "❌ Failed to push changes"
-            echo "result=❌ Error: Failed to push changes" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-          
-          echo "✅ Changes pushed successfully"
-          echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
-        else
-          echo "No changes to commit"
-          echo "result=ℹ️ No changes to commit" >> $GITHUB_OUTPUT
+        # Create a unique commit message with timestamp
+        TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+        COMMIT_MSG="chore: update word cloud - $TIMESTAMP"
+        
+        # Always commit, even if git doesn't detect changes (for the image)
+        echo "Committing changes..."
+        git commit --allow-empty -m "$COMMIT_MSG" || echo "No changes to commit"
+        
+        # Set up authentication for push
+        git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git
+        
+        # Pull any changes first to avoid conflicts
+        git pull --rebase origin main
+        
+        # Force push to ensure the image is updated
+        echo "Pushing changes..."
+        if ! git push origin HEAD:main; then
+          echo "❌ Failed to push changes"
+          echo "result=❌ Error: Failed to push changes" >> $GITHUB_OUTPUT
+          exit 1
         fi
+        
+        echo "✅ Changes pushed successfully"
+        echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
     
     - name: Close the issue
       if: always()  # Run this step even if previous steps fail

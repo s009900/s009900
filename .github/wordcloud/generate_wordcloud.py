@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import logging
+import datetime
 from pathlib import Path
 from collections import Counter
 import matplotlib
@@ -67,22 +68,30 @@ def generate_wordcloud():
     
     # Generate word cloud
     try:
+        # Create a color function for better visibility
+        def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+            colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+                     '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+            return colors[random_state.randint(0, len(colors) - 1)]
+        
+        # Generate word cloud with improved settings
         wc = WordCloud(
             width=1600,
             height=800,
             background_color='white',
             colormap='viridis',
-            max_words=200,
+            max_words=100,  # Reduced for better visibility
             contour_width=1,
-            contour_color='steelblue',
-            prefer_horizontal=0.85,
-            min_font_size=20,
-            max_font_size=300,
-            margin=5,
+            contour_color='#333333',
+            prefer_horizontal=0.9,
+            min_font_size=30,  # Increased minimum font size
+            max_font_size=400,  # Increased maximum font size
+            margin=10,
             random_state=42,
             collocations=False,
             normalize_plurals=True,
-            relative_scaling=0.5
+            relative_scaling=0.5,
+            color_func=color_func
         ).generate_from_frequencies(word_freq)
         
         # Create figure
@@ -92,7 +101,8 @@ def generate_wordcloud():
         plt.tight_layout(pad=0)
         
         # Save the figure with high quality settings
-        plt.savefig(output_file, bbox_inches='tight', pad_inches=0.1, dpi=300, format='png')
+        plt.savefig(output_file, bbox_inches='tight', pad_inches=0.1, dpi=300, format='png', 
+                   metadata={'Creation Time': str(datetime.datetime.now())})
         plt.close()
         
         # Verify the file was created
