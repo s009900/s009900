@@ -210,6 +210,7 @@ The most basic way to show your support is to star the project or to raise issue
 ## 🎨 Community Word Cloud
 
 Add a word to my word cloud! [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
+##### Please note that it does take a minute or two for it to get added and then you need to reload the page
 
 <div align="center">
   <img src="assets/wordcloud.png" alt="Word Cloud" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
