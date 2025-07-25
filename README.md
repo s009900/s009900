@@ -40,7 +40,7 @@
 
 [View all followers](https://github.com/s009900?tab=followers)
 <!-- followers:end -->
-
+👆 You can be here too! Go [here](https://github.com/s009900) and follow. Updates every 1/2 hour.
 </details>
 
 
