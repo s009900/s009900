@@ -135,59 +135,6 @@ jobs:
         
         echo "✅ Changes pushed successfully"
         echo "result=✅ Word cloud updated successfully! 🎉" >> $GITHUB_OUTPUT
-        
-        # Get the SHA of the README file for the API call
-        README_SHA=$(git rev-parse HEAD:README.md)
-        echo "README_SHA=$README_SHA" >> $GITHUB_ENV
-    
-    - name: Update README via API
-      if: always()
-      uses: actions/github-script@v6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        script: |
-          try {
-            // Get the current README content
-            const { data: readme } = await github.rest.repos.getContent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: 'README.md'
-            });
-            
-            // Decode the content
-            const currentContent = Buffer.from(readme.content, 'base64').toString('utf8');
-            
-            // Update the timestamp in the image URL
-            const timestamp = new Date().getTime();
-            const updatedContent = currentContent.replace(
-              /<img[^>]*src=["']assets\/wordcloud\.png[^>]*>/,
-              `<img src="assets/wordcloud.png?t=${timestamp}" alt="Word Cloud" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" id="wordcloud-image">`
-            );
-            
-            // Update the README
-            await github.rest.repos.createOrUpdateFileContents({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              path: 'README.md',
-              message: 'chore: update word cloud timestamp',
-              content: Buffer.from(updatedContent).toString('base64'),
-              sha: readme.sha,
-              committer: {
-                name: 'GitHub Action',
-                email: 'action@github.com'
-              },
-              author: {
-                name: 'GitHub Action',
-                email: 'action@github.com'
-              }
-            });
-            
-            console.log('✅ README updated successfully');
-          } catch (error) {
-            console.error('Error updating README:', error);
-            // Don't fail the workflow, just log the error
-          }
     
     - name: Close the issue
       if: always()  # Run this step even if previous steps fail
