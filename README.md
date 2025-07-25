@@ -44,25 +44,6 @@
 <!-- end statics fun section -->
 
 
-<details>
-<summary><b>👥 Last Followers</b></summary>
-
-<!-- followers:start -->
-| # | Avatar | Username |
-|--:|:------:|:---------|
-| 1 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="32" height="32" alt="jaiq123" /> | [jaiq123](https://github.com/jaiq123) |
-| 2 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="32" height="32" alt="h0011000" /> | [h0011000](https://github.com/h0011000) |
-| 3 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="32" height="32" alt="ez0000001000000" /> | [ez0000001000000](https://github.com/ez0000001000000) |
-| 4 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="32" height="32" alt="as000010000" /> | [as000010000](https://github.com/as000010000) |
-
-[View all followers](https://github.com/s009900?tab=followers)
-<!-- followers:end -->
-👆 You can be here too! Go [here](https://github.com/s009900) and follow. Updates every 1/2 hour.
-</details>
-
-
-
-
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
 
 
@@ -135,6 +116,22 @@
 <br><br>
 </tr>
 </tr></tr>
+
+<details>
+<summary><b>👥 Last Followers</b></summary>
+
+<!-- followers:start -->
+| # | Avatar | Username |
+|--:|:------:|:---------|
+| 1 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="32" height="32" alt="jaiq123" /> | [jaiq123](https://github.com/jaiq123) |
+| 2 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="32" height="32" alt="h0011000" /> | [h0011000](https://github.com/h0011000) |
+| 3 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="32" height="32" alt="ez0000001000000" /> | [ez0000001000000](https://github.com/ez0000001000000) |
+| 4 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="32" height="32" alt="as000010000" /> | [as000010000](https://github.com/as000010000) |
+
+[View all followers](https://github.com/s009900?tab=followers)
+<!-- followers:end -->
+👆 You can be here too! Go [here](https://github.com/s009900) and follow. Updates every 1/2 hour.
+</details>
 
 <details>
   
