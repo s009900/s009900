@@ -91,7 +91,6 @@ def generate_wordcloud():
             bbox_inches='tight',
             pad_inches=0,
             dpi=150,
-            quality=95,
             optimize=True
         )
         plt.close()
