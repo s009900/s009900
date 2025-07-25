@@ -32,7 +32,7 @@
 
 <!-- followers:start -->
 | # | Avatar | Username |
-|---|--------|----------|
+|--:|:------:|:---------|
 | 1 | <img src="https://avatars.githubusercontent.com/u/placeholder" width="32" height="32" alt="Loading..." /> | Loading followers... |
 <!-- followers:end -->
 
