@@ -3,63 +3,69 @@ import sys
 import json
 import logging
 import datetime
+import numpy as np
 from pathlib import Path
 from collections import Counter
 import matplotlib
 # Use 'Agg' backend for non-interactive environments (like GitHub Actions)
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+from PIL import Image
+from wordcloud import WordCloud, ImageColorGenerator
 
-def setup_logging():
-    """Set up basic logging configuration."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.StreamHandler(sys.stdout)
-        ]
-    )
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_script_dir():
-    """Get the directory where this script is located."""
-    return Path(__file__).parent.absolute()
-
-def load_words():
-    """Load words from the JSON file."""
-    script_dir = get_script_dir()
-    words_file = script_dir / 'words.json'
-    
+def load_words(json_path):
+    """Load words from JSON file."""
     try:
-        with open(words_file, 'r', encoding='utf-8') as f:
-            words = json.load(f)
-            if not isinstance(words, list):
-                logging.warning("words.json does not contain a list, initializing with empty list")
-                return []
-            return words
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            if not isinstance(data, list):
+                logging.warning("JSON file does not contain a list. Converting to list format.")
+                data = list(data.values()) if isinstance(data, dict) else [data]
+            return data
     except FileNotFoundError:
-        logging.warning("words.json not found, using default words")
+        logging.warning(f"Words file not found at {json_path}, using default words.")
         return ["GitHub", "Open Source", "Welcome"]
     except json.JSONDecodeError as e:
-        logging.error(f"Error decoding words.json: {e}")
-        return ["Error", "Check", "words.json"]
+        logging.error(f"Error decoding JSON from {json_path}: {e}")
+        return ["GitHub", "Open Source", "Welcome"]
 
-def generate_wordcloud():
-    """Generate and save a word cloud image."""
-    # Set up paths
-    script_dir = get_script_dir()
-    output_dir = script_dir.parent.parent / 'assets'  # Goes up two levels to reach repo root
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / 'wordcloud.png'
+def generate_colorful_background(width, height):
+    """Generate a colorful gradient background."""
+    # Create a grid of points
+    x = np.linspace(0, 1, width)
+    y = np.linspace(0, 1, height)
+    X, Y = np.meshgrid(x, y)
     
-    logging.info(f"Output directory: {output_dir}")
-    logging.info(f"Output file: {output_file}")
+    # Create RGB channels with different gradients
+    r = X  # Red increases with x
+    g = Y  # Green increases with y
+    b = 0.5 + 0.5*np.sin(10*X*Y)  # Blue has a wave pattern
+    
+    # Combine into an RGB image
+    img = np.dstack((r, g, b))
+    return (img * 255).astype(np.uint8)
+
+def generate_word_cloud():
+    """Generate and save a word cloud image."""
+    # Get the directory of the current script
+    script_dir = Path(__file__).parent
+    
+    # Define paths
+    words_path = script_dir / 'words.json'
+    output_dir = script_dir.parent.parent / 'assets'
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / 'wordcloud.png'
     
     # Load words
-    words = load_words()
+    words = load_words(words_path)
     logging.info(f"Loaded {len(words)} words")
     
+    # If no words are found, use default words
     if not words:
+        logging.warning("No words found, using default words")
         words = ["GitHub", "Open Source", "Welcome"]
     
     # Count word frequencies
@@ -68,63 +74,82 @@ def generate_wordcloud():
     
     # Generate word cloud
     try:
-        # Create a color function for better visibility
-        def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
-            colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
-                     '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
-            return colors[random_state.randint(0, len(colors) - 1)]
+        # Create a colorful background
+        width, height = 1600, 800
+        color_image = generate_colorful_background(width, height)
+        
+        # Create a mask from the color image (white = keep, black = mask out)
+        mask = 255 - np.mean(color_image, axis=2).astype(np.uint8)
         
         # Generate word cloud with improved settings
         wc = WordCloud(
-            width=1600,
-            height=800,
-            background_color='white',
-            colormap='viridis',
-            max_words=100,  # Reduced for better visibility
-            contour_width=1,
-            contour_color='#333333',
+            width=width,
+            height=height,
+            background_color=None,
+            mode='RGBA',
+            mask=mask,
+            max_words=200,  # Increased number of words
+            contour_width=0,
             prefer_horizontal=0.9,
-            min_font_size=30,  # Increased minimum font size
-            max_font_size=400,  # Increased maximum font size
-            margin=10,
+            min_font_size=10,  # Smaller minimum font size
+            max_font_size=120,  # Smaller maximum font size
+            margin=5,
             random_state=42,
             collocations=False,
             normalize_plurals=True,
             relative_scaling=0.5,
-            color_func=color_func
+            color_func=lambda *args, **kwargs: 'white'  # Words will be white, we'll color them later
         ).generate_from_frequencies(word_freq)
         
-        # Create figure
-        plt.figure(figsize=(16, 9), dpi=100)
-        plt.imshow(wc, interpolation='bilinear')
+        # Create figure with black background
+        plt.figure(figsize=(16, 8), facecolor='black', edgecolor='none')
+        
+        # Show the colorful background
+        plt.imshow(color_image, alpha=0.9)
+        
+        # Generate word colors based on the background
+        image_colors = ImageColorGenerator(color_image)
+        
+        # Plot the word cloud with colors from the background
+        plt.imshow(wc.recolor(color_func=image_colors), alpha=0.8, interpolation='bilinear')
+        
         plt.axis('off')
         plt.tight_layout(pad=0)
         
-        # Save the figure with high quality settings
-        plt.savefig(output_file, bbox_inches='tight', pad_inches=0.1, dpi=300, format='png', 
-                   metadata={'Creation Time': str(datetime.datetime.now())})
+        # Save with metadata for cache busting
+        metadata = {
+            'Title': 'GitHub Word Cloud',
+            'Author': 'GitHub Action',
+            'Description': 'Word cloud generated from GitHub issues',
+            'Generated': datetime.datetime.utcnow().isoformat()
+        }
+        
+        # Save the figure with metadata
+        plt.savefig(
+            output_path,
+            bbox_inches='tight',
+            pad_inches=0,
+            dpi=150,
+            facecolor='black',
+            metadata=metadata
+        )
         plt.close()
         
-        # Verify the file was created
-        if output_file.exists():
-            file_size = output_file.stat().st_size / 1024  # Size in KB
-            logging.info(f"Successfully generated word cloud: {output_file} ({file_size:.1f} KB)")
-            return True
-        else:
-            logging.error("Failed to generate word cloud: Output file not created")
-            return False
-            
+        logging.info(f"Word cloud saved to {output_path}")
+        return True
+        
     except Exception as e:
-        logging.error(f"Error generating word cloud: {e}", exc_info=True)
+        logging.error(f"Error generating word cloud: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 def main():
     """Main function to run the script."""
-    setup_logging()
     logging.info("Starting word cloud generation...")
     
     try:
-        success = generate_wordcloud()
+        success = generate_word_cloud()
         if not success:
             logging.error("Word cloud generation failed")
             sys.exit(1)
