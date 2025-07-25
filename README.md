@@ -1,31 +1,48 @@
 # s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!;Let's+collaborate!+🚀+Create+some+issues!+🥳&color=000000)
-<img align="right" src="Penguin.png" alt="Penguin" width="15%" /><br>
+<img align="left" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
-
-<!-- start statics fun section -->
-<details>
-<summary><b> Cool Stats, Click to Expand </b></summary>
-<div align="center">
-<img src='https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&line_height=40'  align="left" />
-  
-<img src='https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula' />
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=s009900&theme=dracula&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
-![](https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula)
-![](https://activity-graph.herokuapp.com/graph?username=s009900&theme=dracula&bg_color=20232a&hide_border=true)
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula)
-![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula)
-![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=s009900&theme=dracula)
-
-</div>
-</details>
-<!-- end statics fun section -->
-
 
 ### Contributions Snake Light/Dark Themed
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
+
+<!-- start statics fun section -->
+<details>
+<summary><b>📊 Cool Stats, Click to Expand</b></summary>
+<div align="center">
+
+### 📈 GitHub Statistics
+<div align="center">
+ <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&include_all_commits=true" />
+ <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&layout=compact" />
+</div>
+
+### 🔥 Streak & Activity
+<div align="center">
+ <img src="https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula" />
+</div>
+
+### ⏰ Productivity & Contribution Patterns
+<div align="center">
+ <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=s009900&theme=dracula" />
+ <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula" />
+</div>
+
+### 💻 Language Distribution
+<div align="center">
+ <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula" />
+ <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=s009900&theme=dracula" />
+</div>
+
+### 📊 Contribution Graph
+<div align="center">
+ <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula&bg_color=282a36&hide_border=true&line=ff79c6&point=f8f8f2" />
+</div>
+
+</details>
+<!-- end statics fun section -->
+
 
 <details>
 <summary><b>👥 Last Followers</b></summary>
@@ -42,6 +59,8 @@
 <!-- followers:end -->
 👆 You can be here too! Go [here](https://github.com/s009900) and follow. Updates every 1/2 hour.
 </details>
+
+
 
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
@@ -116,13 +135,6 @@
 <br><br>
 </tr>
 </tr></tr>
-
-<details>
-<summary><b>📊 Activity Graph</b></summary>
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula" alt="Activity Graph" width="100%">
-</div>
-</details>
 
 <details>
   
