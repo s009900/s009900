@@ -98,9 +98,14 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         
+        # Add a cache-busting timestamp to the README.md
+        TIMESTAMP=$(date +%s)
+        sed -i "s|<img src=\"assets/wordcloud.png\"|<img src=\"assets/wordcloud.png?t=$TIMESTAMP\"|g" README.md
+        
         # Force add the word cloud image to ensure it's updated
         git add -f assets/wordcloud.png
         git add .github/wordcloud/words.json
+        git add README.md
         
         # Verify what's being committed
         echo "Files to be committed:"
