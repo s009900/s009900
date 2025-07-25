@@ -32,21 +32,14 @@ def load_words(json_path):
         logging.error(f"Error decoding JSON from {json_path}: {e}")
         return ["GitHub", "Open Source", "Welcome"]
 
-def generate_colorful_background(width, height):
-    """Generate a colorful gradient background."""
-    # Create a grid of points
-    x = np.linspace(0, 1, width)
-    y = np.linspace(0, 1, height)
-    X, Y = np.meshgrid(x, y)
-    
-    # Create RGB channels with different gradients
-    r = X  # Red increases with x
-    g = Y  # Green increases with y
-    b = 0.5 + 0.5*np.sin(10*X*Y)  # Blue has a wave pattern
-    
-    # Combine into an RGB image
-    img = np.dstack((r, g, b))
-    return (img * 255).astype(np.uint8)
+def generate_color_palette():
+    """Generate a vibrant color palette for the word cloud."""
+    return [
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+        '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
+        '#aec7e8', '#ffbb78', '#98df8a', '#ff9896', '#c5b0d5',
+        '#c49c94', '#f7b6d2', '#c7c7c7', '#dbdb8d', '#9edae5'
+    ]
 
 def generate_word_cloud():
     """Generate and save a word cloud image."""
@@ -74,44 +67,32 @@ def generate_word_cloud():
     
     # Generate word cloud
     try:
-        # Create a colorful background
+        # Set dimensions
         width, height = 1600, 800
-        color_image = generate_colorful_background(width, height)
         
-        # Create a mask from the color image (white = keep, black = mask out)
-        mask = 255 - np.mean(color_image, axis=2).astype(np.uint8)
-        
-        # Generate word cloud with smaller text settings
+        # Generate word cloud with varied text sizes
         wc = WordCloud(
             width=width,
             height=height,
-            background_color=None,
-            mode='RGBA',
-            mask=mask,
-            max_words=300,  # Increased number of words
-            contour_width=0,
+            background_color='white',
+            mode='RGB',
+            max_words=250,
             prefer_horizontal=0.9,
-            min_font_size=6,   # Much smaller minimum font size
-            max_font_size=80,  # Reduced maximum font size
-            margin=2,          # Reduced margin between words
-            random_state=42,
+            min_font_size=8,     # Smallest words
+            max_font_size=150,   # Largest words
+            margin=4,            # Slight margin between words
+            random_state=42,     # For reproducibility
             collocations=False,
             normalize_plurals=True,
-            relative_scaling=0.4,  # More variation in word sizes
-            color_func=lambda *args, **kwargs: 'white'  # Words will be white, we'll color them later
+            relative_scaling=0.8,  # More variation in word sizes
+            color_func=lambda *args, **kwargs: np.random.choice(generate_color_palette())  # Random colors from our palette
         ).generate_from_frequencies(word_freq)
         
-        # Create figure with black background
-        plt.figure(figsize=(16, 8), facecolor='black', edgecolor='none')
+        # Create figure with white background
+        plt.figure(figsize=(16, 8), facecolor='white', edgecolor='none')
         
-        # Show the colorful background
-        plt.imshow(color_image, alpha=0.9)
-        
-        # Generate word colors based on the background
-        image_colors = ImageColorGenerator(color_image)
-        
-        # Plot the word cloud with colors from the background
-        plt.imshow(wc.recolor(color_func=image_colors), alpha=0.8, interpolation='bilinear')
+        # Plot the word cloud
+        plt.imshow(wc, interpolation='bilinear')
         
         plt.axis('off')
         plt.tight_layout(pad=0)
