@@ -32,7 +32,7 @@ def update_words_json(word):
     
     # Initialize with default words if file doesn't exist
     if not words_path.exists():
-        words = ["GitHub", "Open Source", "s009900", "Collaboration", "Code", "Fun", "Awesome"]
+        words = ["404-Sleep-Not-Found", "Works-On-My-Machine", "s009900", "Code", "I'm Done.", "Fun", "Awesome"]
     else:
         try:
             with open(words_path, 'r') as f:
