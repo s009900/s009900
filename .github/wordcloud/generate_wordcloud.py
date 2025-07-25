@@ -81,23 +81,23 @@ def generate_word_cloud():
         # Create a mask from the color image (white = keep, black = mask out)
         mask = 255 - np.mean(color_image, axis=2).astype(np.uint8)
         
-        # Generate word cloud with improved settings
+        # Generate word cloud with smaller text settings
         wc = WordCloud(
             width=width,
             height=height,
             background_color=None,
             mode='RGBA',
             mask=mask,
-            max_words=200,  # Increased number of words
+            max_words=300,  # Increased number of words
             contour_width=0,
             prefer_horizontal=0.9,
-            min_font_size=10,  # Smaller minimum font size
-            max_font_size=120,  # Smaller maximum font size
-            margin=5,
+            min_font_size=6,   # Much smaller minimum font size
+            max_font_size=80,  # Reduced maximum font size
+            margin=2,          # Reduced margin between words
             random_state=42,
             collocations=False,
             normalize_plurals=True,
-            relative_scaling=0.5,
+            relative_scaling=0.4,  # More variation in word sizes
             color_func=lambda *args, **kwargs: 'white'  # Words will be white, we'll color them later
         ).generate_from_frequencies(word_freq)
         
