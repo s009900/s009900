@@ -32,7 +32,7 @@ jobs:
           # Base plugins
           plugin_activity: "no"  # Disabled recent activity
           plugin_calendar: "yes"
-          plugin_code: "yes"
+          plugin_code: "no"       # Disabled code snippets
           plugin_habits: "yes"
           plugin_languages: "yes"  # Keep languages enabled
           plugin_lines: "yes"
@@ -42,7 +42,7 @@ jobs:
           plugin_topics: "yes"
           
           # Plugin configurations
-          plugin_achievements: "yes"
+          plugin_achievements: "no"  # Disabled achievements
           plugin_contributors: "yes"
           plugin_discussions: "yes"
           plugin_gists: "no"
