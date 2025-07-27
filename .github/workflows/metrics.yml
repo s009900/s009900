@@ -30,18 +30,18 @@ jobs:
           filename: github-metrics.svg
           
           # Base plugins
-          plugin_activity: "yes"
+          plugin_activity: "no"  # Disabled recent activity
           plugin_calendar: "yes"
           plugin_code: "yes"
           plugin_habits: "yes"
-          plugin_languages: "yes"
+          plugin_languages: "yes"  # Keep languages enabled
           plugin_lines: "yes"
           plugin_reactions: "yes"
           plugin_repositories: "yes"
-          plugin_stargazers: "yes"
+          plugin_stargazers: "no"  # Disabled stargazers
           plugin_topics: "yes"
           
-          # Disabled plugins
+          # Plugin configurations
           plugin_achievements: "yes"
           plugin_contributors: "yes"
           plugin_discussions: "yes"
