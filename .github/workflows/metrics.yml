@@ -12,7 +12,6 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment: production
     permissions:
       contents: write
     steps:
@@ -31,46 +30,45 @@ jobs:
           filename: github-metrics.svg
           
           # Base plugins
-          plugin_activity: "yes"
+          plugin_activity: "no"
           plugin_calendar: "yes"
           plugin_code: "yes"
           plugin_habits: "yes"
           plugin_languages: "yes"
           plugin_lines: "yes"
-          plugin_notable: "yes"
           plugin_reactions: "yes"
           plugin_repositories: "yes"
           plugin_stargazers: "yes"
-          plugin_starlists: "yes"
           plugin_topics: "yes"
           
-          # Disabled problematic plugins
+          # Disabled plugins
           plugin_achievements: "no"
           plugin_contributors: "no"
           plugin_discussions: "no"
+          plugin_gists: "no"
           plugin_licenses: "no"
+          plugin_notable: "no"
           plugin_people: "no"
           plugin_projects: "no"
           plugin_skyline: "no"
           plugin_sponsors: "no"
           plugin_sponsorships: "no"
           plugin_stars: "no"
+          plugin_starlists: "no"
           plugin_traffic: "no"
           
           # Plugin configurations
-          plugin_activity_limit: 5
           plugin_languages_limit: 8
           plugin_languages_ignored: ""
           plugin_repositories_forks: "no"
           plugin_repositories_affiliations: "owner"
-          plugin_starlists_limit: 3
+          plugin_repositories_featured: "s009900/s009900"
           plugin_topics_limit: 8
-          plugin_notable_repositories: ""
           
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "actions@github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add github-metrics.svg
           git commit -m "chore(metrics): Update GitHub metrics" || exit 0
           git push
