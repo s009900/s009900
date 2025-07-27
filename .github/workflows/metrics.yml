@@ -30,7 +30,7 @@ jobs:
           filename: github-metrics.svg
           
           # Base plugins
-          plugin_activity: "no"
+          plugin_activity: "yes"
           plugin_calendar: "yes"
           plugin_code: "yes"
           plugin_habits: "yes"
@@ -42,15 +42,14 @@ jobs:
           plugin_topics: "yes"
           
           # Disabled plugins
-          plugin_achievements: "no"
-          plugin_contributors: "no"
-          plugin_discussions: "no"
+          plugin_achievements: "yes"
+          plugin_contributors: "yes"
+          plugin_discussions: "yes"
           plugin_gists: "no"
-          plugin_licenses: "no"
+          plugin_licenses: "yes"
           plugin_notable: "no"
           plugin_people: "no"
           plugin_projects: "no"
-          plugin_skyline: "no"
           plugin_sponsors: "no"
           plugin_sponsorships: "no"
           plugin_stars: "no"
@@ -64,6 +63,12 @@ jobs:
           plugin_languages_details: "percentage, bytes"
           plugin_languages_indepth: "yes"
           plugin_languages_analysis_timeout: 15
+          
+          # Reactions configuration
+          plugin_reactions_limit: 8
+          
+          # Calendar configuration
+          # Using default calendar settings
           
           plugin_repositories_forks: "no"
           plugin_repositories_affiliations: "owner"
