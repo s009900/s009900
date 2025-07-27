@@ -2,111 +2,67 @@ name: Metrics
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
-  workflow_dispatch:
+    - cron: "0 0 * * *"  # Runs daily at midnight
+  workflow_dispatch:  # Allows manual triggering
   push:
-    branches:
-      - main
-      - master
+    branches: ["master", "main"]
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    environment: production
+
     permissions:
       contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Generate user metrics
+      - name: Generate metrics
         uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
-          user: s009900
+          user: ${{ github.repository_owner }}
+          filename: github-metrics.svg
           template: classic
           base: ""
-          filename: github-metrics.svg
           
-          # Classic template settings
-          config_display: "large"
-          
-          # Base plugins
+          # Core metrics
+          plugin_achievements: "yes"
+          plugin_activity: "yes"
           plugin_calendar: "yes"
+          plugin_code: "yes"
+          plugin_contributors: "yes"
+          plugin_discussions: "yes"
+          plugin_followup: "yes"
+          plugin_gists: "yes"
           plugin_habits: "yes"
+          plugin_isocalendar: "yes"
           plugin_languages: "yes"
+          plugin_licenses: "yes"
           plugin_lines: "yes"
+          plugin_notable: "yes"
+          plugin_people: "yes"
+          plugin_projects: "yes"
           plugin_reactions: "yes"
           plugin_repositories: "yes"
-          plugin_topics: "yes"
-          plugin_discussions: "yes"
-          plugin_traffic: "yes"
-          
-          # Disabled plugins
-          plugin_activity: "no"
-          plugin_code: "no"
-          plugin_stargazers: "no"
-          plugin_achievements: "no"
-          plugin_gists: "no"
-          plugin_notable: "no"
-          plugin_people: "no"
-          plugin_projects: "no"
-          plugin_sponsors: "no"
-          plugin_sponsorships: "no"
-          plugin_stars: "no"
-          plugin_starlists: "no"
-          
-          # Plugin configurations - Languages
-          plugin_languages_ignored: ""
-          plugin_languages_limit: 10
-          plugin_languages_colors: "github"
-          plugin_languages_details: "percentage, bytes"
-          plugin_languages_indepth: "yes"
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_threshold: "0%"  # Show all languages regardless of percentage
-          plugin_languages_aliases: ""  # No aliases for language names
-          plugin_languages_sections: "most-used"  # Show most used languages
-          plugin_languages_recent_categories: "all"  # Include all categories in recent activity
-          
-          # Reactions configuration
-          plugin_reactions_limit: 8
-          
-          # Repositories configuration
-          plugin_repositories_forks: "no"
-          plugin_repositories_affiliations: "owner"
-          plugin_repositories_featured: "s009900/s009900"
-          plugin_topics_limit: 8
-          
-          # Classic template specific
-          plugin_habits_from: 100
-          plugin_habits_facts: true
-          plugin_habits_days: 14
-          
-      - name: Generate repository metrics
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
-          user: s009900
-          repo: s009900
-          template: repository
-          base: ""
-          filename: repo-metrics.svg
-          config_display: "large"
-          
-          # Enable repository-specific plugins
-          plugin_contributors: "yes"
-          plugin_activity: "yes"
+          plugin_skyline: "yes"
+          plugin_sponsors: "yes"
+          plugin_sponsorships: "yes"
           plugin_stargazers: "yes"
+          plugin_starlists: "yes"
+          plugin_stars: "yes"
+          plugin_support: "yes"
+          plugin_topics: "yes"
           plugin_traffic: "yes"
           
-          # Repository metrics settings
-          plugin_activity_limit: 10
-          
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add github-metrics.svg repo-metrics.svg
-          git commit -m "chore(metrics): Update GitHub metrics" || exit 0
+          git config --global user.email "actions@github.com"
+          git add github-metrics.svg
+          git commit -m "Update metrics" || exit 0
           git push
