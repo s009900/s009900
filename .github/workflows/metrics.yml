@@ -26,9 +26,9 @@ jobs:
           user: ${{ github.repository_owner }}
           filename: github-metrics.svg
           template: classic
-          base: ""
+          base: "header, activity, community, repositories, metadata"
           
-          # Core metrics
+          # Core plugins
           plugin_achievements: "yes"
           plugin_activity: "yes"
           plugin_calendar: "yes"
@@ -53,9 +53,16 @@ jobs:
           plugin_stargazers: "yes"
           plugin_starlists: "yes"
           plugin_stars: "yes"
-          plugin_support: "yes"
           plugin_topics: "yes"
           plugin_traffic: "yes"
+          
+          # Display settings
+          config_timezone: "America/New_York"
+          plugin_activity_limit: "10"
+          plugin_languages_limit: "10"
+          plugin_people_limit: "24"
+          plugin_projects_limit: "4"
+          plugin_stars_limit: "6"
           
 
       - name: Commit and push changes
