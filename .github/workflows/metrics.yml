@@ -29,24 +29,24 @@ jobs:
           base: ""
           filename: github-metrics.svg
           
+          # Classic template settings
+          config_display: "large"
+          
           # Base plugins
-          plugin_activity: "no"  # Disabled recent activity
           plugin_calendar: "yes"
-          plugin_code: "no"       # Disabled code snippets
           plugin_habits: "yes"
-          plugin_languages: "yes"  # Keep languages enabled
+          plugin_languages: "yes"
           plugin_lines: "yes"
           plugin_reactions: "yes"
           plugin_repositories: "yes"
-          plugin_stargazers: "no"  # Disabled stargazers
           plugin_topics: "yes"
           
-          # Plugin configurations
-          plugin_achievements: "no"  # Disabled achievements
-          plugin_contributors: "yes"
-          plugin_discussions: "yes"
+          # Disabled plugins
+          plugin_activity: "no"
+          plugin_code: "no"
+          plugin_stargazers: "no"
+          plugin_achievements: "no"
           plugin_gists: "no"
-          plugin_licenses: "yes"
           plugin_notable: "no"
           plugin_people: "no"
           plugin_projects: "no"
@@ -63,17 +63,24 @@ jobs:
           plugin_languages_details: "percentage, bytes"
           plugin_languages_indepth: "yes"
           plugin_languages_analysis_timeout: 15
+          plugin_languages_threshold: "0%"  # Show all languages regardless of percentage
+          plugin_languages_aliases: ""  # No aliases for language names
+          plugin_languages_sections: "most-used"  # Show most used languages
+          plugin_languages_recent_categories: "all"  # Include all categories in recent activity
           
           # Reactions configuration
           plugin_reactions_limit: 8
           
-          # Calendar configuration
-          # Using default calendar settings
-          
+          # Repositories configuration
           plugin_repositories_forks: "no"
           plugin_repositories_affiliations: "owner"
           plugin_repositories_featured: "s009900/s009900"
           plugin_topics_limit: 8
+          
+          # Classic template specific
+          plugin_habits_from: 100
+          plugin_habits_facts: true
+          plugin_habits_days: 14
           
       - name: Commit and push changes
         run: |
