@@ -57,9 +57,14 @@ jobs:
           plugin_starlists: "no"
           plugin_traffic: "no"
           
-          # Plugin configurations
-          plugin_languages_limit: 8
+          # Plugin configurations - Languages
           plugin_languages_ignored: ""
+          plugin_languages_limit: 10
+          plugin_languages_colors: "github"
+          plugin_languages_details: "percentage, bytes"
+          plugin_languages_indepth: "yes"
+          plugin_languages_analysis_timeout: 15
+          
           plugin_repositories_forks: "no"
           plugin_repositories_affiliations: "owner"
           plugin_repositories_featured: "s009900/s009900"
