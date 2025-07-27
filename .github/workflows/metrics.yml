@@ -37,6 +37,14 @@ jobs:
           plugin_habits: "yes"  # Shows coding habits
           plugin_repositories: "yes"  # Shows repository list
           
+          # Disable unwanted plugins
+          plugin_stars: "no"  # Recently starred
+          plugin_skyline: "no"  # GitHub Skyline
+          plugin_achievements: "no"  # Achievements
+          plugin_activity: "no"  # Recent activity
+          plugin_sponsorships: "no"  # Sponsorships
+          plugin_code: "no"  # Code snippet
+          
           # Configure languages
           plugin_languages_limit: 10
           plugin_languages_colors: github
@@ -44,8 +52,6 @@ jobs:
           
           # Configure repositories
           plugin_repositories_featured: "s009900/s009900"
-          plugin_repositories_starred: 4
-          plugin_repositories_random: 4
           plugin_repositories_forks: "no"
           plugin_repositories_affiliations: "owner"
           
