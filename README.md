@@ -174,14 +174,14 @@
   </tr>
 </table>
 </details>
-
+<!--
 <details><summary><b>Metrics</b></summary>
 
 ![Metrics](/github-metrics.svg)
 
 </details>
 
-
+-->
 <details>
 <summary><b>🔄 Workflow Through Life</b></summary>
 
