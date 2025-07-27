@@ -140,6 +140,14 @@
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
 </details>
+
+<details><summary><b>👌 3D Graph and Charts</b></summary>
+
+![](profile-3d-contrib/profile-season-animate.svg)
+
+
+</details>
+
 <details>
 <summary><b>😁 Code Cycle</b></summary>
 
