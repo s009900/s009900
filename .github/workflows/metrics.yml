@@ -40,6 +40,8 @@ jobs:
           plugin_reactions: "yes"
           plugin_repositories: "yes"
           plugin_topics: "yes"
+          plugin_discussions: "yes"
+          plugin_traffic: "yes"
           
           # Disabled plugins
           plugin_activity: "no"
@@ -54,7 +56,6 @@ jobs:
           plugin_sponsorships: "no"
           plugin_stars: "no"
           plugin_starlists: "no"
-          plugin_traffic: "no"
           
           # Plugin configurations - Languages
           plugin_languages_ignored: ""
