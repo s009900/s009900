@@ -52,7 +52,7 @@ jobs:
           plugin_sponsorships: "yes"
           plugin_stargazers: "yes"
           plugin_starlists: "yes"
-          plugin_stars: "yes"
+          plugin_stars: "no"
           plugin_topics: "yes"
           plugin_traffic: "yes"
           
