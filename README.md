@@ -169,6 +169,13 @@
 </table>
 </details>
 
+<details><summary><b>Metrics</b></summary>
+
+![Metrics](/github-metrics.svg)
+
+</details>
+
+
 <details>
 <summary><b>🔄 Workflow Through Life</b></summary>
 
@@ -219,6 +226,8 @@ The most basic way to show your support is to **star the project**. Thanks!
 <details><summary><b>⭐ Star History Chart</b></summary>
 
 [![Star History Chart](https://api.star-history.com/svg?repos=s009900/s009900&type=Date)](https://star-history.com/#s009900/s009900&Date)
+
+</details>
 
 </details>
 
