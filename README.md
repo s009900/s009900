@@ -216,6 +216,12 @@ The most basic way to show your support is to **star the project**. Thanks!
 
 </details>
 
+<details><summary><b>⭐ Star History Chart</b></summary>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=s009900/s009900&type=Date)](https://star-history.com/#s009900/s009900&Date)
+
+</details>
+
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
