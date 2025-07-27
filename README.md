@@ -3,10 +3,6 @@
 <img align="left" src="Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Views:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
-## 📊 GitHub Metrics
-
-![Metrics](https://github.com/s009900/s009900/raw/main/github-metrics.svg)
-
 ### Contributions Snake Light/Dark Themed
 ![GitHub Snake Light](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake.svg)
 ![GitHub Snake Dark](https://github.com/s009900/s009900-test/blob/output/github-contribution-grid-snake-dark.svg)
