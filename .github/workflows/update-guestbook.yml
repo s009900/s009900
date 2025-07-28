@@ -11,7 +11,8 @@ jobs:
     # Only run for guestbook issues
     if: >
       github.event.issue &&
-      contains(github.event.issue.labels.*.name, 'guestbook') &&
+      (contains(github.event.issue.body, '### Your Message') || 
+       (github.event.issue.labels && contains(github.event.issue.labels.*.name, 'guestbook'))) &&
       contains(fromJson('["opened", "edited"]'), github.event.action)
     
     steps:

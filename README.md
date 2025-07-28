@@ -8,10 +8,15 @@
 
 Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd love to hear from you! 😊
 
-[Sign the Guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml&title=Guestbook%3A+Your+Name) ➠•  [View All Entries](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)
+[Sign the Guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml&title=Guestbook%3A+Your+Name) ➠•  [View All Entries](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)
 
----
-*Recent entries will appear here...*
+### Recent Guestbook Entries
+
+| Emoji | Name | Message | Date |
+|:-----:|:----:|:-------:|:----:|
+| 🎉 | You | Be the first to sign my guestbook! | Today |
+
+*Sign the guestbook to see your message here!*
 
 <!-- /Guestbook -->
 <!--
