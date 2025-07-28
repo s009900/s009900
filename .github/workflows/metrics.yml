@@ -1,69 +1,20 @@
+# Disabled GitHub Metrics Workflow
+# This file is intentionally left empty as the workflow is currently disabled.
+# To re-enable, uncomment and configure the workflow below.
+
 # name: Metrics
-
 # on:
- # schedule:
-  #  - cron: "0 0 * * *"  # Runs daily at midnight
-  #workflow_dispatch:  # Allows manual triggering
-  #push:
-   # branches: ["master", "main"]
-
-#jobs:
- # github-metrics:
-  #  runs-on: ubuntu-latest
-   # environment: production
-
-    #permissions:
-     # contents: write
-#    steps:
- #     - name: Checkout repository
-  #      uses: actions/checkout@v4
-   #     with:
-    #      fetch-depth: 0
-
-     # - name: Generate GitHub metrics
-      #  uses: lowlighter/metrics@latest
-       # with:
-          # Basic configuration
-        #  token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
-         # user: s009900
-          #template: classic
- #         base: header, repositories  # This controls the layout sections
-  #        filename: metrics.classic.svg
-   #       
-          # Enable core plugins
-    #      plugin_lines: "yes"  # Shows lines of code statistics
-     #     plugin_calendar: "yes"  # Shows contribution calendar
-      #    plugin_languages: "yes"  # Shows language stats
-       #   plugin_habits: "yes"  # Shows coding habits
-        #  plugin_repositories: "yes"  # Shows repository list
-          
-          # Disable unwanted plugins
-         # plugin_stars: "no"  # Recently starred
-#          plugin_skyline: "no"  # GitHub Skyline
- #         plugin_achievements: "no"  # Achievements
-  #        plugin_activity: "no"  # Recent activity
-   #       plugin_sponsorships: "no"  # Sponsorships
-    #      plugin_code: "no"  # Code snippet
-          
-          # Configure languages
-     #     plugin_languages_limit: 10
-      #    plugin_languages_colors: github
-       #   plugin_languages_details: "percentage, bytes"
-          
-          # Configure repositories
-        #  plugin_repositories_featured: "s009900/s009900"
-         # plugin_repositories_forks: "no"
-          #plugin_repositories_affiliations: "owner"
-          
-          # Configure calendar
-#          plugin_habits_days: 14
- #         plugin_habits_from: 100
-  #        plugin_habits_facts: true
-
-   #   - name: Commit and push changes
-    #    run: |
-     #     git config --global user.name "github-actions[bot]"
-      #    git config --global user.email "actions@github.com"
-       #   git add metrics.classic.svg
-        #  git commit -m "Update metrics" || exit 0
-         # git push
+#   schedule:
+#     - cron: "0 0 * * *"  # Runs daily at midnight
+#   workflow_dispatch:  # Allows manual triggering
+#   push:
+#     branches: ["master", "main"]
+# jobs:
+#   github-metrics:
+#     runs-on: ubuntu-latest
+#     environment: production
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Generate GitHub metrics
+#         uses: lowlighter/metrics@latest
