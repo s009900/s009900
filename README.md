@@ -5,8 +5,23 @@
 <!-- Guestbook -->
 
 <!-- /Guestbook -->
+<!--
+<tr>
+  <td>
+    <a href="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors?repo_id=985959189" target="_blank" style="display: block" align="center">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors/thumbnail.png?repo_id=985959189&image_size=auto&color_scheme=dark" width="280">
+        
+        <img alt="Top Contributors of s009900/s009900 - Last 28 days" src="https://next.ossinsight.io/widgets/official/compose-recent-top-contributors/thumbnail.png?repo_id=985959189&image_size=auto&color_scheme=light" width="280">
+      </picture>
+    </a>
+  </td>
+</tr>
 
-
+<a href="https://openomy.app/github/s009900/s009900" target="_blank" style="display: block; width: 100%;" align="center">
+  <img src="https://openomy.app/svg?repo=s009900/s009900&chart=bubble&latestMonth=3" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" />
+</a>
+-->
 
 # <img width="50" height="50" alt="471540330-b492ebbe-1847-4a3b-9401-14fda1d869e6" src="https://github.com/user-attachments/assets/838454fd-d739-4127-b6f7-5be935d446e1" /> s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!&color=000000)
