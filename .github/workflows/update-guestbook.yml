@@ -35,6 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          python -c """
           import os
           from github import Github
           
@@ -43,95 +44,15 @@ jobs:
           
           try:
               repo.get_label('guestbook')
+              print('\'guestbook\' label already exists')
           except:
               repo.create_label(name='guestbook', color='1d76db', description='Guestbook entries')
-              print("Created 'guestbook' label")
-          else:
-              print("'guestbook' label already exists")
-              
+              print('Created \'guestbook\' label')
+          """
+      
       - name: Update README with new guestbook entry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          import os
-          import re
-          from github import Github
-          
-          # Initialize GitHub client
-          g = Github(os.environ['GITHUB_TOKEN'])
-          repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
-          issue = repo.get_issue(number=int(os.environ['ISSUE_NUMBER']))
-          
-          # Extract fields from issue body
-          def extract_field(field_name, body):
-              match = re.search(rf'### {re.escape(field_name)}[\s\S]*?###', body + '###')
-              if not match:
-                  return ""
-              content = match.group(0).split('\r\n', 1)[1].rsplit('###', 1)[0].strip()
-              return content.replace('\r\n', ' ').strip()
-          
-          # Get all guestbook issues
-          issues = repo.get_issues(labels=['guestbook'], state='all', sort='created', direction='desc')
-          
-          # Collect all entries
-          all_entries = []
-          for issue in issues:
-              try:
-                  body = issue.body
-                  if not body:
-                      continue
-                      
-                  emoji = extract_field('Pick an emoji', body)
-                  name = extract_field('Your Name (or GitHub username)', body)
-                  message = extract_field('Your Message', body)
-                  link = extract_field('Link (optional)', body)
-                  
-                  if message and name:
-                      all_entries.append({
-                          'emoji': emoji,
-                          'name': name,
-                          'link': link if link and link != "_No response_" else None,
-                          'message': message,
-                          'date': issue.created_at.strftime("%Y-%m-%d")
-                      })
-              except Exception as e:
-                  print(f"Error processing issue #{issue.number}: {str(e)}")
-          
-          # Sort entries by date (newest first)
-          all_entries.sort(key=lambda x: x['date'], reverse=True)
-          
-          # Create the guestbook table
-          guestbook_table = "### Recent Guestbook Entries\n\n"
-          guestbook_table += "| Emoji | Name | Message | Date |\n"
-          guestbook_table += "|:-----:|:----:|:-------:|:----:|\n"
-          
-          for entry in all_entries[:10]:  # Show up to 10 most recent entries
-              name_display = f"[{entry['name']}]({entry['link']})" if entry['link'] else entry['name']
-              guestbook_table += f"| {entry['emoji']} | {name_display} | {entry['message']} | {entry['date']} |\n"
-          
-          # Update README
-          with open("README.md", 'r', encoding='utf-8') as f:
-              content = f.read()
-          
-          guestbook_start = "<!-- Guestbook -->"
-          guestbook_end = "<!-- /Guestbook -->"
-          
-          before = content.split(guestbook_start)[0]
-          after = content.split(guestbook_end)[1]
-          
-          new_guestbook = f"{guestbook_start}\n\n## 📝 Guestbook\n\nLeave your mark in my guestbook! Share a message, a joke, or just say hi. 😊\n\n[Sign the Guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml&title=Guestbook%3A+Your+Name)\n\n{guestbook_table}\n\n*Showing {min(10, len(all_entries))} of {len(all_entries)} entries. [View all](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)*\n\n{guestbook_end}"
-          
-          with open("README.md", 'w', encoding='utf-8') as f:
-              f.write(f"{before}{new_guestbook}{after}")
-          
-          # Commit changes
-          os.system('git config --global user.name "GitHub Actions"')
-          os.system('git config --global user.email "actions@github.com"')
-          os.system('git add README.md')
-          os.system(f'git commit -m "Update guestbook with new entry"')
-          os.system('git push')
-          
-          # Add a comment and close the issue
-          issue.create_comment("🎉 Thank you for signing my guestbook! Your message has been added to my README.")
-          issue.edit(state='closed')
+          python .github/scripts/update_guestbook.py
