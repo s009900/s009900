@@ -2,18 +2,20 @@ name: Update Guestbook
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, labeled]
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     
-    # Only run for guestbook issues
+    # Only run for guestbook issues that are being opened or labeled
     if: >
       github.event.issue &&
+      (github.event.action == 'opened' || 
+       (github.event.action == 'labeled' && 
+        contains(github.event.label.name, 'guestbook'))) &&
       (contains(github.event.issue.body, '### Your Message') || 
-       (github.event.issue.labels && contains(github.event.issue.labels.*.name, 'guestbook'))) &&
-      contains(fromJson('["opened", "edited"]'), github.event.action)
+       (github.event.issue.labels && contains(github.event.issue.labels.*.name, 'guestbook')))
     
     steps:
       - name: Checkout repository
@@ -51,6 +53,7 @@ jobs:
           """
       
       - name: Update README with new guestbook entry
+        if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
