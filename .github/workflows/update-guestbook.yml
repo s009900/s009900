@@ -30,6 +30,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyGithub
           
+      - name: Create guestbook label if it doesn't exist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          import os
+          from github import Github
+          
+          g = Github(os.environ['GITHUB_TOKEN'])
+          repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
+          
+          try:
+              repo.get_label('guestbook')
+          except:
+              repo.create_label(name='guestbook', color='1d76db', description='Guestbook entries')
+              print("Created 'guestbook' label")
+          else:
+              print("'guestbook' label already exists")
+              
       - name: Update README with new guestbook entry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
