@@ -1,0 +1,111 @@
+name: Update Guestbook
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    # Only run for guestbook issues
+    if: >
+      github.event.issue && 
+      contains(github.event.issue.body, '### What type of issue is this?') &&
+      contains(fromJson('["opened", "edited"]'), github.event.action)
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+          
+      - name: Update README with new guestbook entry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          import os
+          import re
+          from github import Github
+          
+          # Get issue data
+          issue_number = os.environ['ISSUE_NUMBER']
+          repo_name = os.environ['GITHUB_REPOSITORY']
+          
+          # Initialize GitHub client
+          g = Github(os.environ['GITHUB_TOKEN'])
+          repo = g.get_repo(repo_name)
+          issue = repo.get_issue(number=int(issue_number))
+          
+          # Extract message from issue body
+          body = issue.body
+          
+          # Extract fields using regex
+          def extract_field(field_name):
+              match = re.search(rf'### {field_name}[\s\S]*?###', body + '###')
+              if not match:
+                  return ""
+              content = match.group(0).split('\r\n', 1)[1].rsplit('###', 1)[0].strip()
+              return content.replace('\r\n', ' ').strip()
+          
+          message = extract_field('Your Message')
+          name = extract_field('Your Name \(or GitHub username\)')
+          link = extract_field('Link \(optional\)')
+          emoji = extract_field('Pick an emoji')
+          
+          if not message or not name:
+              print("Missing required fields")
+              exit(0)
+              
+          # Format the entry
+          timestamp = issue.created_at.strftime("%Y-%m-%d")
+          if link and link != "_No response_":
+              entry = f"- {emoji} **[{name}]({link})** - {message} *(signed on {timestamp})*"
+          else:
+              entry = f"- {emoji} **{name}** - {message} *(signed on {timestamp})*"
+          
+          # Update README
+          readme_path = "README.md"
+          with open(readme_path, 'r', encoding='utf-8') as f:
+              content = f.read()
+              
+          # Find the guestbook section
+          guestbook_start = "<!-- Guestbook -->"
+          guestbook_end = "<!-- /Guestbook -->"
+          
+          if guestbook_start in content and guestbook_end in content:
+              before = content.split(guestbook_start)[0]
+              after = content.split(guestbook_end)[1]
+              
+              # Add new entry at the top of the guestbook
+              new_guestbook = f"{guestbook_start}\n\n{entry}\n\n{guestbook_end}"
+              new_content = f"{before}{new_guestbook}{after}"
+              
+              with open(readme_path, 'w', encoding='utf-8') as f:
+                  f.write(new_content)
+                  
+              # Commit changes
+              os.system('git config --global user.name "GitHub Actions"')
+              os.system('git config --global user.email "actions@github.com"')
+              os.system('git add README.md')
+              os.system(f'git commit -m "Add guestbook entry from @{issue.user.login}"')
+              os.system('git push')
+              
+              # Add a comment to the issue
+              issue.create_comment("🎉 Thank you for signing my guestbook! Your message has been added to my README.")
+              
+              # Close the issue
+              issue.edit(state='closed')
+          else:
+              print("Guestbook section not found in README.md")

@@ -1,0 +1,75 @@
+name: 📝 Sign My Guestbook
+description: Leave a message in my guestbook!
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for stopping by! 😊
+        
+        Please leave a message below to sign my guestbook. Your message will be added to my README!
+        
+        **Note:** Please be kind and respectful in your message. Inappropriate content will be removed.
+
+  - type: textarea
+    id: message
+    attributes:
+      label: Your Message
+      description: What would you like to say?
+      placeholder: Type your message here...
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Your Name (or GitHub username)
+      description: How would you like to be credited?
+      placeholder: GitHub username or name
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link (optional)
+      description: Your website, GitHub profile, or social media
+      placeholder: https://github.com/username
+    validations:
+      required: false
+
+  - type: dropdown
+    id: emoji
+    attributes:
+      label: Pick an emoji
+      description: Choose how you're feeling today
+      options:
+        - 😊 # Smile
+        - 😍 # Heart Eyes
+        - 😄 # Big Smile
+        - 😎 # Cool
+        - ✨ # Sparkles
+        - 🎉 # Party Popper
+        - 👋 # Wave
+        - 🚀 # Rocket
+        - 😏 # Smirk
+        - 😌 # Relieved
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        <div align="center">
+          <sub><sub>
+            <br>
+            <sub>
+              <sub>
+                <sub>
+                  <sub>
+                    <sub>Thank you for signing my guestbook!</sub>
+                  </sub>
+                </sub>
+              </sub>
+            </sub>
+          </sub></sub>
+        </div>
