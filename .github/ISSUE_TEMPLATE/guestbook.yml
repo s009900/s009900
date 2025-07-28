@@ -1,5 +1,7 @@
 name: 📝 Sign My Guestbook
 description: Leave a message in my guestbook!
+title: 'Guestbook: [Your Name]'
+labels: [guestbook]
 body:
   - type: markdown
     attributes:
@@ -41,7 +43,7 @@ body:
     id: emoji
     attributes:
       label: Pick an emoji
-      description: Choose how you're feeling today
+      description: What's up?
       options:
         - 😊 # Smile
         - 😍 # Heart Eyes

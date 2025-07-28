@@ -10,8 +10,8 @@ jobs:
     
     # Only run for guestbook issues
     if: >
-      github.event.issue && 
-      contains(github.event.issue.body, '### What type of issue is this?') &&
+      github.event.issue &&
+      contains(github.event.issue.labels.*.name, 'guestbook') &&
       contains(fromJson('["opened", "edited"]'), github.event.action)
     
     steps:
@@ -88,8 +88,20 @@ jobs:
               before = content.split(guestbook_start)[0]
               after = content.split(guestbook_end)[1]
               
-              # Add new entry at the top of the guestbook
-              new_guestbook = f"{guestbook_start}\n\n{entry}\n\n{guestbook_end}"
+              # Get existing entries (if any)
+              existing_entries = []
+              current_entries = content.split(guestbook_start)[1].split(guestbook_end)[0].strip()
+              
+              # Keep only the 10 most recent entries to prevent README from getting too long
+              existing_entries = [e.strip() for e in current_entries.split('\n\n') if e.strip() and not e.strip().startswith('*')]
+              existing_entries = existing_entries[:9]  # Keep only 9 most recent + new one = 10 total
+              
+              # Add new entry at the top
+              all_entries = [entry] + existing_entries
+              
+              # Create new guestbook section
+              entries_section = '\n\n'.join(all_entries)
+              new_guestbook = f"{guestbook_start}\n\n{entries_section}\n\n*[View all guestbook entries](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)*\n\n{guestbook_end}"
               new_content = f"{before}{new_guestbook}{after}"
               
               with open(readme_path, 'w', encoding='utf-8') as f:

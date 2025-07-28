@@ -6,9 +6,12 @@
 
 ## 📝 Guestbook
 
-Leave a message in my [guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml)!
+Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd love to hear from you! 😊
 
-*Signatures will appear here...*
+[Sign the Guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml&title=Guestbook%3A+Your+Name) ➠•  [View All Entries](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)
+
+---
+*Recent entries will appear here...*
 
 <!-- /Guestbook -->
 <!--
