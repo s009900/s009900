@@ -236,7 +236,7 @@ The most basic way to show your support is to **star the project**. Thanks!
 
 [![Star History Chart](https://api.star-history.com/svg?repos=s009900/s009900&type=Date)](https://star-history.com/#s009900/s009900&Date)
 
-#### Remember to <img width="25" height="25" alt="471539974-44bb4a54-9912-4e55-8037-30733059bf13" src="https://github.com/user-attachments/assets/9f8636dd-22dc-4507-a91b-6e4fc0996849" /> if you like it!
+#### Remember to <img width="25" height="25" alt="471539974-44bb4a54-9912-4e55-8037-30733059bf13" src="https://github.com/user-attachments/assets/9f8636dd-22dc-4507-a91b-6e4fc0996849" /> if you like this repo!
 
 
 </details>
