@@ -9,8 +9,6 @@ body:
         
         Please leave a message below to sign my guestbook. Your message will be added to my README!
         
-        **Note:** Please be kind and respectful in your message. Inappropriate content will be removed.
-
   - type: textarea
     id: message
     attributes:
