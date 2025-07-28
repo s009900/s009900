@@ -98,7 +98,7 @@
 
 ### 📈 GitHub Statistics
 <div align="center">
- <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&include_all_commits=true" />
+ <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&include_all_commits=true" />
  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&layout=compact" />
 </div>
 
