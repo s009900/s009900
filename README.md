@@ -3,7 +3,7 @@
 
 
 <!-- Guestbook -->
-
+<!--
 ## 📝 Guestbook
 
 Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd love to hear from you! 😊
@@ -17,7 +17,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 | 🎉 | You | Be the first to sign my guestbook! | Today |
 
 *Sign the guestbook to see your message here!*
-
+-->
 
 # <img width="50" height="50" alt="471540330-b492ebbe-1847-4a3b-9401-14fda1d869e6" src="https://github.com/user-attachments/assets/838454fd-d739-4127-b6f7-5be935d446e1" /> s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!)
