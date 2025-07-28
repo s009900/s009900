@@ -1,3 +1,7 @@
+
+<img width="1700" height="259" alt="A_IXw7939jqraOcglR1sR" src="https://github.com/user-attachments/assets/6badbb17-62bb-4a27-be10-1a9fa0dec15e" />
+
+
 <!-- Guestbook -->
 
 <!-- /Guestbook -->
@@ -94,7 +98,7 @@
 
 ### 📈 GitHub Statistics
 <div align="center">
- <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&count_private=true&include_all_commits=true" />
+ <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&include_all_commits=true" />
  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&layout=compact" />
 </div>
 
@@ -174,14 +178,13 @@
   </tr>
 </table>
 </details>
-<!--
-<details><summary><b>Metrics</b></summary>
 
-![Metrics](/github-metrics.svg)
+<details><summary><b>⛽ Metrics</b></summary>
+
+![Metrics](metrics.classic.svg)
 
 </details>
 
--->
 <details>
 <summary><b>🔄 Workflow Through Life</b></summary>
 

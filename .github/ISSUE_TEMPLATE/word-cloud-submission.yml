@@ -15,7 +15,7 @@ body:
     attributes:
       label: "Word to Add"
       description: "Enter a single word to add to the word cloud"
-      placeholder: "What would you absolutely put on a programming bumper sticker?"
+      placeholder: "Your word goes here. 👇"
     validations:
       required: true
       
