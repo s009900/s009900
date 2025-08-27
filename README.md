@@ -1,6 +1,7 @@
-
-<img width="1700" height="259" alt="A_IXw7939jqraOcglR1sR" src="https://github.com/user-attachments/assets/6badbb17-62bb-4a27-be10-1a9fa0dec15e" />
-
+<!-- Animated Header -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=200&section=header&text=s009900&fontSize=90&animation=fadeIn&fontAlignY=35&desc=Hi%20there!%20Thanks%20for%20coming!%20👋&descAlignY=55&descSize=20" width="100%" />
+</div>
 
 <!-- Guestbook -->
 <!--
