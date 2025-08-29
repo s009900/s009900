@@ -120,26 +120,9 @@ Check out my [GitHub Trophies](trophies.readme.md) to see my achievements and mi
 
 Check out my [3D Contribution Graph](3d-contributions.readme.md) for an interactive visualization of my GitHub activity!
 
-<details>
-<summary><b>😁 Code Cycle</b></summary>
+## 😁 The Developer's Code Cycle
 
-<table style="border: none; border-collapse: collapse; margin: 10px 0;">
-  <tr style="border: none;">
-    <td align="center" style="border: none; padding: 0 20px;">
-      <img src="good-spiral-eyes.png" width="80" alt="Broken system!"/><br>
-      Something BROKE!
-    </td>
-    <td align="center" style="border: none; padding: 0 20px;">
-      <img src="good-relieved.png" width="80" alt="It's working!"/><br>
-      It's FINALLY working...
-    </td>
-    <td align="center" style="border: none; padding: 0 20px;">
-      <img src="good-astonished.png" width="80" alt="It's working but I don't know how!"/><br>
-      on its own? HOW IS IT WORKING???
-    </td>
-  </tr>
-</table>
-</details>
+Ever wonder what goes through a developer's mind? Check out my [Code Cycle](code-cycle.readme.md) to see the emotional rollercoaster of programming!
 
 <details><summary><b>⛽ Metrics</b></summary>
 
