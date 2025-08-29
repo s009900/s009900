@@ -116,12 +116,9 @@ Check out my [followers page](followers.readme.md) to see who's following my wor
 
 Check out my [GitHub Trophies](trophies.readme.md) to see my achievements and milestones!
 
-<details><summary><b>👌 3D Graph and Charts</b></summary>
+## 📊 3D Contribution Graph
 
-![](profile-3d-contrib/profile-season-animate.svg)
-
-
-</details>
+Check out my [3D Contribution Graph](3d-contributions.readme.md) for an interactive visualization of my GitHub activity!
 
 <details>
 <summary><b>😁 Code Cycle</b></summary>
