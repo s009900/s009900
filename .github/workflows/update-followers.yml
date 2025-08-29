@@ -15,16 +15,20 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Update Followers in README
+      - name: Update Followers List
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const { execSync } = require('child_process');
+            const fs = require('fs');
+            
             try {
-              console.log('Fetching followers...');
+              console.log('Fetching latest followers...');
+              // Get the 4 most recent followers
               const { data: followers } = await github.rest.users.listFollowersForUser({
                 username: 's009900',
-                per_page: 5,
+                per_page: 4,
                 headers: {
                   'X-GitHub-Api-Version': '2022-11-28'
                 }
@@ -35,53 +39,56 @@ jobs:
               // Generate the followers table
               let followersTable = '| # | Avatar | Username |\n|--:|:------:|:---------|\n';
               
-              if (followers.length > 0) {
-                followers.forEach((follower, index) => {
-                  console.log(`Adding follower: ${follower.login}`);
-                  followersTable += `| ${index + 1} | <img src="${follower.avatar_url}" width="32" height="32" alt="${follower.login}" /> | [${follower.login}](https://github.com/${follower.login}) |\n`;
-                });
-              } else {
-                followersTable = 'No followers yet. Be the first!';
+              followers.forEach((follower, index) => {
+                followersTable += `| ${index + 1} | <img src="${follower.avatar_url}" width="50" height="50" alt="${follower.login}" /> | [@${follower.login}](${follower.html_url}) |\n`;
+              });
+              
+              console.log('Generated followers table:');
+              console.log(followersTable);
+              
+              // Update the followers.readme.md file
+              const path = './additional-readmes/followers.readme.md';
+              const timestamp = new Date().toLocaleString();
+              
+              // Create the content with a timestamp
+              const content = [
+                '# 👥 Recent Followers',
+                '',
+                `Last updated: ${timestamp}`,
+                '',
+                followersTable,
+                '',
+                '> Note: This list shows your 4 most recent followers and updates every 30 minutes.'
+              ].join('\n');
+              
+              // Write to file
+              fs.writeFileSync(path, content);
+              console.log('Successfully updated followers list');
+              
+              // Commit and push changes if there are any
+              try {
+                // Configure git
+                execSync('git config --global user.name "GitHub Action"');
+                execSync('git config --global user.email "action@github.com"');
+                
+                // Add the changed file
+                execSync('git add additional-readmes/followers.readme.md');
+                
+                // Check if there are changes to commit
+                const status = execSync('git status --porcelain').toString();
+                if (status) {
+                  execSync('git commit -m \"Update followers list\"');
+                  execSync('git push');
+                  console.log('Successfully committed and pushed changes');
+                } else {
+                  console.log('No changes to commit');
+                }
+              } catch (error) {
+                console.error('Error committing changes:', error);
+                core.setFailed(`Failed to commit changes: ${error.message}`);
               }
               
-              // Read the current README
-              const fs = require('fs');
-              const path = require('path');
-              const readmePath = path.join(process.cwd(), 'README.md');
-              let readme = fs.readFileSync(readmePath, 'utf8');
-              
-              // Update the followers section
-              const startMarker = '<!-- followers:start -->';
-              const endMarker = '<!-- followers:end -->';
-              const newContent = `${startMarker}\n${followersTable}\n[View all followers](https://github.com/s009900?tab=followers)\n${endMarker}`;
-              
-              const updatedReadme = readme.replace(
-                new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'g'),
-                newContent
-              );
-              
-              // Write the updated README
-              fs.writeFileSync(readmePath, updatedReadme);
-              console.log('Successfully updated README.md');
-              
-              // Return true to indicate changes were made
-              return true;
-              
             } catch (error) {
-              console.error('Error updating followers:', error);
-              core.setFailed(`Action failed with error: ${error}`);
-              return false;
+              console.error('Action failed with error:', error);
+              core.setFailed(error.message);
             }
-      
-      - name: Commit and push changes
-        if: success()
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git add README.md
-          git diff --quiet && git diff --staged --quiet || \
-            (git commit -m 'docs: update followers list [skip ci]' && \
-             git pull --rebase && \
-             git push origin HEAD:main)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
