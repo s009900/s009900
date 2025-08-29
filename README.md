@@ -103,41 +103,9 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 </tr>
 </tr></tr>
 
-<!-- start statics fun section -->
-<details>
-<summary><b>📊 Cool Stats, Click to Expand</b></summary>
-<div align="center">
+## 📊 GitHub Statistics
 
-### 📈 GitHub Statistics
-<div align="center">
- <img height="180em" src="https://github-readme-stats.vercel.app/api?username=s009900&show_icons=true&theme=dracula&include_all_commits=true" />
- <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=s009900&theme=dracula&layout=compact" />
-</div>
-
-### 🔥 Streak & Activity
-<div align="center">
- <img src="https://github-readme-streak-stats.herokuapp.com/?user=s009900&theme=dracula" />
-</div>
-
-### ⏰ Productivity & Contribution Patterns
-<div align="center">
- <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=s009900&theme=dracula" />
- <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=s009900&theme=dracula" />
-</div>
-
-### 💻 Language Distribution
-<div align="center">
- <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=s009900&theme=dracula" />
- <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=s009900&theme=dracula" />
-</div>
-
-### 📊 Contribution Graph
-<div align="center">
- <img src="https://github-readme-activity-graph.vercel.app/graph?username=s009900&theme=dracula&bg_color=282a36&hide_border=true&line=ff79c6&point=f8f8f2" width="800" style="border-radius: 10px;" />
-</div>
-
-</details>
-<!-- end statics fun section -->
+Check out my detailed [GitHub Statistics](stats.readme.md) page for an in-depth look at my coding activity, including contribution patterns, language distribution, and more!
 
 
 <details>
