@@ -112,12 +112,9 @@ Check out my detailed [GitHub Statistics](stats.readme.md) page for an in-depth 
 
 Check out my [followers page](followers.readme.md) to see who's following my work. Feel free to follow me too!
 
-<details>
-  
-<summary><b>🏆 Trophies</b></summary>
+## 🏆 Trophies
 
-![trophy](https://github-profile-trophy.vercel.app/?username=s009900&margin-w=15&title=-Repositories&theme=dracula)
-</details>
+Check out my [GitHub Trophies](trophies.readme.md) to see my achievements and milestones!
 
 <details><summary><b>👌 3D Graph and Charts</b></summary>
 
