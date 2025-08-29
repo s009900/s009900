@@ -18,7 +18,7 @@ jobs:
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
-          # GitHub token (read-only is enough, no additional permissions required)
+          # Use GitHub token
           token: ${{ secrets.GITHUB_TOKEN }}
           
           # Output configuration
@@ -33,10 +33,21 @@ jobs:
           # Timezone
           config_timezone: America/New_York
           
-          # Languages - show all
+          # Language settings - comprehensive detection
           plugin_languages: yes
-          plugin_languages_skipped: ''  # Empty string shows all languages
-          plugin_languages_limit: 50
+          plugin_languages_skipped: ' '  # Single space means don't skip any
+          plugin_languages_limit: 20
+          plugin_languages_colors: github
+          plugin_languages_ignored: ''  # Don't ignore any languages
+          
+          # Repository settings
+          plugin_repositories: yes
+          plugin_repositories_forks: yes
+          plugin_repositories_affiliations: owner,collaborator
+          
+          # Enable detailed analysis
+          plugin_activity: yes
+          plugin_contributors: yes
           
           # Coding habits
           plugin_habits: yes
