@@ -107,12 +107,12 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 <summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
 
 ### 📊 Stats & Metrics
-- [GitHub Statistics](additional-readmes/stats.readme.md)
-- [GitHub Metrics](additional-readmes/metrics.readme.md)
-- [3D Contribution Graph](additional-readmes/3d-contributions.readme.md)
-- [GitHub Trophies](additional-readmes/trophies.readme.md)
+- [My GitHub Statistics](additional-readmes/stats.readme.md)
+- [My GitHub Metrics](additional-readmes/metrics.readme.md)
+- [My 3D Contribution Graph](additional-readmes/3d-contributions.readme.md)
+- [My GitHub Trophies](additional-readmes/trophies.readme.md)
 - [Star History](additional-readmes/star-history.readme.md)
-- [Word Cloud](additional-readmes/wordcloud.readme.md)
+- [My Word Cloud](additional-readmes/wordcloud.readme.md)
 - [Workflow Thru Life](additional-readmes/workflow.readme.md)
 - [Code Cycle](additional-readmes/code-cycle.readme.md)
 
