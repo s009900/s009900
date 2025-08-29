@@ -1,7 +1,7 @@
 # 🫱🏼‍🫲🏼 Contributors
 
 
-[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=s009900/s009900&max=100&columns=8)](https://github.com/s009900/s009900/graphs/contributors)
 
 ## How to Contribute
 
