@@ -6,17 +6,14 @@
     <td align="center" style="border: none; padding: 20px;">
       <img src="https://raw.githubusercontent.com/s009900/s009900/main/good-spiral-eyes.png" width="120" alt="Broken system!"/>
       <h3>Phase 1: Something BROKE!</h3>
-      <p>That moment when nothing works and you're not sure why. The code was working just a minute ago, right?</p>
     </td>
     <td align="center" style="border: none; padding: 20px;">
       <img src="https://raw.githubusercontent.com/s009900/s009900/main/good-relieved.png" width="120" alt="It's working!"/>
       <h3>Phase 2: It's FINALLY working...</h3>
-      <p>After hours of debugging, the code runs! But you're too afraid to touch anything now.</p>
     </td>
     <td align="center" style="border: none; padding: 20px;">
       <img src="https://raw.githubusercontent.com/s009900/s009900/main/good-astonished.png" width="120" alt="It's working but I don't know how!"/>
       <h3>Phase 3: HOW IS IT WORKING???</h3>
-      <p>The code works, but you have no idea why. You're afraid to change anything now.</p>
     </td>
   </tr>
 </table>
