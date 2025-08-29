@@ -1,24 +1,23 @@
-# 😋 How to Contribute
+# 🫱🏼‍🫲🏼 Contributors
 
-Thank you for considering contributing to my projects! Your support means a lot to me. Here's how you can get involved:
 
-## Show Your Support
+[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
 
-The simplest way to show your support is by **starring** the repository. It's quick, easy, and helps more people discover my work!
+## How to Contribute
 
-## Ways to Contribute
+Want to see yourself here? Here's how you can contribute:
 
-1. **Star the Repository** - It's free and shows your appreciation!
-2. **Open Issues** - Found a bug or have a feature request? Let me know!
-3. **Submit Pull Requests** - Have an improvement? I'd love to see it!
-4. **Spread the Word** - Share my projects with your network
-5. **Provide Feedback** - Your thoughts help me improve
+1. **Fork the repository**
+2. Make your changes or improvements
+3. Submit a pull request
+4. Get it reviewed and merged
+5. Welcome to the contributors list! 🎉
 
-## Getting Started
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Types of Contributions
+
+- **Code Contributions**: Bug fixes, new features, improvements
+- **Documentation**: Improving docs, adding examples
+- **Bug Reports**: File issues for any problems you find
+
 
 [⬅️ Back to main README](README.md)

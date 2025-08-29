@@ -1,14 +1,11 @@
 # 🫱🏼‍🫲🏼 Contributors
 
-A huge thank you to everyone who has contributed to my projects! Your support and contributions are greatly appreciated.
-
-## Current Contributors
 
 [![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
 
 ## How to Contribute
 
-Want to see your name here? Here's how you can contribute:
+Want to see yourself here? Here's how you can contribute:
 
 1. **Fork the repository**
 2. Make your changes or improvements
@@ -21,7 +18,6 @@ Want to see your name here? Here's how you can contribute:
 - **Code Contributions**: Bug fixes, new features, improvements
 - **Documentation**: Improving docs, adding examples
 - **Bug Reports**: File issues for any problems you find
-- **Feature Requests**: Suggest new features or improvements
-- **Testing**: Help test and report issues
+
 
 [⬅️ Back to main README](README.md)

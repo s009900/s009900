@@ -1,8 +1,5 @@
 # 😁 The Developer's Code Cycle
 
-Every developer goes through these phases when working on code. Here's a humorous take on the emotional rollercoaster of programming!
-
-## The Three States of a Developer
 
 <table style="border: none; border-collapse: collapse; margin: 20px auto; width: 100%; max-width: 800px;">
   <tr style="border: none;">
@@ -23,13 +20,5 @@ Every developer goes through these phases when working on code. Here's a humorou
     </td>
   </tr>
 </table>
-
-## The Never-Ending Cycle
-
-1. Write some code
-2. Something breaks
-3. Fix the bug
-4. Something else breaks
-5. GOTO 1
 
 [⬅️ Back to main README](README.md)

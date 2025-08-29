@@ -1,9 +1,5 @@
 # 👥 Followers
 
-Here are some of my recent GitHub followers. Thanks for the support! 🙏
-
-## Recent Followers
-
 | # | Avatar | Username |
 |--:|:------:|:---------|
 | 1 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="32" height="32" alt="jaiq123" /> | [jaiq123](https://github.com/jaiq123) |
