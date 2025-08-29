@@ -263,18 +263,9 @@ The most basic way to show your support is to **star the project**. Thanks!
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
 </div>
 
-## 🎨 Community Word Cloud
+## 📊 Word Cloud
 
-Add a word to my word cloud! (PS: Emojis don't work yet) [Click here to add your word](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud)
-
-<details>
-<summary><b>🔽 Click to Show/Hide Word Cloud</b></summary>
-
-##### Give it like 5 minutes to update, then reload the page after adding a word
-<div align="center">
-  <img src="assets/wordcloud.png?t=1753405750647" alt="Word Cloud" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" id="wordcloud-image">
-</div>
-</details>
+Check out my [Word Cloud](wordcloud.readme.md) to see a visual representation of my GitHub activity! You can also [add a word to the cloud](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud). (Note: Emojis don't work yet)
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=float" width="100%" />
