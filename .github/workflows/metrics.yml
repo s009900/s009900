@@ -24,19 +24,19 @@ jobs:
           # Output configuration
           filename: metrics.classic.svg
           
-          # Base content (enable what you need)
-          base: ""
+          # Base settings
+          base: ""  # Include all repositories
           
           # User metadata
           user: ${{ github.repository_owner }}
           
-          # Metrics to include
+          # Timezone
           config_timezone: America/New_York
           
-          # Top languages
+          # Languages - show all
           plugin_languages: yes
-          plugin_languages_skipped: html,css,scss,less,stylus,shell,batchfile,dockerfile,procfile,makefile
-          plugin_languages_limit: 10
+          plugin_languages_skipped: ''  # Empty string shows all languages
+          plugin_languages_limit: 50
           
           # Coding habits
           plugin_habits: yes
