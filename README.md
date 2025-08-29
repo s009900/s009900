@@ -28,7 +28,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
 
-![GitHub Snake Light](https://raw.githubusercontent.com/s009900/s009900/main/dist/default-snake.svg)
+![GitHub Snake Light](https://raw.githubusercontent.com/s009900/s009900/output/github-contribution-grid-snake.svg)
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
 
