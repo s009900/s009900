@@ -124,69 +124,25 @@ Check out my [3D Contribution Graph](3d-contributions.readme.md) for an interact
 
 Ever wonder what goes through a developer's mind? Check out my [Code Cycle](code-cycle.readme.md) to see the emotional rollercoaster of programming!
 
-<details><summary><b>⛽ Metrics</b></summary>
+## 📊 GitHub Metrics
 
-![Metrics](metrics.classic.svg)
+Check out my [GitHub Metrics](metrics.readme.md) for a detailed overview of my coding activity and statistics!
 
-</details>
+## 🔄 Development Workflow
 
-<details>
-<summary><b>🔄 Workflow Through Life</b></summary>
+Ever wondered how I approach problem-solving? Check out my [Development Workflow](workflow.readme.md) to see my process in action!
 
-```mermaid
-flowchart LR
-    %% Set the overall direction
-    direction LR
+## 😋 How to Contribute
 
-    %% Subgraph 1
-    subgraph S1 [ ]
-        direction TB
-        top1["s009900's-Profile - did it!"] --> bottom1["Ask s009900 🤝"]
-    end
+Interested in contributing? Learn how you can get involved on my [Contributions](contributions.readme.md) page!
 
-    %% Subgraph 2
-    subgraph S2 [ ]
-        direction TB
-        top2["Google Endlessly 🔎"] --> bottom2["Waste Time ⌛"]
-    end
+## 🫱🏼‍🫲🏼 Our Amazing Contributors
 
-    %% Entry point
-    D["Discover Problem 🐛"] --> S1
-    D --> S2
+A big thank you to all our [contributors](contributors.readme.md)! Your support means the world to me. Join them by submitting your first PR!
 
-    S1 --> SC["Succeed 📈"]
-    S2 --> CRY["Cry 😢"]
+## ⭐ Star History
 
-    click top1 "https://www.github.com/s009900/" "Visit Github Profile"
-    style S1 stroke:#072ff7,stroke-width:5px
-    style S2 stroke:#f70707,stroke-width:5px
-```
-</details>
-
-<details>
-<summary><b>😋 Contributions</b></summary>
-Want to contribute? Awesome! 
-  
-The most basic way to show your support is to **star the project**. Thanks! 
-</details>
-
-<details>
-<summary><b>🫱🏼‍🫲🏼 Contributors - You can be one too! Just fork and submit a PR with your changes</b></summary>
-  
-[![Contributors](https://contrib.rocks/image?repo=s009900/s009900)](https://github.com/s009900/s009900/graphs/contributors)
-
-</details>
-
-<details><summary><b>⭐ Star History Chart</b></summary>
-
-[![Star History Chart](https://api.star-history.com/svg?repos=s009900/s009900&type=Date)](https://star-history.com/#s009900/s009900&Date)
-
-#### Remember to <img width="25" height="25" alt="471539974-44bb4a54-9912-4e55-8037-30733059bf13" src="https://github.com/user-attachments/assets/9f8636dd-22dc-4507-a91b-6e4fc0996849" /> if you like this repo!
-
-
-</details>
-
-</details>
+Check out the [Star History](star-history.readme.md) of this repository to see how it's grown over time with the support of amazing people like you!
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
