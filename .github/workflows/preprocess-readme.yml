@@ -1,0 +1,66 @@
+name: Preprocess README for GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4
+          
+      - name: Process README for GitHub Pages
+        run: |
+          # Create a copy of the README for GitHub Pages
+          cp README.md README.gh-pages.md
+          
+          # Process the GitHub Pages version to remove dropdowns
+          python -c "
+          import re
+          
+          # Read the README
+          with open('README.gh-pages.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+          
+          # Remove the details/summary tags but keep their content
+          processed = re.sub(r'<details[^>]*>\s*<summary[^>]*>.*?</summary>\s*', '', content)
+          processed = processed.replace('</details>', '')
+          
+          # Write the processed content back
+          with open('README.gh-pages.md', 'w', encoding='utf-8') as f:
+              f.write(processed)
+          "
+          
+          # Rename files for GitHub Pages
+          mv README.md README.original.md
+          mv README.gh-pages.md README.md
+          
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
+          branch: gh-pages
+          clean: true
+          clean-exclude: |
+            README.original.md
+          
+      - name: Restore original README
+        if: always()
+        run: |
+          # Restore the original README
+          mv README.original.md README.md
