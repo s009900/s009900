@@ -45,14 +45,6 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: yes
           
-          # Activity and stats
-          plugin_activity: yes
-          plugin_activity_limit: 30
-          plugin_activity_days: 30
-          
-          # Detailed stats
-          plugin_contributors: yes
-          
           # Lines of code
           plugin_lines: yes
           
