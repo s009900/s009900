@@ -103,32 +103,25 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 </tr>
 </tr></tr>
 
+<details open>
+<summary><b>📂 Explore My GitHub Profile</b> (Click to expand/collapse)</summary>
+
 ## 📊 GitHub Statistics
 
 Check out my detailed [GitHub Statistics](stats.readme.md) page for an in-depth look at my coding activity, including contribution patterns, language distribution, and more!
 
-
-<details>
-<summary><b>📊 GitHub Stats & Metrics</b></summary>
-
+### 📊 Stats & Metrics
 - [GitHub Metrics](metrics.readme.md) - Detailed overview of my coding activity and statistics
 - [3D Contribution Graph](3d-contributions.readme.md) - Interactive visualization of my GitHub activity
 - [GitHub Trophies](trophies.readme.md) - My achievements and milestones
 - [Star History](star-history.readme.md) - Repository growth over time
+- [Word Cloud](wordcloud.readme.md) - Visual representation of my GitHub activity
 
-</details>
-
-<details>
-<summary><b>🚀 Development & Workflow</b></summary>
-
+### 🚀 Development
 - [Development Workflow](workflow.readme.md) - My problem-solving approach and process
 - [Code Cycle](code-cycle.readme.md) - The emotional rollercoaster of programming
 
-</details>
-
-<details>
-<summary><b>🤝 Community & Contributions</b></summary>
-
+### 🤝 Community
 - [How to Contribute](contributions.readme.md) - Get involved in the project
 - [Our Amazing Contributors](contributors.readme.md) - Meet the people who made this possible
 - [Recent Followers](followers.readme.md) - See who's following my work
