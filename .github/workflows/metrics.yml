@@ -32,22 +32,34 @@ jobs:
           
           # Metrics to include
           config_timezone: America/New_York
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          
+          # Top languages
           plugin_languages: yes
-          plugin_languages_ignored: html,css,scss,less,stylus,shell,batchfile,dockerfile,procfile,makefile
+          plugin_languages_skipped: html,css,scss,less,stylus,shell,batchfile,dockerfile,procfile,makefile
+          plugin_languages_limit: 10
+          
+          # Coding habits
           plugin_habits: yes
-          plugin_habits_from: 100
-          plugin_habits_days: 14
+          plugin_habits_from: 200  # Look at last 200 days
+          plugin_habits_days: 30   # Show last 30 days
           plugin_habits_facts: yes
           plugin_habits_charts: yes
-          plugin_stars: yes
+          
+          # Activity and stats
+          plugin_activity: yes
+          plugin_activity_limit: 30
+          plugin_activity_days: 30
+          
+          # Detailed stats
+          plugin_contributors: yes
+          
+          # Lines of code
+          plugin_lines: yes
+          
+          # Additional metrics
           plugin_people: yes
-          plugin_people_size: 28
+          plugin_stars: yes
           plugin_followup: yes
-          plugin_traffic: yes
-          plugin_stargazers: yes
-          plugin_stargazers_charts: yes
           
           # Output settings
           config_display: large
