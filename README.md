@@ -108,41 +108,32 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 Check out my detailed [GitHub Statistics](stats.readme.md) page for an in-depth look at my coding activity, including contribution patterns, language distribution, and more!
 
 
-## 👥 Followers
+<details>
+<summary><b>📊 GitHub Stats & Metrics</b></summary>
 
-Check out my [followers page](followers.readme.md) to see who's following my work. Feel free to follow me too!
+- [GitHub Metrics](metrics.readme.md) - Detailed overview of my coding activity and statistics
+- [3D Contribution Graph](3d-contributions.readme.md) - Interactive visualization of my GitHub activity
+- [GitHub Trophies](trophies.readme.md) - My achievements and milestones
+- [Star History](star-history.readme.md) - Repository growth over time
 
-## 🏆 Trophies
+</details>
 
-Check out my [GitHub Trophies](trophies.readme.md) to see my achievements and milestones!
+<details>
+<summary><b>🚀 Development & Workflow</b></summary>
 
-## 📊 3D Contribution Graph
+- [Development Workflow](workflow.readme.md) - My problem-solving approach and process
+- [Code Cycle](code-cycle.readme.md) - The emotional rollercoaster of programming
 
-Check out my [3D Contribution Graph](3d-contributions.readme.md) for an interactive visualization of my GitHub activity!
+</details>
 
-## 😁 The Developer's Code Cycle
+<details>
+<summary><b>🤝 Community & Contributions</b></summary>
 
-Ever wonder what goes through a developer's mind? Check out my [Code Cycle](code-cycle.readme.md) to see the emotional rollercoaster of programming!
+- [How to Contribute](contributions.readme.md) - Get involved in the project
+- [Our Amazing Contributors](contributors.readme.md) - Meet the people who made this possible
+- [Recent Followers](followers.readme.md) - See who's following my work
 
-## 📊 GitHub Metrics
-
-Check out my [GitHub Metrics](metrics.readme.md) for a detailed overview of my coding activity and statistics!
-
-## 🔄 Development Workflow
-
-Ever wondered how I approach problem-solving? Check out my [Development Workflow](workflow.readme.md) to see my process in action!
-
-## 😋 How to Contribute
-
-Interested in contributing? Learn how you can get involved on my [Contributions](contributions.readme.md) page!
-
-## 🫱🏼‍🫲🏼 Our Amazing Contributors
-
-A big thank you to all our [contributors](contributors.readme.md)! Your support means the world to me. Join them by submitting your first PR!
-
-## ⭐ Star History
-
-Check out the [Star History](star-history.readme.md) of this repository to see how it's grown over time with the support of amazing people like you!
+</details>
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
@@ -152,11 +143,6 @@ Check out the [Star History](star-history.readme.md) of this repository to see h
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
 </div>
-
-## 📊 Word Cloud
-
-Check out my [Word Cloud](wordcloud.readme.md) to see a visual representation of my GitHub activity! You can also [add a word to the cloud](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml&title=Add+word+to+word+cloud). (Note: Emojis don't work yet)
-
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=float" width="100%" />
 </div>
