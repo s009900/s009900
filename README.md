@@ -106,7 +106,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 </tr></tr>
 
 <details open>
-<summary><b>📂 More stats</b> (Click to expand/collapse)</summary>
+<summary><b>📂 More fun stuff</b> (Click to expand/collapse)</summary>
 
 ### 📊 Stats & Metrics
 - [GitHub Statistics](additional-readmes/stats.readme.md)
