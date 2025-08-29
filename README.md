@@ -107,19 +107,19 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 <summary><b>📂 Explore My GitHub Profile</b> (Click to expand/collapse)</summary>
 
 ### 📊 Stats & Metrics
-- [GitHub Statistics](stats.readme.md)
-- [GitHub Metrics](metrics.readme.md)
-- [3D Contribution Graph](3d-contributions.readme.md)
-- [GitHub Trophies](trophies.readme.md)
-- [Star History](star-history.readme.md)
-- [Word Cloud](wordcloud.readme.md)
-- [Workflow Thru Life](workflow.readme.md)
-- [Code Cycle](code-cycle.readme.md)
+- [GitHub Statistics](additional-readmes/stats.readme.md)
+- [GitHub Metrics](additional-readmes/metrics.readme.md)
+- [3D Contribution Graph](additional-readmes/3d-contributions.readme.md)
+- [GitHub Trophies](additional-readmes/trophies.readme.md)
+- [Star History](additional-readmes/star-history.readme.md)
+- [Word Cloud](additional-readmes/wordcloud.readme.md)
+- [Workflow Thru Life](additional-readmes/workflow.readme.md)
+- [Code Cycle](additional-readmes/code-cycle.readme.md)
 
 ### 🤝 Community
-- [How to Contribute](contributions.readme.md)
-- [Our Amazing Contributors](contributors.readme.md)
-- [Recent Followers](followers.readme.md)
+- [How to Contribute](additional-readmes/contributions.readme.md)
+- [Our Amazing Contributors](additional-readmes/contributors.readme.md)
+- [Recent Followers](additional-readmes/followers.readme.md)
 
 </details>
 
