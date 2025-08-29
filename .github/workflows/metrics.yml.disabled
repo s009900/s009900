@@ -1,0 +1,20 @@
+# Disabled GitHub Metrics Workflow
+# This file is intentionally left empty as the workflow is currently disabled.
+# To re-enable, uncomment and configure the workflow below.
+
+# name: Metrics
+# on:
+#   schedule:
+#     - cron: "0 0 * * *"  # Runs daily at midnight
+#   workflow_dispatch:  # Allows manual triggering
+#   push:
+#     branches: ["master", "main"]
+# jobs:
+#   github-metrics:
+#     runs-on: ubuntu-latest
+#     environment: production
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Generate GitHub metrics
+#         uses: lowlighter/metrics@latest
