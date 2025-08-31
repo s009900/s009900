@@ -10,4 +10,4 @@ Last updated: 8/31/2025, 4:19:48 PM
 | 4 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="50" height="50" alt="as000010000" /> | [@as000010000](https://github.com/as000010000) |
 
 
-> Note: This list shows your 4 most recent followers and updates every 30 minutes.
+> Note: This list shows my 4 most recent followers and updates every 30 minutes.
