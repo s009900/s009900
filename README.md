@@ -105,6 +105,8 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 
 <details open>
 <summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
+  
+#####                                                 [Check them all out here](https://github.com/s009900/s009900/tree/main/additional-readmes)
 
 ### 📊 Stats & Metrics
 - [My GitHub Statistics](additional-readmes/stats.readme.md)
