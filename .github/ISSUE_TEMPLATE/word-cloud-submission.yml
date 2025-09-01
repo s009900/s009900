@@ -1,5 +1,5 @@
 name: "📫 Add Word to Word Cloud"
-description: "Submit a word to be added to the community word cloud"
+description: "Submit a word to be added to the community word cloud below"
 title: "Add word to word cloud: Need ideas? What would you absolutely put on a programming bumper sticker?"
 labels: ["word-cloud"]
 body:
