@@ -31,13 +31,8 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 
 ## 📊 Word Cloud
 
-Here's a visual representation of the most common words from my GitHub activity:
-
 ![Word Cloud](https://raw.githubusercontent.com/s009900/s009900/main/assets/wordcloud.png)
 
-This word cloud is automatically generated based on my repositories and contributions. The size of each word represents its frequency in my code and documentation.
-
-*Last updated: August 2023*
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
 
