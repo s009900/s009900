@@ -2,9 +2,9 @@ name: Update Followers List
 
 on:
   schedule:
-    # Runs every 30 minutes
-    - cron: '*/30 * * * *'
-  workflow_dispatch:  # Allows manual triggering
+    # Runs daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-followers:
@@ -13,104 +13,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-      
-      - name: Update Followers List
+
+      - name: Update Followers
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { execSync } = require('child_process');
-            const fs = require('fs');
-            
-            try {
-              console.log('Current directory:', process.cwd());
-              console.log('Repository contents:', execSync('ls -la').toString());
-              
-              console.log('Fetching latest followers...');
-              // Get the 4 most recent followers
-              const { data: followers } = await github.rest.users.listFollowersForUser({
-                username: 's009900',
-                per_page: 4,
-                headers: {
-                  'X-GitHub-Api-Version': '2022-11-28'
-                }
-              });
-              
-              console.log(`Found ${followers.length} followers`);
-              
-              // Generate the followers table rows
-              let followersTable = '';
-              
-              followers.forEach((follower, index) => {
-                followersTable += `| ${index + 1} | <img src="${follower.avatar_url}" width="50" height="50" alt="${follower.login}" /> | [@${follower.login}](${follower.html_url}) |\n`;
-              });
-              
-              console.log('Generated followers table:');
-              console.log('| # | Avatar | Username |\n|--:|:------:|:---------|\n' + followersTable);
-              
-              // Update the followers.readme.md file
-              const followersPath = 'additional-readmes/followers.readme.md';
-              const timestamp = new Date().toLocaleString();
-              
-              const followersContent = [
-                '# 👥 Recent Followers',
-                '',
-                `Last updated: ${timestamp}`,
-                '',
-                '| # | Avatar | Username |',
-                '|--:|:------:|:---------|',
-                followersTable.trim(),
-                '',
-              ].join('\n');
-              
-              // Ensure the directory exists
-              const dir = 'additional-readmes';
-              if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-              }
-              
-              // Write the file
-              fs.writeFileSync(followersPath, followersContent);
-              console.log('Successfully updated followers list');
-              
-              // Verify file was written
-              console.log('File contents after write:', fs.readFileSync(followersPath, 'utf8'));
-              
-              // Configure git
-              execSync('git config --global user.name "GitHub Action"');
-              execSync('git config --global user.email "action@github.com"');
-              
-              // Add all changes
-              execSync('git add .');
-              
-              // Check status
-              console.log('Git status:', execSync('git status').toString());
-              
-              // Commit changes
-              try {
-                execSync('git commit -m "Update followers list"');
-                console.log('Changes committed successfully');
-                
-                // Push changes using the token
-                const token = process.env.GITHUB_TOKEN || '${{ secrets.GITHUB_TOKEN }}';
-                const repo = process.env.GITHUB_REPOSITORY;
-                const branch = process.env.GITHUB_REF?.replace('refs/heads/', '') || 'main';
-                
-                console.log(`Pushing to ${repo} on branch ${branch}`);
-                execSync(`git push https://x-access-token:${token}@github.com/${repo}.git HEAD:${branch}`);
-                console.log('Successfully pushed changes');
-              } catch (commitError) {
-                if (commitError.message.includes('nothing to commit')) {
-                  console.log('No changes to commit');
-                } else {
-                  console.error('Error committing changes:', commitError);
-                  throw commitError;
-                }
-              }
-            } catch (error) {
-              console.error('Action failed with error:', error);
-              core.setFailed(error.message);
-            }
+            const { data: followers } = await github.rest.users.listFollowersForUser({
+              username: 's009900',
+              per_page: 4,
+              headers: {'X-GitHub-Api-Version': '2022-11-28'}
+            });
+
+            let tableContent = `| # | Avatar | Username |\n|--:|:------:|:---------|\n`;
+            followers.forEach((follower, index) => {
+              tableContent += `| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |\n`;
+            });
+
+            const content = [
+              '## 👥 Recent Followers',
+              `_Last updated: ${new Date().toUTCString()}_`,
+              '',
+              tableContent,
+              '_✨ Updated daily via GitHub Actions_'
+            ].join('\n');
+
+            fs.writeFileSync('followers.md', content);
+
+      - name: Commit & Push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add followers.md
+          git commit -m "Update followers list" || echo "No changes to commit"
+          git push
