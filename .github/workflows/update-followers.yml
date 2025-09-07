@@ -106,14 +106,10 @@ jobs:
                 if (commitError.message.includes('nothing to commit')) {
                   console.log('No changes to commit');
                 } else {
+                  console.error('Error committing changes:', commitError);
                   throw commitError;
                 }
               }
-              } catch (error) {
-                console.error('Error committing changes:', error);
-                core.setFailed(`Failed to commit changes: ${error.message}`);
-              }
-              
             } catch (error) {
               console.error('Action failed with error:', error);
               core.setFailed(error.message);
