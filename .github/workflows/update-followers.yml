@@ -24,7 +24,6 @@ jobs:
           script: |
             const { execSync } = require('child_process');
             const fs = require('fs');
-            const core = require('@actions/core');
             
             try {
               console.log('Current directory:', process.cwd());
