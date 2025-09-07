@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
       
       - name: Update Followers List
         uses: actions/github-script@v6
@@ -22,8 +24,12 @@ jobs:
           script: |
             const { execSync } = require('child_process');
             const fs = require('fs');
+            const core = require('@actions/core');
             
             try {
+              console.log('Current directory:', process.cwd());
+              console.log('Repository contents:', execSync('ls -la').toString());
+              
               console.log('Fetching latest followers...');
               // Get the 4 most recent followers
               const { data: followers } = await github.rest.users.listFollowersForUser({
@@ -61,27 +67,49 @@ jobs:
                 '',
               ].join('\n');
               
+              // Ensure the directory exists
+              const dir = 'additional-readmes';
+              if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
+              }
+              
+              // Write the file
               fs.writeFileSync(followersPath, followersContent);
               console.log('Successfully updated followers list');
               
-              // Commit and push changes if there are any
+              // Verify file was written
+              console.log('File contents after write:', fs.readFileSync(followersPath, 'utf8'));
+              
+              // Configure git
+              execSync('git config --global user.name "GitHub Action"');
+              execSync('git config --global user.email "action@github.com"');
+              
+              // Add all changes
+              execSync('git add .');
+              
+              // Check status
+              console.log('Git status:', execSync('git status').toString());
+              
+              // Commit changes
               try {
-                // Configure git
-                execSync('git config --global user.name "GitHub Action"');
-                execSync('git config --global user.email "action@github.com"');
+                execSync('git commit -m "Update followers list"');
+                console.log('Changes committed successfully');
                 
-                // Add the changed files
-                execSync('git add additional-readmes/followers.readme.md');
+                // Push changes using the token
+                const token = process.env.GITHUB_TOKEN || '${{ secrets.GITHUB_TOKEN }}';
+                const repo = process.env.GITHUB_REPOSITORY;
+                const branch = process.env.GITHUB_REF?.replace('refs/heads/', '') || 'main';
                 
-                // Configure git to use the GitHub token for authentication
-                const remoteRepo = `https://${process.env.GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${process.env.GITHUB_REPOSITORY}.git`;
-                
-                // Commit the changes
-                execSync('git commit -m "Update followers list" || echo "No changes to commit"');
-                
-                // Push the changes
-                execSync(`git push ${remoteRepo} HEAD:${process.env.GITHUB_REF} --force`);
-                console.log('Successfully committed and pushed changes');
+                console.log(`Pushing to ${repo} on branch ${branch}`);
+                execSync(`git push https://x-access-token:${token}@github.com/${repo}.git HEAD:${branch}`);
+                console.log('Successfully pushed changes');
+              } catch (commitError) {
+                if (commitError.message.includes('nothing to commit')) {
+                  console.log('No changes to commit');
+                } else {
+                  throw commitError;
+                }
+              }
               } catch (error) {
                 console.error('Error committing changes:', error);
                 core.setFailed(`Failed to commit changes: ${error.message}`);
