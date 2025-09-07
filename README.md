@@ -101,9 +101,10 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 
 ![Word Cloud](https://raw.githubusercontent.com/s009900/s009900/main/assets/wordcloud.png)
 
-[View in full detail](additional-readmes/wordcloud.readme.md)
+[Add a Word to the Word Cloud](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml)
 
-<details open>
+
+<details>
 <summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
   
 #####                                                 [Check them all out here](https://github.com/s009900/s009900/tree/main/additional-readmes)
