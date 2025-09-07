@@ -1,6 +1,6 @@
 # 👥 Recent Followers
 
-Last updated: 9/7/2025, 2:17:21 PM
+Last updated: 9/7/2025, 2:35:43 PM
 
 | # | Avatar | Username |
 |--:|:------:|:---------|
@@ -11,5 +11,3 @@ Last updated: 9/7/2025, 2:17:21 PM
 | 3 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="50" height="50" alt="ez0000001000000" /> | [@ez0000001000000](https://github.com/ez0000001000000) |
 | 4 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="50" height="50" alt="as000010000" /> | [@as000010000](https://github.com/as000010000) |
 
-
-> This list shows your 4 most recent followers and updates every 30 minutes.
