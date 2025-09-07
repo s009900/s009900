@@ -59,7 +59,6 @@ jobs:
                 '|--:|:------:|:---------|',
                 followersTable,
                 '',
-                '> This list shows your 4 most recent followers and updates every 30 minutes.'
               ].join('\n');
               
               fs.writeFileSync(followersPath, followersContent);
@@ -74,15 +73,15 @@ jobs:
                 // Add the changed files
                 execSync('git add additional-readmes/followers.readme.md');
                 
-                // Check if there are changes to commit
-                const status = execSync('git status --porcelain').toString();
-                if (status) {
-                  execSync('git commit -m \"Update followers list\"');
-                  execSync('git push');
-                  console.log('Successfully committed and pushed changes');
-                } else {
-                  console.log('No changes to commit');
-                }
+                // Configure git to use the GitHub token for authentication
+                const remoteRepo = `https://${process.env.GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${process.env.GITHUB_REPOSITORY}.git`;
+                
+                // Commit the changes
+                execSync('git commit -m "Update followers list" || echo "No changes to commit"');
+                
+                // Push the changes
+                execSync(`git push ${remoteRepo} HEAD:${process.env.GITHUB_REF} --force`);
+                console.log('Successfully committed and pushed changes');
               } catch (error) {
                 console.error('Error committing changes:', error);
                 core.setFailed(`Failed to commit changes: ${error.message}`);
