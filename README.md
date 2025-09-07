@@ -24,7 +24,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 
 # <img width="50" height="50" alt="471540330-b492ebbe-1847-4a3b-9401-14fda1d869e6" src="https://github.com/user-attachments/assets/838454fd-d739-4127-b6f7-5be935d446e1" /> s009900
 # ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!) -->
-<img align="left" src="https://raw.githubusercontent.com/s009900/s009900/main/assets/emojis/Penguin.png" alt="Penguin" width="15%" /><br>
+<img align="right" src="https://raw.githubusercontent.com/s009900/s009900/main/assets/emojis/Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
