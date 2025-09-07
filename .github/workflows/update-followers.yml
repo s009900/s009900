@@ -46,50 +46,24 @@ jobs:
               console.log('Generated followers table:');
               console.log(followersTable);
               
-              // Update the README.md directly
-              const readmePath = 'README.md';
-              const readmeContent = fs.readFileSync(readmePath, 'utf8');
+              // Update the followers.readme.md file
+              const followersPath = 'additional-readmes/followers.readme.md';
               const timestamp = new Date().toLocaleString();
               
-              // Create the followers section
-              const followersSection = [
-                '### 🤝 Community',
-                '- [How to Contribute](additional-readmes/contributions.readme.md)',
-                '- [Our Amazing Contributors](additional-readmes/contributors.readme.md)',
-                '- [Recent Followers](additional-readmes/followers.readme.md)',
-                '',
-                '#### 👥 Recent Followers',
-                `*Last updated: ${timestamp}*`, 
-                '',
-                followersTable,
-                '',
-                '> Note: This list shows your 4 most recent followers and updates every 30 minutes.',
-                ''
-              ].join('\n');
-              
-              // Replace the existing community section
-              const updatedReadme = readmeContent.replace(
-                /### 🤝 Community[\s\S]*?(?=### |<\/details>|$)/,
-                followersSection
-              );
-              
-              // Write back to README.md
-              fs.writeFileSync(readmePath, updatedReadme);
-              console.log('Successfully updated README with followers');
-              
-              // Also update the followers.readme.md file for reference
-              const followersPath = 'additional-readmes/followers.readme.md';
               const followersContent = [
                 '# 👥 Recent Followers',
                 '',
                 `Last updated: ${timestamp}`,
                 '',
+                '| # | Avatar | Username |',
+                '|--:|:------:|:---------|',
                 followersTable,
                 '',
-                '> Note: This list shows your 4 most recent followers and updates every 30 minutes.'
+                '> This list shows your 4 most recent followers and updates every 30 minutes.'
               ].join('\n');
               
               fs.writeFileSync(followersPath, followersContent);
+              console.log('Successfully updated followers list');
               
               // Commit and push changes if there are any
               try {
@@ -98,7 +72,7 @@ jobs:
                 execSync('git config --global user.email "action@github.com"');
                 
                 // Add the changed files
-                execSync('git add README.md additional-readmes/followers.readme.md');
+                execSync('git add additional-readmes/followers.readme.md');
                 
                 // Check if there are changes to commit
                 const status = execSync('git status --porcelain').toString();
