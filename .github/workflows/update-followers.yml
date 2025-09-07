@@ -41,15 +41,15 @@ jobs:
               
               console.log(`Found ${followers.length} followers`);
               
-              // Generate the followers table
-              let followersTable = '| # | Avatar | Username |\n|--:|:------:|:---------|\n';
+              // Generate the followers table rows
+              let followersTable = '';
               
               followers.forEach((follower, index) => {
                 followersTable += `| ${index + 1} | <img src="${follower.avatar_url}" width="50" height="50" alt="${follower.login}" /> | [@${follower.login}](${follower.html_url}) |\n`;
               });
               
               console.log('Generated followers table:');
-              console.log(followersTable);
+              console.log('| # | Avatar | Username |\n|--:|:------:|:---------|\n' + followersTable);
               
               // Update the followers.readme.md file
               const followersPath = 'additional-readmes/followers.readme.md';
@@ -62,7 +62,7 @@ jobs:
                 '',
                 '| # | Avatar | Username |',
                 '|--:|:------:|:---------|',
-                followersTable,
+                followersTable.trim(),
                 '',
               ].join('\n');
               
