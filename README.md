@@ -115,6 +115,8 @@ This word cloud is automatically generated based on my repositories and contribu
 
 <details open>
 <summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
+  
+#####                                                 [Check them all out here](https://github.com/s009900/s009900/tree/main/additional-readmes)
 
 ### 📊 Stats & Metrics
 - [My GitHub Statistics](additional-readmes/stats.readme.md)
@@ -142,5 +144,5 @@ This word cloud is automatically generated based on my repositories and contribu
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
 </div>
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=14,18,20,24,28&height=120&section=footer&animation=float" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=120&section=footer&animation=float" width="100%" />
 </div>

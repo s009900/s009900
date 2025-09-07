@@ -1,21 +1,21 @@
-name: "Add Word to Word Cloud"
-description: "Submit a word to be added to the community word cloud"
-title: "Add word to word cloud: What would you absolutely put on a programming bumper sticker?"
+name: "📫 Add Word to Word Cloud"
+description: "Submit a word to be added to the community word cloud below"
+title: "Add word to word cloud: Need ideas? What would you absolutely put on a programming bumper sticker?"
 labels: ["word-cloud"]
 body:
   - type: markdown
     attributes:
       value: |
-        ### Add a word to the word cloud!
+        ### Add a word to the word cloud! Need ideas? What would you absolutely put on a programming bumper sticker?
         
-        Your word will be added to the word cloud in my README. Keep it clean and appropriate!
+        Your word will be added to the word cloud in my README. Give it a minute or two to update, then reload the page.
   
   - type: input
     id: word
     attributes:
       label: "Word to Add"
-      description: "Enter a single word to add to the word cloud"
-      placeholder: "Your word goes here. 👇"
+      description: "Enter a single word to add to the word cloud 👇"
+      placeholder: "Your word goes here. 👉"
     validations:
       required: true
       
