@@ -16,58 +16,40 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Recent Followers
-        uses: actions/github-script@v6
         id: get-followers
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { core } = require('@actions/core');
             const { github } = require('@actions/github');
             
             try {
-              // Get ALL followers to find the most recent ones
-              const allFollowers = [];
-              let page = 1;
-              let hasNextPage = true;
-              
-              console.log('Fetching all followers to find most recent ones...');
-              
-              while (hasNextPage && allFollowers.length < 100) { // Limit to 100 for safety
-                const response = await github.rest.users.listFollowersForUser({
-                  username: 's009900',
-                  per_page: 100,
-                  page: page,
-                  headers: {'X-GitHub-Api-Version': '2022-11-28'}
-                });
-                
-                if (response.data.length === 0) {
-                  hasNextPage = false;
-                } else {
-                  allFollowers.push(...response.data);
-                  console.log(`Fetched page ${page}: ${response.data.length} followers`);
-                  page++;
-                  // Add small delay to avoid rate limiting
-                  await new Promise(resolve => setTimeout(resolve, 100));
-                }
-              }
-              
-              console.log(`Found ${allFollowers.length} total followers`);
-              
-              // Sort by most recent (reverse the array since GitHub returns oldest first)
-              const recentFollowers = [...allFollowers].reverse().slice(0, 4);
-              
-              console.log('Most recent followers:', recentFollowers.map(f => f.login));
-              
-              // Generate table content
-              let tableContent = `| # | Avatar | Username |\n|--:|:------:|:---------|\n`;
-              recentFollowers.forEach((follower, index) => {
-                tableContent += `| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |\n`;
+              // Get the most recent followers (GitHub returns them in reverse chronological order)
+              const response = await github.rest.users.listFollowersForUser({
+                username: 's009900',
+                per_page: 4, // Only get the 4 most recent
+                headers: {'X-GitHub-Api-Version': '2022-11-28'}
               });
               
-              // Store as output for next step
-              core.setOutput('followersTable', tableContent);
-              core.setOutput('followersCount', allFollowers.length);
-              console.log('Followers table generated successfully');
+              const recentFollowers = response.data;
+              console.log(`Found ${recentFollowers.length} recent followers`);
+              
+              // Get the total number of followers
+              const userResponse = await github.rest.users.getByUsername({
+                username: 's009900'
+              });
+              const totalFollowers = userResponse.data.followers;
+              
+              // Generate table rows
+              let tableRows = [];
+              recentFollowers.forEach((follower, index) => {
+                tableRows.push(`| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |`);
+              });
+              
+              // Set outputs
+              core.setOutput('tableRows', tableRows.join('\n'));
+              core.setOutput('totalFollowers', totalFollowers);
+              console.log('Followers data prepared successfully');
               
             } catch (error) {
               console.error('Error fetching followers:', error);
@@ -76,20 +58,25 @@ jobs:
 
       - name: Update Followers README
         run: |
-          # Get the generated table from previous step
-          FOLLOWERS_TABLE="${{ steps.get-followers.outputs.followersTable }}"
-          TOTAL_FOLLOWERS="${{ steps.get-followers.outputs.followersCount }}"
-          TIMESTAMP=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
+          # Get the generated table rows and total followers from previous step
+          TABLE_ROWS="${{ steps.get-followers.outputs.tableRows }}"
+          TOTAL_FOLLOWERS="${{ steps.get-followers.outputs.totalFollowers }}"
+          TIMESTAMP=$(date -u +"%a, %d %b %Y %H:%%M:%S GMT")
           
           echo "Updating followers README with $TOTAL_FOLLOWERS total followers..."
           
-          # Create the followers content with escaped newlines
+          # Create the directory if it doesn't exist
+          mkdir -p additional-readmes
+          
+          # Create the followers content
           {
             echo "# 👥 Recent Followers"
             echo ""
             echo "_Last updated: ${TIMESTAMP}_"
             echo ""
-            echo "$FOLLOWERS_TABLE"
+            echo "| # | Avatar | Username |"
+            echo "|--:|:------:|:---------|"
+            echo "$TABLE_ROWS"
             echo ""
             echo "_Showing 4 most recent of ${TOTAL_FOLLOWERS} total followers_"
             echo ""
