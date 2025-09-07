@@ -17,54 +17,51 @@ jobs:
 
       - name: Get Recent Followers
         id: get-followers
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          result-encoding: string
-          script: |
-            const { github, context } = require('@actions/github');
-            const core = require('@actions/core');
+        run: |
+          # Get the most recent followers
+          FOLLOWERS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/users/s009900/followers?per_page=4")
+          
+          # Get total followers count
+          USER_INFO_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/users/s009900")
+          
+          # Parse the JSON responses
+          TOTAL_FOLLOWERS=$(echo "$USER_INFO_JSON" | jq -r '.followers')
+          
+          # Generate the table rows
+          TABLE_ROWS=""
+          INDEX=1
+          
+          echo "$FOLLOWERS_JSON" | jq -r '.[] | [.login, .avatar_url, .html_url] | @tsv' | while IFS=$'\t' read -r login avatar_url html_url; do
+            TABLE_ROWS+="| $INDEX | <img src=\"$avatar_url\" width=\"50\" height=\"50\" /> | [@$login]($html_url) |"$'\n'
+            # Save the table rows to a file to persist outside the loop
+            echo "$TABLE_ROWS" > /tmp/followers_table.txt
             
-            try {
-              // Get the most recent followers (GitHub returns them in reverse chronological order)
-              const response = await github.rest.users.listFollowersForUser({
-                username: context.repo.owner,
-                per_page: 4, // Only get the 4 most recent
-                headers: {'X-GitHub-Api-Version': '2022-11-28'}
-              });
-              
-              const recentFollowers = response.data;
-              console.log(`Found ${recentFollowers.length} recent followers`);
-              
-              // Get the total number of followers
-              const userResponse = await github.rest.users.getByUsername({
-                username: context.repo.owner
-              });
-              const totalFollowers = userResponse.data.followers;
-              
-              // Generate table rows
-              const tableRows = recentFollowers.map((follower, index) => {
-                return `| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |`;
-              }).join('\n');
-              
-              // Set outputs
-              core.setOutput('tableRows', tableRows);
-              core.setOutput('totalFollowers', totalFollowers);
-              
-              return 'Successfully fetched followers data';
-              
-            } catch (error) {
-              console.error('Error fetching followers:', error);
-              core.setFailed(error.message);
-              throw error;
-            }
+            ((INDEX++))
+          done
+          
+          # Read the table rows from the file
+          TABLE_ROWS=$(cat /tmp/followers_table.txt)
+          
+          # Save outputs to environment files
+          echo "$TABLE_ROWS" > "$GITHUB_OUTPUT"
+          echo "table-rows<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$TABLE_ROWS" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          
+          echo "total-followers=$TOTAL_FOLLOWERS" >> "$GITHUB_OUTPUT"
+          
+          echo "Successfully fetched followers data"
 
       - name: Update Followers README
         run: |
           # Get the generated table rows and total followers from previous step
-          TABLE_ROWS="${{ steps.get-followers.outputs.tableRows }}"
-          TOTAL_FOLLOWERS="${{ steps.get-followers.outputs.totalFollowers }}"
-          TIMESTAMP=$(date -u +"%a, %d %b %Y %H:%%M:%S GMT")
+          TABLE_ROWS='${{ steps.get-followers.outputs.table-rows }}'
+          TOTAL_FOLLOWERS='${{ steps.get-followers.outputs.total-followers }}'
+          TIMESTAMP=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
           
           echo "Updating followers README with $TOTAL_FOLLOWERS total followers..."
           
