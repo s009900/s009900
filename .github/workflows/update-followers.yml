@@ -20,8 +20,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
           script: |
             const { github, context } = require('@actions/github');
+            const core = require('@actions/core');
             
             try {
               // Get the most recent followers (GitHub returns them in reverse chronological order)
@@ -45,14 +47,15 @@ jobs:
                 return `| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |`;
               }).join('\n');
               
-              // Return outputs
-              return {
-                tableRows,
-                totalFollowers
-              };
+              // Set outputs
+              core.setOutput('tableRows', tableRows);
+              core.setOutput('totalFollowers', totalFollowers);
+              
+              return 'Successfully fetched followers data';
               
             } catch (error) {
               console.error('Error fetching followers:', error);
+              core.setFailed(error.message);
               throw error;
             }
 
