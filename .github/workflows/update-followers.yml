@@ -21,12 +21,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { github } = require('@actions/github');
+            const { github, context } = require('@actions/github');
             
             try {
               // Get the most recent followers (GitHub returns them in reverse chronological order)
               const response = await github.rest.users.listFollowersForUser({
-                username: 's009900',
+                username: context.repo.owner,
                 per_page: 4, // Only get the 4 most recent
                 headers: {'X-GitHub-Api-Version': '2022-11-28'}
               });
@@ -36,24 +36,24 @@ jobs:
               
               // Get the total number of followers
               const userResponse = await github.rest.users.getByUsername({
-                username: 's009900'
+                username: context.repo.owner
               });
               const totalFollowers = userResponse.data.followers;
               
               // Generate table rows
-              let tableRows = [];
-              recentFollowers.forEach((follower, index) => {
-                tableRows.push(`| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |`);
-              });
+              const tableRows = recentFollowers.map((follower, index) => {
+                return `| ${index+1} | <img src="${follower.avatar_url}" width="50" height="50" /> | [@${follower.login}](${follower.html_url}) |`;
+              }).join('\n');
               
-              // Set outputs
-              core.setOutput('tableRows', tableRows.join('\n'));
-              core.setOutput('totalFollowers', totalFollowers);
-              console.log('Followers data prepared successfully');
+              // Return outputs
+              return {
+                tableRows,
+                totalFollowers
+              };
               
             } catch (error) {
               console.error('Error fetching followers:', error);
-              core.setFailed(error.message);
+              throw error;
             }
 
       - name: Update Followers README
