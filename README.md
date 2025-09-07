@@ -126,10 +126,6 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 </details>
 
 
-## 👥 Recent Followers
-
-Here are my most recent GitHub followers:
-
 <!-- START FOLLOWERS -->
 <!-- END FOLLOWERS -->
 
