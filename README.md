@@ -123,6 +123,18 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 - [Our Amazing Contributors](additional-readmes/contributors.readme.md)
 - [Recent Followers](additional-readmes/followers.readme.md)
 
+#### 👥 Recent Followers
+*Last updated: 9/7/2025, 1:19:58 PM*
+
+| # | Avatar | Username |
+|--:|:------:|:---------|
+| 1 | <img src="https://avatars.githubusercontent.com/u/201192802?v=4" width="50" height="50" alt="jaiq123" /> | [@jaiq123](https://github.com/jaiq123) |
+| 2 | <img src="https://avatars.githubusercontent.com/u/207253023?v=4" width="50" height="50" alt="h0011000" /> | [@h0011000](https://github.com/h0011000) |
+| 3 | <img src="https://avatars.githubusercontent.com/u/207921092?v=4" width="50" height="50" alt="ez0000001000000" /> | [@ez0000001000000](https://github.com/ez0000001000000) |
+| 4 | <img src="https://avatars.githubusercontent.com/u/207921618?v=4" width="50" height="50" alt="as000010000" /> | [@as000010000](https://github.com/as000010000) |
+
+
+> Note: This list shows your 4 most recent followers and updates every 30 minutes.
 </details>
 
 <div align="center">
