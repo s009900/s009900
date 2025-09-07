@@ -18,11 +18,11 @@ jobs:
       - name: Get Recent Followers
         id: get-followers
         run: |
-          # Get the most recent 4 followers using the GitHub API with since parameter
-          # We use a high ID number to get the most recent followers first
-          FOLLOWERS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          # Get the most recent 4 followers using the GitHub Events API
+          # First, get the list of all followers
+          ALL_FOLLOWERS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/users/s009900/followers?per_page=4&sort=created&direction=desc")
+            "https://api.github.com/users/s009900/followers?per_page=100")
           
           # Get total followers count
           USER_INFO_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
@@ -31,6 +31,25 @@ jobs:
           
           # Parse the JSON responses
           TOTAL_FOLLOWERS=$(echo "$USER_INFO_JSON" | jq -r '.followers')
+          
+          # Get the most recent 4 followers by checking when they followed
+          # This requires checking the events for each follower to see when they followed
+          # We'll use the events API to get the most recent follow events
+          EVENTS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/users/s009900/received_events?per_page=100")
+            
+          # Extract the most recent 4 follow events
+          RECENT_FOLLOWERS=$(echo "$EVENTS_JSON" | jq -r '
+            [.[] | select(.type == "FollowEvent") | {
+              login: .actor.login,
+              avatar_url: .actor.avatar_url,
+              html_url: .actor.html_url,
+              created_at: .created_at
+            }] | sort_by(.created_at) | reverse | .[0:4]')
+            
+          # Use these recent followers instead of the basic followers list
+          FOLLOWERS_JSON="$RECENT_FOLLOWERS"
           
           # Generate the table rows
           TABLE_ROWS=""
