@@ -28,7 +28,6 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
 
-![GitHub Snake Light](https://raw.githubusercontent.com/s009900/s009900/output/github-contribution-grid-snake.svg)
 
 ## 📊 Word Cloud
 
@@ -125,6 +124,7 @@ This word cloud is automatically generated based on my repositories and contribu
 - [My GitHub Trophies](additional-readmes/trophies.readme.md)
 - [Star History](additional-readmes/star-history.readme.md)
 - [My Word Cloud](additional-readmes/wordcloud.readme.md)
+- [My Contribution Snake](additional-readmes/snake-contributions.readme.md)
 - [Workflow Thru Life](additional-readmes/workflow.readme.md)
 - [Code Cycle](additional-readmes/code-cycle.readme.md)
 
