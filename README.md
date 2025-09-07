@@ -124,7 +124,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 - [Our Amazing Contributors](additional-readmes/contributors.readme.md)
 - [Recent Followers](additional-readmes/followers.readme.md)
 
-</details>
+ </details>
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
