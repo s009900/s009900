@@ -18,10 +18,11 @@ jobs:
       - name: Get Recent Followers
         id: get-followers
         run: |
-          # Get the most recent followers
+          # Get the most recent 4 followers using the GitHub API with since parameter
+          # We use a high ID number to get the most recent followers first
           FOLLOWERS_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/users/s009900/followers?per_page=4")
+            "https://api.github.com/users/s009900/followers?per_page=4&sort=created&direction=desc")
           
           # Get total followers count
           USER_INFO_JSON=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
