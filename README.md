@@ -27,15 +27,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 <img align="left" src="https://raw.githubusercontent.com/s009900/s009900/main/assets/emojis/Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
-
-
-## 📊 Word Cloud
-
-![Word Cloud](https://raw.githubusercontent.com/s009900/s009900/main/assets/wordcloud.png)
-
-
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
-
 
 <table align="center">
   <tr>
@@ -101,11 +93,15 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
       </td>
    
   
- </tr>
+  </tr>
 </table>
 <br><br>
-</tr>
-</tr></tr>
+
+## 📊 Word Cloud
+
+![Word Cloud](https://raw.githubusercontent.com/s009900/s009900/main/assets/wordcloud.png)
+
+[View in full detail](additional-readmes/wordcloud.readme.md)
 
 <details open>
 <summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
@@ -118,7 +114,6 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 - [My 3D Contribution Graph](additional-readmes/3d-contributions.readme.md)
 - [My GitHub Trophies](additional-readmes/trophies.readme.md)
 - [Star History](additional-readmes/star-history.readme.md)
-- [My Word Cloud](additional-readmes/wordcloud.readme.md)
 - [My Contribution Snake](additional-readmes/snake-contributions.readme.md)
 - [Workflow Thru Life](additional-readmes/workflow.readme.md)
 - [Code Cycle](additional-readmes/code-cycle.readme.md)
