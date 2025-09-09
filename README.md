@@ -125,15 +125,6 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 - [Recent Followers](additional-readmes/followers.readme.md)
 </details>
 
-
-<!-- START FOLLOWERS -->
-## 👥 Recent Followers
-
-Check out my [recent followers page](additional-readmes/followers.readme.md) to see who's recently followed my GitHub profile!
-
-_✨ Updated automatically via GitHub Actions_
-<!-- END FOLLOWERS -->
-
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>

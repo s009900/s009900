@@ -51,28 +51,17 @@ jobs:
           # Use these recent followers instead of the basic followers list
           FOLLOWERS_JSON="$RECENT_FOLLOWERS"
           
-          # Generate the table rows
-          TABLE_ROWS=""
-          INDEX=1
-          
-          echo "$FOLLOWERS_JSON" | jq -r '.[] | [.login, .avatar_url, .html_url] | @tsv' | while IFS=$'\t' read -r login avatar_url html_url; do
-            TABLE_ROWS+="| $INDEX | <img src=\"$avatar_url\" width=\"50\" height=\"50\" /> | [@$login]($html_url) |"$'\n'
-            # Save the table rows to a file to persist outside the loop
-            echo "$TABLE_ROWS" > /tmp/followers_table.txt
-            
-            ((INDEX++))
-          done
-          
-          # Read the table rows from the file
-          TABLE_ROWS=$(cat /tmp/followers_table.txt)
+          # Generate the table rows directly
+          TABLE_ROWS=$(echo "$FOLLOWERS_JSON" | jq -r 'to_entries | map(
+            "| \(.key + 1) | <img src=\"\(.value.avatar_url)\" width=\"50\" height=\"50\" /> | [@\(.value.login)](\(.value.html_url)) |"
+          ) | join("\n")')
           
           # Save outputs to environment files
-          echo "$TABLE_ROWS" > "$GITHUB_OUTPUT"
-          echo "table-rows<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$TABLE_ROWS" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "table-rows<<EOF" >> $GITHUB_OUTPUT
+          echo "$TABLE_ROWS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
           
-          echo "total-followers=$TOTAL_FOLLOWERS" >> "$GITHUB_OUTPUT"
+          echo "total-followers=$TOTAL_FOLLOWERS" >> $GITHUB_OUTPUT
           
           echo "Successfully fetched followers data"
 
