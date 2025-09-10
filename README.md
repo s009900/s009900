@@ -2,7 +2,9 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=200&section=header&text=s009900&fontSize=90&animation=fadeIn&fontAlignY=35&desc=Hi%20there!%20Thanks%20for%20coming!%20👋&descAlignY=55&descSize=20" width="100%" />
 </div>
+
 <img align="left" src="https://raw.githubusercontent.com/s009900/s009900/main/assets/emojis/Penguin.png" alt="Penguin" width="15%" /><br>
+
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Languages and Tools</b>
