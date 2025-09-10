@@ -2,24 +2,6 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=200&section=header&text=s009900&fontSize=90&animation=fadeIn&fontAlignY=35&desc=Hi%20there!%20Thanks%20for%20coming!%20👋&descAlignY=55&descSize=20" width="100%" />
 </div>
-
-<!-- Guestbook -->
-<!--
-## 📝 Guestbook
-
-Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd love to hear from you! 😊
-
-[Sign the Guestbook](https://github.com/s009900/s009900/issues/new?template=guestbook.yml&title=Guestbook%3A+Your+Name) ➠•  [View All Entries](https://github.com/s009900/s009900/issues?q=is%3Aissue+label%3Aguestbook+sort%3Acreated-desc)
-
-### Recent Guestbook Entries
-
-| Emoji | Name | Message | Date |
-|:-----:|:----:|:-------:|:----:|
-| 🎉 | You | Be the first to sign my guestbook! | Today |
-
-*Sign the guestbook to see your message here!*
--->
-
 <!--Comment out typing and confetti>
 
 # <img width="50" height="50" alt="471540330-b492ebbe-1847-4a3b-9401-14fda1d869e6" src="https://github.com/user-attachments/assets/838454fd-d739-4127-b6f7-5be935d446e1" /> s009900
@@ -119,10 +101,7 @@ Leave your mark in my guestbook! Share a message, a joke, or just say hi. I'd lo
 - [Workflow Thru Life](additional-readmes/workflow.readme.md)
 - [Code Cycle](additional-readmes/code-cycle.readme.md)
 
-### 🤝 Community
-- [How to Contribute](additional-readmes/contributions.readme.md)
-- [Our Amazing Contributors](additional-readmes/contributors.readme.md)
-- [Recent Followers](additional-readmes/followers.readme.md)
+
 </details>
 
 <div align="center">
