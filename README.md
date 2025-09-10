@@ -97,3 +97,4 @@
 
 [![My Skills](https://skillicons.dev/icons?i=js,ts,python,java,cpp,cs,html,css,react,nodejs,express,django,mongodb,postgres,mysql,git,docker,aws,vscode,linux)](https://skillicons.dev)
 
+[![My Skills](https://skillicons.dev/icons?i=python,javascript,typescript)](https://skillicons.dev)
