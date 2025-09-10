@@ -2,10 +2,6 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=200&section=header&text=s009900&fontSize=90&animation=fadeIn&fontAlignY=35&desc=Hi%20there!%20Thanks%20for%20coming!%20👋&descAlignY=55&descSize=20" width="100%" />
 </div>
-<!--Comment out typing and confetti>
-
-# <img width="50" height="50" alt="471540330-b492ebbe-1847-4a3b-9401-14fda1d869e6" src="https://github.com/user-attachments/assets/838454fd-d739-4127-b6f7-5be935d446e1" /> s009900
-# ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome!+👋+Thanks+for+making+it+over!;Remember+to+star+this+repo!) -->
 <img align="left" src="https://raw.githubusercontent.com/s009900/s009900/main/assets/emojis/Penguin.png" alt="Penguin" width="15%" /><br>
 ![](https://komarev.com/ghpvc/?username=s009900&style=for-the-badge&color=ff69b4&label=Visitors:) ![GitHub Stars](https://img.shields.io/github/stars/s009900/s009900?&style=for-the-badge&color=green&)
 
@@ -84,25 +80,6 @@
 ![Word Cloud](https://raw.githubusercontent.com/s009900/s009900/main/assets/wordcloud.png)
 
 [Add a Word to the Word Cloud](https://github.com/s009900/s009900/issues/new?template=word-cloud-submission.yml)
-
-
-<details>
-<summary><b>📂 More Fun Stuff</b> (Click to expand/collapse)</summary>
-  
-#####                                                 [Check them all out here](https://github.com/s009900/s009900/tree/main/additional-readmes)
-
-### 📊 Stats & Metrics
-- [My GitHub Statistics](additional-readmes/stats.readme.md)
-- [My GitHub Metrics](additional-readmes/metrics.readme.md)
-- [My 3D Contribution Graph](additional-readmes/3d-contributions.readme.md)
-- [My GitHub Trophies](additional-readmes/trophies.readme.md)
-- [Star History](additional-readmes/star-history.readme.md)
-- [My Contribution Snake](additional-readmes/snake-contributions.readme.md)
-- [Workflow Thru Life](additional-readmes/workflow.readme.md)
-- [Code Cycle](additional-readmes/code-cycle.readme.md)
-
-
-</details>
 
 <div align="center">
   <picture><img src = "https://github.com/user-attachments/assets/209c1290-5039-4723-8ea8-04423f1ddf4c" width = 50px></picture>
