@@ -93,3 +93,7 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24,30&height=120&section=footer&animation=float" width="100%" />
 </div>
+
+
+[![My Skills](https://skillicons.dev/icons?i=js,ts,python,java,cpp,cs,html,css,react,nodejs,express,django,mongodb,postgres,mysql,git,docker,aws,vscode,linux)](https://skillicons.dev)
+
